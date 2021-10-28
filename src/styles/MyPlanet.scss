@@ -1,0 +1,1370 @@
+// 행성 내부 전체에 적용될 css파일
+
+/* 
+순서
+1. MyPlanet (내 행성 가기 누르면 나오는 페이지, 내행성들 전체를 볼 수 있음)
+2. MyPlanetZoom (내 행성들 중 하나를 선택화면 확대해서 보여줄 페이지)
+3. MyPlanetInside (행성 내부)
+
+*/
+
+// 1. MyPlanet
+.planetContainer {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  overflow-x: scroll;
+}
+
+.planetBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.planetLink {
+  text-decoration: none;
+}
+
+.planetNickname {
+  color: rgb(224, 224, 224);
+}
+
+.planetImg {
+  position: relative;
+  height: 40vh;
+  width: 40vh;
+  transition: 0.6s;
+  opacity: 1;
+  border-radius: 100%;
+  &:hover {
+    height: 42vh;
+    width: 42vh;
+  }
+}
+
+//---------------------------------------------------
+//---------------------------------------------------
+
+// 2. MyPlanetZoom
+.planetZoomContinaer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.planetImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  color: white;
+}
+
+.planetZoomPosition {
+  color: rgb(196, 196, 196);
+  font-size: 5rem;
+  z-index: 10;
+}
+
+.PageNameContainer {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  z-index: 10;
+}
+
+.planetNickname {
+  font-size: 3rem;
+}
+
+.myPlanetZoom {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 100%;
+  transition: 0.4s;
+  opacity: 1;
+}
+
+.planetScriptContainer1 {
+  width: 25vw;
+  height: 40vh;
+  background-color: #96aabf2e;
+  border-radius: 5px;
+  transition: 0.4s;
+  opacity: 1;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planetScriptContainer2 {
+  width: 25vw;
+  height: 50vh;
+  background-color: #96aabf2e;
+  border-radius: 5px;
+  transition: 0.4s;
+  opacity: 1;
+  color: white;
+  margin-top: -15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userNameBox {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 5%;
+}
+
+.imageBox {
+  width: 100%;
+  height: 80%;
+}
+
+.userName {
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+.representPhoto {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  border-radius: 30px;
+}
+
+.planetScript {
+  width: 100%;
+  height: 100%;
+}
+
+.welcomeMsg {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+
+  font-size: 1.4rem;
+}
+
+.subTitleContainer {
+  background-color: #1b1b1b61;
+  width: 100%;
+  height: 10%;
+  font-size: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBox {
+  width: 25vw;
+  height: 18%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  font-size: 1.4rem;
+}
+
+.planetItem {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planetValue {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planet-body,
+.planet-ears,
+.planet-nose,
+.planet-mouth,
+.planet-body-shade {
+  width: 45%;
+  position: absolute;
+  top: 1%;
+  left: 5%;
+}
+
+//---------------------------------------------------
+//---------------------------------------------------
+
+// 3. MyPlanetInside
+
+/*
+z-index 순서
+배경 -> 우체통 -> 사람
+
+실제 값 참고
+post : 10
+human : 20
+trees : 5
+
+postmodal : 999,998
+
+에디터 관련 : 100
+console.log(res.data.guest[0].guestBook);
+*/
+
+// 로딩화면
+.p5Canvas {
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  z-index: -99999;
+}
+
+.loaderContainer {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lloader {
+  font-size: 200px;
+  color: #999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.circleContainer {
+  margin-top: 10vh;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+}
+.circle {
+  width: 4vh;
+  height: 4vh;
+  background-color: #999999;
+  border-radius: 100px;
+  margin: 2vh;
+
+  position: relative;
+}
+@keyframes loaderMotion {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: -10vh;
+  }
+
+  99% {
+    top: -1px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.circle21 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 0.2s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle31 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 0.4s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle41 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 0.6s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle5 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 0.8s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle6 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle7 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 1.2s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle8 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 1.4s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle9 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 1.6s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle10 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 1.8s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle11 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle12 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 2.2s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle13 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 2.4s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle14 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 2.6s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle15 {
+  animation: loaderMotion 2s infinite;
+  animation-delay: 2.8s;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+// 배경, 기타 요소
+
+// 추억관 외부
+.sky {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 2000px;
+  height: 50%;
+  background-color: #afdefd;
+}
+
+.land {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 1915px;
+  height: 50%;
+  background-color: #9ddc79;
+}
+
+.subland1 {
+  position: absolute;
+  left: 1915px;
+  top: 86%;
+  width: 475px;
+  height: 14%;
+  background-color: #9ddc79;
+}
+
+.subland2 {
+  position: absolute;
+  left: 1870px;
+  top: 765px;
+  width: 275px;
+  height: 90px;
+  background-color: #9ddc79;
+
+  transform: rotate(27deg);
+}
+
+// 추억관 내부
+.skyInside {
+  position: absolute;
+  left: 2000px;
+  top: 0px;
+  width: 4000px;
+  height: 50%;
+  background-color: #fffcf5;
+}
+
+.landInside {
+  position: absolute;
+  left: 1915px;
+  top: 49%;
+  width: 4085px;
+  height: 51%;
+  background-color: #a99685;
+}
+//외부 문 색상 값
+//#fffcf5
+.post {
+  position: absolute;
+  top: 67%;
+  left: 1050px;
+  width: 200px;
+  height: auto;
+  transition: 0.1s;
+  z-index: 20;
+  &:hover {
+    width: 220px;
+    cursor: pointer;
+  }
+}
+
+.human {
+  position: fixed;
+  left: 600px;
+  top: 500px;
+  width: 200px;
+  height: 300px;
+  z-index: 10;
+}
+
+// 아이템 컴포넌트 css
+
+/*
+나무 아이템 컴포넌트 구성
+treeContainer
+  - Controller
+  - tree
+*/
+
+// 나무아이템 부분
+
+// 나무 컨테이너 공통
+
+// 크기와 위치는 컴포넌트 내에서 계산.
+// 나무 이미지의 크기에 맞게 컨테이너의 크기가 설정되고, 컨트롤러의 높이 만큼이 컨테이너 높이에 추가됨.
+.treeContainer {
+  position: absolute;
+
+  /*
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  */
+}
+
+// 실제 나무에 해당하는 부분
+.tree {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  z-index: 3;
+}
+
+.subContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+.contentsContainer {
+  position: absolute;
+  top: 0px;
+  //left: -25vw;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+// 입구 문
+.enterDoorLeft {
+  position: relative;
+  top: -146px;
+  left: 1700px;
+  z-index: 9;
+  width: 340px;
+  height: auto;
+}
+
+.enterDoorRight {
+  position: relative;
+  top: 5px;
+  left: 1655px;
+  z-index: 11;
+  width: 460px;
+  height: auto;
+
+  overflow-y: hidden;
+}
+
+// 편지 작성 관련 (모달, 내부 요소)
+// 우체통 부분
+
+// 모달창
+.Modal {
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  margin-top: -40vh;
+  margin-left: -35vw;
+  width: 70vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 999;
+  overflow-y: scroll;
+
+  border-radius: 5px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70vw;
+  height: 5vh;
+  position: fixed;
+  background-color: #e24343;
+}
+
+.closebtnImg {
+  height: 70%;
+  width: auto;
+  margin-right: 1%;
+  border: solid 1px gray;
+}
+
+.closebtnImg:hover {
+  cursor: pointer;
+}
+
+.Modaloutside {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background-color: rgba(143, 143, 143, 0.8);
+}
+
+.Modaloutside:hover {
+  cursor: pointer;
+}
+
+// 포스트 리스트 컨테이너
+.showPostOn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showPostOff {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// 포스트 작성 컨테이너
+.writePostOff {
+  display: none;
+}
+
+.writePostOn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10vh;
+  height: 50vh;
+}
+
+// 편지 작성 확인 버튼
+.PostInputBtn {
+  width: 70%;
+  height: 4vh;
+  background-color: black;
+  margin-top: 2vh;
+  color: white;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.postContentsContainer {
+  padding: 5vh;
+}
+
+// 포스트 리스트
+.PostList {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: white;
+  color: black;
+
+  border: solid 1px black;
+  margin: 5%;
+  border-radius: 5px;
+  height: 10vh;
+  width: 80%;
+
+  overflow-y: scroll;
+
+  transition: 0.3s;
+
+  margin-bottom: 1vh;
+
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.PostListTitle {
+  transition: 0.3s;
+}
+
+.PostListTime {
+  transition: 0.3s;
+}
+
+.PostDelteBtn {
+  width: 20vh;
+  height: 4vh;
+  border-radius: 5px;
+  border: solid 2px rgb(255, 38, 0);
+  margin-bottom: 2vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.createPostBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-direction: row;
+  margin-right: 2vh;
+  margin-top: 2vh;
+}
+
+.createPostBtn {
+  position: fixed;
+  margin-top: 140vh;
+  width: 10vh;
+  height: 4vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.createGuestBookBtn {
+  position: fixed;
+  margin-top: 140vh;
+  width: 10vh;
+  height: 4vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+}
+.postInput {
+  width: 70%;
+  height: 60%;
+}
+
+// 에디터
+
+.editorBtnOpen {
+  left: 45vh;
+}
+
+.editorBtnClose {
+  left: 5vh;
+}
+
+.editorContainer {
+  position: fixed;
+  top: 5vh;
+  left: -55vh;
+  width: 35vh;
+  height: 50vh;
+  background-color: rgb(185, 185, 185);
+  z-index: 101;
+  border-radius: 5px;
+  transition: 0.3s;
+  overflow-y: scroll;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.editorContainerOpen {
+  left: 5vh;
+}
+
+.editorContainerClose {
+  left: -45vh;
+}
+
+.item {
+  position: relative;
+  width: 40%;
+  height: 20%;
+
+  color: white;
+  margin: 5%;
+}
+
+.edititem {
+  position: relative;
+  width: 40%;
+  height: 20%;
+
+  background-color: rgb(216, 216, 216);
+  margin: 5%;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.itemImg {
+  width: 100%;
+  height: 100%;
+}
+
+.editorWindow {
+  // position: fixed;
+  // top: 5vh;
+  // right: 5vh;
+  z-index: 100;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.redDot {
+  width: 1vh;
+  height: 1vh;
+  border-radius: 100px;
+  background-color: red;
+  margin-bottom: 4px;
+  margin-right: 7px;
+}
+
+.noDot {
+  width: 1vh;
+  height: 1vh;
+  border-radius: 100px;
+  margin-bottom: 4px;
+  margin-right: 7px;
+}
+
+.redDotWindow {
+  position: absolute;
+  right: 8.5vh;
+}
+.redDotSave {
+  position: absolute;
+  right: 5.5vh;
+}
+
+.editorWindowBtn {
+  width: 5vh;
+  height: 5vh;
+}
+
+.planetNavbar {
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 5vh;
+  width: 100vw;
+  margin-top: 2vh;
+  padding: 2vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// 수정, 추가 관련 메뉴바
+.editorSideBar {
+  z-index: 100;
+  position: fixed;
+  top: 10vh;
+  right: 2vh;
+  width: 5vh;
+  height: 100vh;
+
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.editorSideBarOpen {
+  right: 2vh;
+}
+
+.editorSideBarClose {
+  right: -7vh;
+}
+
+// 에디터 추가 버튼
+.editorBtn {
+  // position: fixed;
+  // top: 5vh;
+  // left: 5vh;
+  width: 5vh;
+  height: 5vh;
+  background-color: white;
+  border: solid 2px black;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 에디터 수정 버튼
+.editorModifyBtn {
+  width: 5vh;
+  height: 5vh;
+  // background-color: blue;
+  background-color: #4646f3;
+  border: solid 2px black;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 3vh;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 변경사항 저장 버튼
+.editorSaveBtn {
+  width: 5vh;
+  height: 5vh;
+  background-color: #f3f96d;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+
+  border: solid 2px black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vh;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 추억관 이미지 삭제 관리 버튼
+.editorPhotoDelBtn {
+  width: 5vh;
+  height: 5vh;
+  background-color: #ff3434;
+  border: solid 2px black;
+  color: white;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    border: solid 3px white;
+  }
+}
+
+// 방명록
+.guestBook1 {
+  position: absolute;
+  top: 17%;
+  left: 2600px;
+  width: 300px;
+  height: auto;
+  transition: 0.1s;
+  z-index: 10;
+  // background-color: brown;
+  &:hover {
+    width: 320px;
+    cursor: pointer;
+  }
+}
+
+.guestBook2 {
+  position: absolute;
+  top: 17%;
+  left: 3000px;
+  width: 300px;
+  height: auto;
+  transition: 0.1s;
+  z-index: 10;
+  // background-color: brown;
+  &:hover {
+    width: 320px;
+    cursor: pointer;
+  }
+}
+
+// 포스트 리스트 컨테이너
+.showGuestBookOn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+.showGuestBookOff {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// 방명록 리스트
+.guestBookList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin: 5%;
+
+  border-radius: 5px;
+  height: 30vh;
+  width: 40%;
+
+  overflow-y: scroll;
+
+  transition: 0.3s;
+
+  margin-bottom: 1vh;
+
+  border: solid 1px rgb(128, 128, 128);
+
+  font-size: 1.5rem;
+
+  &:hover {
+  }
+}
+
+.guestBookUserNickName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  font-size: 1.2rem;
+  margin-left: 5%;
+}
+
+.guestBookContent {
+  word-break: break-all;
+  width: 95%;
+  height: 70%;
+  margin-left: 2%;
+  font-size: 1.4rem;
+
+  padding: 5px;
+}
+
+.guestBookDate {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  font-size: 0.7rem;
+}
+
+.guestBookDelBtn {
+  width: 2vh;
+  height: 2vh;
+
+  margin-right: 5%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
+// 포스트 작성 컨테이너
+.writeshowGuestOff {
+  display: none;
+}
+
+.writeshowGuesttOn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10vh;
+  height: 50vh;
+}
+
+// 사진 추가
+.addPicture {
+  position: absolute;
+  top: 0.5vh;
+  right: -27vh;
+  height: 30vh;
+  width: auto;
+  transition: 0.1s;
+  z-index: 10;
+  &:hover {
+    height: 31vh;
+    cursor: pointer;
+  }
+}
+
+.addPhotoContentsContainer {
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 80%;
+  height: 80%;
+  // background-color: gray;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.PreviewAreaContinaer {
+  width: 100%;
+  height: 90%;
+  border: solid 1px gray;
+}
+
+.photoInput {
+  // background-color: blue;
+  width: 30vh;
+  border-style: none;
+}
+
+.photoBtnOkContainer {
+  width: 10vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 3px #15c40b;
+  border-radius: 5px;
+  transition: 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    border: solid 3px #15fc09;
+  }
+}
+
+.photoBtnOk {
+  width: 4vh;
+  height: 4vh;
+}
+
+.photoBtnDel {
+  width: 4vh;
+  height: 4vh;
+  background-color: red;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.photoBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.imgPreview {
+  width: 100%;
+  height: 100%;
+}
+
+.noImg {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 이미지 리스트 컨테이너
+.PhotoListContainer {
+  position: absolute;
+  left: 3500px;
+  top: -10%;
+
+  display: flex;
+  height: 50%;
+
+  margin-top: 20vh;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// 이미지 리스트
+.photoListImgContainer {
+  position: absolute;
+  height: 33vh;
+}
+
+.photoList {
+  z-index: 5;
+  width: 25vh;
+  height: 23vh;
+  // margin-right: 10vw;
+  position: relative;
+  bottom: 24vh;
+  margin-left: 1vh;
+
+  border: solid 1px black;
+}
+.frame {
+  z-index: 4;
+  height: 30vh;
+  width: auto;
+
+  margin-right: 10vh;
+}
+
+.photoDelBtnContainer {
+  width: 30vh;
+  height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: relative;
+  top: 2vh;
+  right: 3vh;
+}
+
+.photoContainer {
+  position: relative;
+}
+
+.photoDelBtn {
+  width: 3vh;
+  height: 3vh;
+  // border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//---------------------------------------------------
+//---------------------------------------------------
+
+// 4. (MyPlanetInside) Items
+// 실제 수정 버튼 (각 아이템에 달림)
+.ControllerNavBar {
+  width: auto;
+  z-index: 5;
+  /*
+  
+  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 더미
+.dummyController {
+  width: 3vh;
+  height: 3vh;
+}
+
+// 이동, 수정
+.Controller {
+  width: 3vh;
+  height: 3vh;
+  z-index: 0;
+
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.ControllerOn {
+  opacity: 1;
+  z-index: 5;
+  top: 0px;
+  display: block;
+}
+
+.ControllerOff {
+  opacity: 0;
+  z-index: 0;
+  display: none;
+}
+
+// 삭제
+.ControllerDel {
+  width: 3vh;
+  height: 3vh;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.ControllerDelOn {
+  opacity: 1;
+  z-index: 5;
+  display: block;
+}
+
+.ControllerDelOff {
+  opacity: 0;
+  z-index: 0;
+  display: none;
+}
+
+//---------------------------------------------------
+//---------------------------------------------------
+
+// 5. New Items
+
+.NewItemContainer {
+  z-index: 200;
+  position: absolute;
+  left: 45vh;
+  top: 100px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(133, 133, 133, 0.438);
+}
+
+.newItem {
+  z-index: 199;
+  width: 300px;
+  height: 300px;
+}

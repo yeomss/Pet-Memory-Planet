@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+// 데스크톱 버전
+@media (orientation: landscape) {
+  .mypage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mypage-container {
+      width: 90%;
+      height: 100%;
+      background-color: palevioletred;
+
+      display: flex;
+      flex-direction: row;
+
+      .menu-area {
+        width: 20%;
+        background-color: red;
+        padding: 10px;
+
+        .title {
+          background-color: papayawhip;
+        }
+        .user-info {
+          background-color: palegoldenrod;
+        }
+        .planet-info {
+          background-color: palegreen;
+        }
+        .delete {
+          background-color: paleturquoise;
+        }
+      }
+      .content-area {
+        width: 100%;
+        background-color: green;
+      }
+    }
+  }
+}
+
+// 모바일 버전
+@media (orientation: portrait) {
+}
