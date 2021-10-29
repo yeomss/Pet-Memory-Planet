@@ -1,15 +1,14 @@
 # 🪐 Pet-Memory-Planet 🐾 
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/src/assets/main.png)
 <div align='center'>
-### <b>2021 창의설계프로젝트 - 추억 그리고 행성</b>
+  <h3> <b>2021 창의설계프로젝트 - 추억 그리고 행성</b> </h3>
+  <p>2021년 팀MADE 캡스톤 프로젝트</p>
 
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/></a>
-
-- 2021년 팀MADE 캡스톤 프로젝트
 
 </div>
 ```
