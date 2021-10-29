@@ -2,7 +2,7 @@
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/src/assets/main.png)
 <div align='center'>
   <h3> <b>2021 창의설계프로젝트 - 추억 그리고 행성</b> </h3>
-  <p>👉 팀 MADE 캡스톤 프로젝트</p>
+  <p>👉 팀 MADE</p>
 
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
