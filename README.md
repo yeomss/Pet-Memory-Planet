@@ -1,6 +1,7 @@
 # 🪐 Pet-Memory-Planet 🐾 
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/src/assets/main.png)
-<b>2021 창의설계프로젝트 - 추억 그리고 행성</b>
+<div align='center'>
+### <b>2021 창의설계프로젝트 - 추억 그리고 행성</b>
 
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/></a>
@@ -10,6 +11,7 @@
 
 - 2021년 팀MADE 캡스톤 프로젝트
 
+</div>
 ```
   반려동물을 잃었을 때, 흔히들 ‘무지개다리를 건넜다.’라고 표현한다.
   무지개다리를 건넌 나의 반려동물은 어디에 있을까?
