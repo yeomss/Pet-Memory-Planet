@@ -2,6 +2,7 @@
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/src/assets/main.png)
 <div align='center'>
   <h3> <b>2021 창의설계프로젝트 - 추억 그리고 행성</b> </h3>
+  <h6>반려동물 추모 웹 사이트</h6>
   <p>👉 팀 MADE</p>
 
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
