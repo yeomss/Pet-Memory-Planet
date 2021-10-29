@@ -1,25 +1,24 @@
-# 🐾🪐 Pet-Memory-Planet 
+# 🪐 Pet-Memory-Planet 🐾 
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/src/assets/main.png)
 <b>2021 창의설계프로젝트 - 추억 그리고 행성</b>
 
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/></a>
 
-🚩 https://osp20-25073.web.app
-- 2020년 2학기 오픈소스프로젝트 과제
+- 2021년 팀MADE 캡스톤 프로젝트
 
 ```
-Vue.js를 기반으로 한 노트 웹 애플리케이션 만들기
-(CRUD) 노트 내용 및 색상 수정이 가능하며 이미지 업로드 가능
-텐서플로우.js를 활용하여 이미지 객체 인식
-네이버 API 사용 노트 내용 번역 및 이미지 감정 인식
-firebase를 통한 간단한 배포
+  반려동물을 잃었을 때, 흔히들 ‘무지개다리를 건넜다.’라고 표현한다. 무지개다리를 건넌 나의 반려동물은 어디에 있을까? 이러한 의문을 던지는 사람들에게 웹 추모 공간을 선사하고자 한다. 이곳에서는 내 반려동물을 행성으로 대입하여 기릴 수 있다.
+
+- 우주 배경의 추모 공간으로 사용자마다 행성을 구축할 수 있다.
+- 행성 외부/내부 커스터마이징 기능으로 자신만의 추모 공간 구현이 가능하다.
+- 무지개다리를 건넌 반려동물에게 편지를 보내는 우편함 기능이 내재 되어 있다.
+- 반려동물을 잃은 사람들 간의 소통을 원활하게 할 의견/정보 게시판이 존재한다.
 ```
 
-| #처음 웹언어 딥하게 만져봄
-
-| #어렵지만 신기하고 재밌는 경험이었음
-
-| #나름 외관이나 기능이나 만족스러웠던 과제
+| #리액트 처음 다뤄봄
+| #해당 과제를 통해 웹에 대해서 많이 깨달음
+| #좋은 사람들과 재미있었던 조별과제
