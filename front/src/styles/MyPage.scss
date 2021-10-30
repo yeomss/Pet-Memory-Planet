@@ -14,9 +14,8 @@
     align-items: center;
 
     .mypage-container {
-      width: 90%;
-      height: 90%;
-      // background-color: white;
+      width: 70%;
+      height: 70%;
 
       display: flex;
       flex-direction: row;
@@ -30,7 +29,6 @@
         flex-grow: 1;
 
         .title {
-          // background-color: papayawhip;
           border-bottom: 1px solid rgba(255, 255, 255, 0.5);
           color: white;
           text-align: center;
@@ -66,18 +64,14 @@
           }
         }
         .user-info {
-          // background-color: palegoldenrod;
-          // padding-left: 15px;
           padding: 15px;
           margin-bottom: 10px;
         }
         .planet-info {
-          // background-color: palegreen;
           padding: 15px;
           margin-bottom: 10px;
         }
         .delete {
-          // background-color: paleturquoise;
           padding: 15px;
         }
       }
@@ -91,7 +85,6 @@
         flex-grow: 0;
 
         .user-info-container {
-          // padding: 150px;
           .title {
             text-align: center;
             font-size: 1.3rem;

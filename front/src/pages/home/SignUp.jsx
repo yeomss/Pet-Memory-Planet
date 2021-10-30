@@ -17,9 +17,6 @@ const SignUp = () => {
 
   // 회원가입 버튼
   const onClickSignUpCheck = useCallback(() => {
-    console.log("회원 가입 버튼 클릭 -> ");
-    console.log(email, nickname, password, passwordCheck, numOfPets);
-
     if (!email) {
       alert("이메일을 입력해주세요");
     } else if (!nickname) {

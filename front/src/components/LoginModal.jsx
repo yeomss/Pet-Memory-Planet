@@ -12,7 +12,6 @@ const LoginModal = () => {
 
   // 로그인 모달창 close
   const LoginModalClose = useCallback(() => {
-    console.log("클릭");
     dispatch(
       loginModalClose({
         isLoginModalOpen: false,

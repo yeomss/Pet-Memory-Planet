@@ -84,20 +84,20 @@ const NewPlanet = () => {
     formData.append("mouth", planetMouthColor);
     formData.append("private", 5);
 
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     "content-type": "multipart/form-data",
+    //   },
+    // };
 
-    axios
-      // .post("http://localhost:8000/createplanet", data)
-      .post("http://52.78.18.110:8000/createplanet", formData, config)
-      .then((res) => {
-        console.log(res);
-        window.location.replace("/");
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   // .post("http://localhost:8000/createplanet", data)
+    //   .post("http://52.78.18.110:8000/createplanet", formData, config)
+    //   .then((res) => {
+    //     console.log(res);
+    //     window.location.replace("/");
+    //   })
+    // .catch((err) => console.log(err));
   }, [
     planetId,
     planetName,
@@ -120,7 +120,6 @@ const NewPlanet = () => {
     <div className="new-planet-container">
       <HomeBtn />
 
-      {/* <h1 className="new-planet-title">New Planet</h1> */}
       <div className="planet dung">
         <PlanetBody className="planet-body" fill={planetColor} />
         <PlanetEars className="planet-ears" />

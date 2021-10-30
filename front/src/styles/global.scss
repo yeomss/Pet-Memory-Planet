@@ -12,6 +12,10 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration-line: none;
+}
+
 // 지구 아이콘 wiggle 효과
 @keyframes wiggle {
   0% {
