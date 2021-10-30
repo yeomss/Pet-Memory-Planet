@@ -31,8 +31,8 @@ body {
     .signup-btn {
       position: absolute;
       background-color: wheat;
-      width: 5rem;
-      height: 5rem;
+      width: 7rem;
+      height: 7rem;
       left: 20%;
       top: 22%;
       border-radius: 100%;
@@ -60,8 +60,8 @@ body {
     .newplanet-btn {
       position: absolute;
       background-color: pink;
-      width: 5rem;
-      height: 5rem;
+      width: 7rem;
+      height: 7rem;
       left: 20%;
       top: 70%;
       border-radius: 100%;
@@ -153,34 +153,27 @@ body {
       }
       .myplanet-btn {
         // logged 하고
-        background: linear-gradient(
-          45deg,
-          rgba(10, 88, 255, 0.637),
-          rgba(0, 0, 0, 0.356)
-        );
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .myplanet-title {
-          font-weight: 600;
-          padding-top: 15px;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -2px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
 
-          span:nth-child(1) {
-            font-size: 2rem;
-          }
-          span:nth-child(2) {
-            font-size: 1rem;
-          }
+          font-weight: 600;
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
 
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
     }
@@ -201,30 +194,27 @@ body {
       .signup-btn,
       .logout-btn {
         cursor: pointer;
-        background: linear-gradient(
-          45deg,
-          rgb(114, 35, 74),
-          rgba(128, 17, 255, 0.267)
-        );
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        // border: 1px solid rgba(255, 255, 255, 0.123);
-        box-shadow: 1px 1px 30px 3px rgba(247, 15, 104, 0.212);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .signup-title,
         .logout-title {
-          font-size: 1.7rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+
           font-weight: 600;
-          padding-top: 31px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -2.5px;
         }
 
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
       .earth-title {
@@ -243,18 +233,12 @@ body {
         transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
       }
       .newplanet-btn {
-        background: linear-gradient(
-          45deg,
-          rgba(1, 241, 149, 0.6),
-          rgba(141, 2, 255, 0.4)
-        );
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        // border: 1px solid rgba(255, 255, 255, 0.123);
-        box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .material-icons {
           position: static;
@@ -264,32 +248,32 @@ body {
         }
 
         .newplanet-title {
-          // width: 200px;
-          font-size: 1.4rem;
-          font-weight: 600;
-          padding-top: 23px;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -2px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
 
-          // &:lang(en) {
-          //   font-family: "Oswald";
-          // }
+          font-weight: 600;
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
+
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
       .search-area {
         width: 400px;
         flex-shrink: 0;
-        margin-top: -50px;
+        margin-top: -80px;
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
 
         input,
         button {
-          padding: 10px;
+          padding: 3px;
           outline: none;
         }
         select {
@@ -298,12 +282,11 @@ body {
           background-color: black;
           color: white;
           border: none;
-          // margin-right: 20px;
           margin-bottom: 10px;
           outline: none;
+          font-size: 0.9rem;
 
           &:focus {
-            // background-color: aqua;
             outline: none;
           }
           &:hover {
@@ -317,15 +300,29 @@ body {
         }
         input {
           text-align: center;
-          background-color: white;
-          color: rgba(0, 0, 0, 0.445);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          padding-left: 100px;
-          padding-right: 100px;
-          font-size: 1.3rem;
+          background-color: transparent;
+          color: rgba(255, 255, 255, 0.445);
+          border: 1px solid rgb(0, 0, 0);
+          padding-left: 50px;
+          padding-right: 50px;
+          font-size: 1rem;
 
+          &::placeholder {
+            color: rgba(0, 0, 0, 0.514);
+            margin: 10px;
+            font-size: 13px;
+            letter-spacing: 5px;
+            padding-left: 2%;
+
+            &:focus {
+              background-color: rgba($color: #fff, $alpha: 1);
+              color: black;
+            }
+          }
           &:focus {
-            color: rgb(119, 0, 255);
+            background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.2);
+            border: 1px solid rgb(0, 0, 0);
+            color: black;
           }
         }
         button {
@@ -344,38 +341,27 @@ body {
       align-items: center;
 
       .mypage-btn {
-        background: linear-gradient(
-          45deg,
-          rgba(153, 0, 255, 0.637),
-          rgba(93, 226, 32, 0.356)
-        );
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        box-shadow: 1px 1px 30px 3px rgba(177, 141, 245, 0.212);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .mypage-title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+
           font-weight: 600;
-          padding-top: 15px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -1px;
-
-          span:nth-child(1) {
-            font-size: 2rem;
-          }
-          span:nth-child(2) {
-            font-size: 1rem;
-          }
-
-          // &:lang(en) {
-          //   font-family: "Oswald";
-          // }
         }
 
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
       .myplanet-btn {

@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {inToken ? <Logged /> : <UnLogged />} <HomeBtn />
+      {inToken ? <Logged /> : <Logged />} <HomeBtn />
     </div>
   );
 };

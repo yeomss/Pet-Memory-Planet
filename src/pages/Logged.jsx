@@ -108,7 +108,7 @@ const Home = () => {
         {/* 마이 행성 페이지 */}
         <Link to="/myplanet">
           <div className="myplanet-btn">
-            <div className="myplanet-title">추모 행성</div>
+            <div className="myplanet-title">추모행성</div>
           </div>
         </Link>
       </div>
@@ -122,7 +122,11 @@ const Home = () => {
             onClick={onClickNewPlanet}
           >
             {/* <span className="material-icons">add</span> */}
-            <div className="newplanet-title">행성 만들기</div>
+            <div className="newplanet-title">
+              행성
+              <br />
+              만들기
+            </div>
           </div>
         </Link>
         {/* 지구 게시판 페이지 */}
@@ -156,7 +160,7 @@ const Home = () => {
           onClick={onClickLogOut}
         >
           <div className="logout-title" style={{ color: "white" }}>
-            LogOut
+            로그아웃
           </div>
         </div>
       </div>
