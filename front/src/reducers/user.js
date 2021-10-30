@@ -50,6 +50,7 @@ const userReducer = (prevState = initialState, action) => {
         draft.isSignUpIn = false;
         draft.signUpData = action.data;
         localStorage.setItem("signup", JSON.stringify(action.data));
+        localStorage.setItem("planet", JSON.stringify([]));
         break;
       case SIGN_UP_FAILURE:
         draft.isSignUpIn = false;
@@ -79,6 +80,7 @@ const userReducer = (prevState = initialState, action) => {
         draft.logIndata = null;
         localStorage.removeItem("signup");
         localStorage.removeItem("login");
+        localStorage.removeItem("planet");
         break;
 
       // 마이페이지

@@ -17,10 +17,13 @@ import "../styles/Home.scss";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [selected, onChangeSelected] = useInput("행성 번호");
+  const token = localStorage.getItem("login");
+  const user = JSON.parse(localStorage.getItem("signup"));
+  const planet = JSON.parse(localStorage.getItem("planet"));
+
+  const [selected, onChangeSelected] = useInput("행성 번호"); // 검색 유형
   const [search, onChangeSearch] = useInput(""); // 검색 내용
   const [searchResult, setSearchResult] = useState(""); // 검색해서 나오는 결과
-  const token = sessionStorage.getItem("login");
 
   // useEffect(() => {
   //   effect;
@@ -29,38 +32,27 @@ const Home = () => {
   //   };
   // }, [input]);
 
-  // const setSearchData = () => {
-  //   console.log("selected: ", selected);
-  //   console.log("search: ", search);
+  // 행성 만들기 가용행성 수 확인
+  const onClickNewPlanet = useCallback(() => {
+    var nowNum = planet.length; // 현재 planet의 수
+    var num = Number(user.data.numOfPets);
 
-  //   let planetId = searchData[0].planetId;
+    if (num <= nowNum) {
+      alert("가용할 수 있는 추모 행성이 없습니다.");
+    }
 
-  //   let token = sessionStorage.getItem("token");
-  //   let url = `http://52.78.18.110:8000/showplanet?userToken=${token}&planetId=${planetId}`;
-  //   axios
-  //     .get(url)
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // 로그아웃 이벤트
-  const onClickLogOut = useCallback(() => {
-    dispatch(logOut());
-    alert("로그아웃 성공!");
-    sessionStorage.removeItem("userToken");
-    sessionStorage.removeItem("planetToken");
-    window.location.replace("/");
-  }, []);
-
-  // 스크롤 이벤트
-  // const onTest = () => {
-  //   let tmp = document.getElementsByClassName("search-btn");
-  //   tmp[0].click();
-  //   console.log("스크롤");
-  //   console.log(tmp[0]);
-  // };
+    /* 서버 코드
+    axios
+      .get(`http://52.78.18.110:8000/createplanetcheck?userToken=${token}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        window.location.replace("/");
+        alert("더이상의 추모 행성을 만들 수 없습니다.");
+      });*/
+  }, [token]);
 
   // 검색 클릭 이벤트
   const onClickSearch = useCallback(() => {
@@ -77,6 +69,7 @@ const Home = () => {
       });
   }, [selected, search, searchResult]);
 
+  // 검색 엔터
   const onKeyPressSearch = useCallback(
     (e) => {
       if (e.key === "Enter") {
@@ -86,20 +79,12 @@ const Home = () => {
     [search]
   );
 
-  const onClickNewPlanet = useCallback(() => {
-    console.log("펫 수 확인");
-
-    axios
-      .get(`http://52.78.18.110:8000/createplanetcheck?userToken=${token}`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        window.location.replace("/");
-        alert("더이상의 추모 행성을 만들 수 없습니다.");
-      });
-  }, [token]);
+  // 로그아웃 이벤트
+  const onClickLogOut = useCallback(() => {
+    dispatch(logOut());
+    alert("로그아웃 성공!");
+    window.location.replace("/");
+  }, []);
 
   return (
     <div className={searchResult ? "home-search" : "home"}>

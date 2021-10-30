@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Link, Route } from "react-router-dom";
-import axios from "axios";
 
 import { ReactComponent as PlanetBody } from "../../styles/images/planet/planet-body-extend.svg";
 import PlanetInfo from "../../components/PlanetInfo";
@@ -17,6 +16,8 @@ import "../../styles/NewPlanet.scss";
 import HomeBtn from "../../components/HomeBtn";
 
 const NewPlanet = () => {
+  const planet = JSON.parse(localStorage.getItem("planet"));
+
   // Info
   const planetId = useSelector((state) => state.planet.Info.planetId);
   const planetName = useSelector((state) => state.planet.Info.planetName);
@@ -43,20 +44,32 @@ const NewPlanet = () => {
 
   // 체크 버튼 클릭 이벤트
   const onClickPlanetCheck = useCallback(() => {
-    console.log("행성 외부: 확인 버튼 클릭");
-    console.log("행성 이름:", planetName);
-    console.log("행성 스토리:", planetStory);
-    console.log("행성 아이디:", planetId);
-    console.log("반려동물 이름:", petName);
-    console.log("반려동물 성별:", petGender);
-    console.log("반려동물 품종:", petBreed);
-    console.log("반려동물 탄생일:", petBirthday);
-    console.log("반려동물 추모일:", petDeathday);
-    console.log("반려동물 사진:", typeof petImg);
-    console.log("반려동물 사진:", petImg);
+    var data = {
+      // Info
+      id: planetId,
+      name: planetName,
+      story: planetStory,
+      petName: petName,
+      petGender: petGender,
+      petBirthday: petBirthday,
+      petDeathday: petDeathday,
+      petBreed: petBreed,
+      petFavorite: petFavorite,
+      image: petImg,
 
-    let token = sessionStorage.getItem("userToken");
+      // Deco
+      color: [planetColor, planetShade],
+      ears: [planetEarsIdx, planetEarsColor],
+      nose: [planetNoseIdx, planetNoseColor],
+      mouth: [planetMouthIdx, planetMouthColor],
+    };
 
+    planet.push(data);
+    localStorage.setItem("planet", JSON.stringify(planet));
+    alert("추모 행성 띄우기 성공 🌌");
+    window.location.replace("/");
+
+    /* 서버코드
     // formData 생성
     let formData = new FormData();
 
@@ -84,20 +97,20 @@ const NewPlanet = () => {
     formData.append("mouth", planetMouthColor);
     formData.append("private", 5);
 
-    // const config = {
-    //   headers: {
-    //     "content-type": "multipart/form-data",
-    //   },
-    // };
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
 
-    // axios
-    //   // .post("http://localhost:8000/createplanet", data)
-    //   .post("http://52.78.18.110:8000/createplanet", formData, config)
-    //   .then((res) => {
-    //     console.log(res);
-    //     window.location.replace("/");
-    //   })
-    // .catch((err) => console.log(err));
+    axios
+      // .post("http://localhost:8000/createplanet", data)
+      .post("http://52.78.18.110:8000/createplanet", formData, config)
+      .then((res) => {
+        console.log(res);
+        window.location.replace("/");
+      })
+      .catch((err) => console.log(err));*/
   }, [
     planetId,
     planetName,
@@ -116,6 +129,7 @@ const NewPlanet = () => {
     planetMouthIdx,
     planetMouthColor,
   ]);
+
   return (
     <div className="new-planet-container">
       <HomeBtn />
