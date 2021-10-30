@@ -123,12 +123,11 @@ body {
       .login-btn {
         cursor: pointer;
         background-color: rgba(0, 0, 0, 1);
+        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        // box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
-        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .login-title {
           display: flex;
@@ -138,7 +137,7 @@ body {
           height: 100%;
           font-size: 17px;
           font-weight: 600;
-          // margin-top: -4px;
+
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: 2px;
         }
@@ -148,38 +147,29 @@ body {
         }
       }
       .myplanet-btn {
-        // logged 하고
-        background: linear-gradient(
-          45deg,
-          rgba(10, 88, 255, 0.637),
-          rgba(0, 0, 0, 0.356)
-        );
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
+
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .myplanet-title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          font-size: 17px;
           font-weight: 600;
-          padding-top: 15px;
+
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2px;
-
-          span:nth-child(1) {
-            font-size: 2rem;
-          }
-          span:nth-child(2) {
-            font-size: 1rem;
-          }
-
-          // &:lang(en) {
-          //   font-family: "Oswald";
-          // }
         }
 
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -350px 0 0 rgb(129, 129, 129) inset;
         }
       }
     }
@@ -201,19 +191,24 @@ body {
         justify-content: center;
         height: 100%;
         cursor: pointer;
-        background-color: #000000;
+
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        box-shadow: 1px 1px 30px 3px rgba(247, 15, 104, 0.212);
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .signup-title,
         .logout-title {
-          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          font-size: 17px;
           font-weight: 600;
-          padding-top: 31px;
+
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2.5px;
 
@@ -407,11 +402,6 @@ body {
     align-items: center;
 
     box-shadow: 1px 1px 30px 3px rgb(255, 255, 255);
-    // background: linear-gradient(
-    //   45deg,
-    //   rgba(255, 255, 255, 0.226),
-    //   rgba(0, 0, 0, 0.356)
-    // );
 
     .title {
       color: black;
@@ -430,11 +420,6 @@ body {
       border: 1px solid rgb(126, 126, 126);
       border-radius: 3px;
 
-      // background: linear-gradient(
-      //   45deg,
-      //   rgba(0, 0, 0, 0.781),
-      //   rgba(0, 0, 0, 0)
-      // );
       background-color: rgba(0, 0, 0, 0.9);
 
       display: flex;

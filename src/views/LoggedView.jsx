@@ -40,11 +40,7 @@ const Home = () => {
         {/* 마이 행성 페이지 */}
         <Link to="/myplanet">
           <div className="myplanet-btn">
-            <div className="myplanet-title">
-              <span>My</span>
-              <br />
-              <span>Planet</span>
-            </div>
+            <div className="myplanet-title">추모 행성</div>
           </div>
         </Link>
       </div>
@@ -56,7 +52,7 @@ const Home = () => {
           <div className="newplanet-btn">
             {/* <span className="material-icons">add</span> */}
             <div className="newplanet-title">
-              <span>추모 행성</span>
+              <span>행성 띄우기</span>
             </div>
           </div>
         </Link>
@@ -68,7 +64,7 @@ const Home = () => {
         {/* 로그아웃 페이지 */}
         <div className="logout-btn" onClick={onClickLogOut}>
           <div className="logout-title" style={{ color: "white" }}>
-            LogOut
+            로그아웃
           </div>
         </div>
       </div>
@@ -78,11 +74,7 @@ const Home = () => {
         {/* 마이 페이지 */}
         <Link to="/mypage/user">
           <div className="mypage-btn">
-            <div className="mypage-title">
-              <span>My</span>
-              <br />
-              <span>Page</span>
-            </div>
+            <div className="mypage-title">설정</div>
           </div>
         </Link>
       </div>
