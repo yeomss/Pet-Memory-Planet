@@ -14,9 +14,7 @@ export const Petloss = () => {
         <HomeBtn />
       </div>
       <div className="head">펫로스 헤더</div>
-      <div id="content" className="content">
-        펫 로스 컨텐트
-      </div>
+      <div id="content">펫 로스 컨텐트</div>
       <div className="footer">펫 로스 푸터</div>
     </div>
   );

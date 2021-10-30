@@ -157,6 +157,7 @@
         }
       }
       table {
+        height: 80%;
         thead {
           background-color: black;
           color: white;
@@ -174,6 +175,11 @@
         // height: 80%;
         margin-top: 10px;
         border-collapse: collapse;
+      }
+
+      .board-nav {
+        // background-color: aqua;
+        color: white;
       }
     }
 

@@ -37,7 +37,7 @@ const RecoverBoardList = () => {
             </button>
           </div>
 
-          <table className="table table-hover table-striped text-center">
+          <table className="table table-hover text-center">
             <thead>
               <tr>
                 <th class="text-center">id</th>
@@ -51,6 +51,27 @@ const RecoverBoardList = () => {
               <tr>
                 <th>하이루</th>
                 <th class="list-title">하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+              </tr>
+              <tr>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+              </tr>
+              <tr>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+                <th>하이루</th>
+              </tr>
+              <tr>
+                <th>하이루</th>
+                <th>하이루</th>
                 <th>하이루</th>
                 <th>하이루</th>
                 <th>하이루</th>
@@ -133,6 +154,8 @@ const RecoverBoardList = () => {
               ))}
             </tbody>
           </table>
+
+          <div class="board-nav">하이루</div>
         </div>
       ) : (
         <Loading />
