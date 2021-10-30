@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { Link, Route } from "react-router-dom";
-import HomeBtn from "../components/HomeBtn";
-import MyDelete from "../components/MyDelete";
-import MyPlanetInfo from "../components/MyPlanetInfo";
-import MyUserInfo from "../components/MyUserInfo";
-import "../styles/MyPage.scss";
+import HomeBtn from "../../components/HomeBtn";
+import MyDelete from "../../components/MyDelete";
+import MyPlanetInfo from "../../components/MyPlanetInfo";
+import MyUserInfo from "../../components/MyUserInfo";
+import "../../styles/MyPage.scss";
 
 const MyPage = () => {
   return (

@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../components/particles.js";
+import particles from "../../components/particles.js";
 import X from "../styles/images/SVG/X2white.svg";
 
 import { ReactComponent as PlanetBody } from "../styles/images/planet/planet-body-extend.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
-import PlanetEars from "../components/PlanetEars";
+import PlanetEars from "../../components/PlanetEars";
 
 import {
   setPlanetEarsIdx,
@@ -19,9 +19,9 @@ import {
   setPlanetEarsColor,
   setPlanetNoseColor,
   setPlanetMouthColor,
-} from "../actions/planet";
-import PlanetNose from "../components/PlanetNose";
-import PlanetMouth from "../components/PlanetMouth";
+} from "../../actions/planet";
+import PlanetNose from "../../components/PlanetNose";
+import PlanetMouth from "../../components/PlanetMouth";
 
 const MyPlanetZoom = (state) => {
   // url 에 id 값 넘겨주고 이 값을 state.match.params.~ 로 받음.

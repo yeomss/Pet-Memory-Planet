@@ -3,16 +3,7 @@ const reducer = require("./reducers");
 const { composeWithDevTools } = require("redux-devtools-extension");
 
 // state 초기값
-const initialState = {
-  user: {
-    isLoggedIn: false,
-    data: null,
-  },
-  modal: {
-    isLoginModalOpen: false,
-    isSignUpModalOpen: false,
-  },
-};
+const initialState = {};
 
 // 미들웨어
 const logginMiddleware = (store) => (dispatch) => (action) => {

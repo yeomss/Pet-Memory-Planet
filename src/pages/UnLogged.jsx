@@ -1,17 +1,17 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { loginModalOpen } from "../../actions/modal";
-import LoginModal from "../../components/LoginModal";
+import { loginModalOpen } from "../actions/modal";
+import LoginModal from "../components/LoginModal";
 
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../../components/particles";
-import earthBtn from "../../styles/images/SVG/earth-btn.svg";
+import particles from "../components/particles";
+import earthBtn from "../styles/images/SVG/earth-btn.svg";
 
-import "../../styles/global.scss";
-import "../../styles/Home.scss";
-import MenuBar from "../../components/MenuBar";
-import MenuBarContents from "../../components/MenuBarContents";
+import "../styles/global.scss";
+import "../styles/Home.scss";
+import MenuBar from "../components/MenuBar";
+import MenuBarContents from "../components/MenuBarContents";
 
 const UnLogged = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const UnLogged = () => {
         {/* 로그인 버튼 */}
         <div className="login-btn " onClick={LoginModalOpen}>
           <div className="login-title" style={{ color: "white" }}>
-            Login
+            로그인
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ const UnLogged = () => {
         {/* 회원가입 버튼 */}
         <Link to="/signup">
           <div className="signup-btn">
-            <div className="signup-title">SignUp</div>
+            <div className="signup-title">회원가입</div>
           </div>
         </Link>
       </div>

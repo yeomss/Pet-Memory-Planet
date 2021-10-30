@@ -1,9 +1,9 @@
 import React from "react";
-import UnLogged from "./Logged/UnLogged";
-import Logged from "./Logged/Logged";
-import HomeBtn from "../components/HomeBtn";
+import UnLogged from "../UnLogged";
+import Logged from "../Logged";
+import HomeBtn from "../../components/HomeBtn";
 
-import "../styles/Home.scss";
+import "../../styles/Home.scss";
 
 const Home = () => {
   const inToken = sessionStorage.getItem("userToken");
@@ -13,7 +13,6 @@ const Home = () => {
       {inToken ? <Logged /> : <UnLogged />} <HomeBtn />
     </div>
   );
-  // return <div className="home">{inToken ? <UnLogged /> : <Logged />}</div>;
 };
 
 export default Home;

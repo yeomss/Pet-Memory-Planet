@@ -1,18 +1,4 @@
-* {
-  box-sizing: border-box;
-  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
-}
-
-html {
-  width: 100%;
-  height: 100%;
-}
-
 body {
-  width: 100%;
-  height: 100%;
-  //   overflow: hidden;
-
   &::selection {
     background-color: aqua;
   }
@@ -141,33 +127,28 @@ body {
 
       .login-btn {
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 
-        background: linear-gradient(
-          45deg,
-          rgb(27, 124, 77),
-          rgba(128, 17, 255, 0.267)
-        );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        // border: 1px solid rgba(255, 255, 255, 0.123);
-        box-shadow: 1px 1px 30px 3px rgba(255, 255, 255, 0.15);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .login-title {
-          font-size: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          font-size: 17px;
           font-weight: 600;
-          padding-top: 27px;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -2.5px;
 
-          &:lang(en) {
-            font-family: "Oswald";
-          }
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          letter-spacing: 2px;
         }
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
       .myplanet-btn {
@@ -195,10 +176,6 @@ body {
           }
           span:nth-child(2) {
             font-size: 1rem;
-          }
-
-          &:lang(en) {
-            font-family: "Oswald";
           }
         }
 
@@ -244,10 +221,6 @@ body {
           padding-top: 31px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2.5px;
-
-          &:lang(en) {
-            font-family: "Oswald";
-          }
         }
 
         &:hover {
@@ -298,9 +271,9 @@ body {
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2px;
 
-          &:lang(en) {
-            font-family: "Oswald";
-          }
+          // &:lang(en) {
+          //   font-family: "Oswald";
+          // }
         }
         &:hover {
           transform: scale(1.2);
@@ -396,9 +369,9 @@ body {
             font-size: 1rem;
           }
 
-          &:lang(en) {
-            font-family: "Oswald";
-          }
+          // &:lang(en) {
+          //   font-family: "Oswald";
+          // }
         }
 
         &:hover {
@@ -431,9 +404,9 @@ body {
             font-size: 1rem;
           }
 
-          &:lang(en) {
-            font-family: "Oswald";
-          }
+          // &:lang(en) {
+          //   font-family: "Oswald";
+          // }
         }
 
         &:hover {
@@ -441,34 +414,29 @@ body {
         }
       }
       .signup-btn {
-        // unLogged 일때 signup 버튼
-        background: linear-gradient(
-          45deg,
-          rgb(114, 35, 74),
-          rgba(128, 17, 255, 0.267)
-        );
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        // border: 1px solid rgba(255, 255, 255, 0.123);
-        box-shadow: 1px 1px 30px 3px rgba(255, 203, 203, 0.212);
-        // opacity: 0.5;
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .signup-title {
-          font-size: 1.7rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          font-size: 17px;
           font-weight: 600;
-          padding-top: 31px;
+
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: -2.5px;
-
-          &:lang(en) {
-            font-family: "Oswald";
-          }
+          letter-spacing: 2px;
         }
-
         &:hover {
-          transform: scale(1.2);
+          border: none;
+          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
         }
       }
     }
@@ -482,7 +450,6 @@ body {
 
   // 회원가입
   .signup {
-    // background-color: aquamarine;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -493,103 +460,84 @@ body {
     align-items: center;
 
     box-shadow: 1px 1px 30px 3px rgb(255, 255, 255);
-    background: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.226),
-      rgba(0, 0, 0, 0.356)
-    );
 
     .title {
-      color: white;
-      font-family: "Montserrat", sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
+      color: black;
+      font-size: 20px;
+      font-weight: 900;
       letter-spacing: 10px;
       margin-bottom: 10px;
+      cursor: default;
     }
     .input-area {
-      width: 30%;
-      height: 80%;
+      width: 20%;
+      height: 65%;
       padding: 30px;
 
-      background-color: rgba(255, 255, 255, 0.1);
-      // color: white;
-      border: 1px solid rgb(0, 0, 0);
-      border-radius: 2%;
+      color: black;
+      border: 1px solid rgb(126, 126, 126);
+      border-radius: 3px;
 
-      // background: linear-gradient(
-      //   45deg,
-      //   rgba(255, 255, 255, 0.781),
-      //   rgba(0, 0, 0, 0)
-      // );
+      background-color: rgba(0, 0, 0, 0.9);
 
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: center;
 
       div {
         color: white;
-        font-family: "Montserrat", sans-serif;
         font-size: 11px;
-        font-weight: 600;
+        font-weight: 00;
         letter-spacing: 1px;
         text-align: left;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        cursor: default;
       }
       input {
         width: 100%;
-        padding: 10px;
-        margin-bottom: 5%;
-        border-radius: 300px 300px 300px 300px;
-        background-color: rgb(255, 255, 255);
-        // background-color: rgb(255, 255, 255);
-        // border: 1px solid rgba(0, 0, 0, 0.4);
+        padding: 1.5%;
+        margin-bottom: 25px;
+        border-radius: 2px 2px 2px 2px;
+
+        background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.8);
+
+        border: 1px solid rgba(255, 255, 255, 0.692);
         outline: none;
         color: black;
-        // padding-left: 2%;
-        border: none;
-        // font-family: "Montserrat", sans-serif;
-        font-weight: 400;
 
-        transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         &::placeholder {
-          color: rgba(0, 0, 0, 0.5);
+          color: rgba(0, 0, 0, 0.514);
           margin: 10px;
-          font-size: 11px;
+          font-size: 13px;
           letter-spacing: 5px;
-          // text-align: center;
-          padding-left: 3%;
+          padding-left: 2%;
 
           &:focus {
-            // background-color: rgba($color: #000000, $alpha: 1);
-            // color: white;
+            background-color: rgba($color: #fff, $alpha: 1);
           }
         }
         &:focus {
-          background-color: rgba($color: #000000, $alpha: 1);
-          border: 3px solid rgb(255, 255, 255);
-          color: rgb(255, 255, 255);
-
-          &::placeholder {
-            color: white;
-          }
+          background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
+          border: 1px solid rgb(0, 0, 0);
+          color: black;
         }
       }
       select {
         padding: 3px;
         margin-bottom: 5%;
-        border: 1px solid rgb(0, 0, 0);
+        border: 1px solid #999;
         border-radius: 0px; /* iOS 둥근모서리 제거 */
         outline: none;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
 
         transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         option {
-          color: white;
-          background-color: black;
+          color: black;
+          background-color: white;
 
           &:focus {
             cursor: pointer;
@@ -601,7 +549,7 @@ body {
           content: "가용할 추모 행성의 수";
         }
         &:focus {
-          background-color: rgba($color: #000000, $alpha: 1);
+          background-color: rgba($color: #fff, $alpha: 1);
         }
       }
       .api-area {
@@ -614,23 +562,24 @@ body {
       }
       button {
         color: white;
-        background-color: rgba($color: #000000, $alpha: 1);
-
-        padding-top: 10px;
-        padding-bottom: 10px;
+        background-color: rgba(0, 0, 0, 0.644);
+        bottom: 0;
+        margin-top: 20%;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
         outline: none;
         border: 1px solid black;
 
-        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         font-weight: 700;
         border: none;
-        // box-shadow: 1px 1px 1px 0px 1px 1px rgb(255, 255, 255);
 
         transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         &:hover {
-          background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
+          box-shadow: 0 -120px 0 0 rgba(255, 255, 255, 0.5) inset;
+
+          background-color: rgba($color: #ffffffa1, $alpha: 1);
           border-radius: 1px 1px 1px 1px;
           color: black;
         }

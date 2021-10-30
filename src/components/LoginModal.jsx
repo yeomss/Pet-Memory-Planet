@@ -37,7 +37,7 @@ const LoginModal = () => {
       </div>
 
       <div className="layer">
-        <div className="title">LOGIN</div>
+        <div className="title">반가워요</div>
 
         <div className="content">
           <div>Email</div>

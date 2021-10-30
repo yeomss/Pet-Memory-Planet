@@ -1,12 +1,12 @@
 import React from "react";
 // import circle from "../styles/images/SVG/myPlanetBtn.svg";
-import "../styles/MyPlanet.scss";
+import "../../styles/MyPlanet.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PlanetListItem from "../components/InsidePlanet/PlanetListItem";
+import PlanetListItem from "../../components/InsidePlanet/PlanetListItem";
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../components/particles.js";
+import particles from "../../components/particles.js";
 
 const MyPlanet = (state) => {
   const token = sessionStorage.getItem("userToken");

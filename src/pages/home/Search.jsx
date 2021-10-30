@@ -1,7 +1,7 @@
-import React, { useEffect, useCallback, useState } from "react";
-import "../styles/Search.scss";
-import Bubble from "../components/bubble";
-import Loading from "../components/Loading";
+import React, { useEffect, useState } from "react";
+import "../../styles/Search.scss";
+import Bubble from "../../components/bubble";
+import Loading from "../../components/Loading";
 import { Link } from "react-router-dom";
 
 const Search = (props) => {

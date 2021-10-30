@@ -1,19 +1,19 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { logOut, openMypage } from "../../actions/user";
-import useInput from "../../hooks/useInput";
+import { logOut, openMypage } from "../actions/user";
+import useInput from "../hooks/useInput";
 import axios from "axios";
 
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../../components/particles";
-import earthBtn from "../../styles/images/SVG/earth-btn.svg";
-import Search from "../Search";
-import MenuBar from "../../components/MenuBar";
-import Loading from "../../components/Loading";
+import particles from "../components/particles";
+import earthBtn from "../styles/images/SVG/earth-btn.svg";
+import Search from "./home/Search";
+import MenuBar from "../components/MenuBar";
+import Loading from "../components/Loading";
 
-import "../../styles/global.scss";
-import "../../styles/Home.scss";
+import "../styles/global.scss";
+import "../styles/Home.scss";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -108,11 +108,7 @@ const Home = () => {
         {/* 마이 행성 페이지 */}
         <Link to="/myplanet">
           <div className="myplanet-btn">
-            <div className="myplanet-title">
-              <span>My</span>
-              <br />
-              <span>Planet</span>
-            </div>
+            <div className="myplanet-title">추모 행성</div>
           </div>
         </Link>
       </div>
@@ -126,13 +122,7 @@ const Home = () => {
             onClick={onClickNewPlanet}
           >
             {/* <span className="material-icons">add</span> */}
-            <div className="newplanet-title">
-              <span>
-                추모 행성
-                <br />
-                만들기
-              </span>
-            </div>
+            <div className="newplanet-title">행성 만들기</div>
           </div>
         </Link>
         {/* 지구 게시판 페이지 */}
@@ -176,11 +166,7 @@ const Home = () => {
         {/* 마이 페이지 */}
         <Link to="/mypage/user">
           <div className={searchResult ? "none" : "mypage-btn"}>
-            <div className="mypage-title">
-              <span>My</span>
-              <br />
-              <span>Page</span>
-            </div>
+            <div className="mypage-title">설정</div>
           </div>
         </Link>
       </div>

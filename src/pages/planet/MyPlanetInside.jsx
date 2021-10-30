@@ -1,16 +1,16 @@
 import { useRef, useEffect, useState } from "react";
 import "../styles/MyPlanet.scss";
-import PostList from "../components/InsidePlanet/PostList";
+import PostList from "../../components/InsidePlanet/PostList";
 import close from "../styles/images/close.png";
 import setting from "../styles/images/pngwing.com.png";
 import axios from "axios";
 
-import TreeItem from "../components/InsidePlanet/TreeItem";
-import NewItem from "../components/InsidePlanet/NewItem";
+import TreeItem from "../../components/InsidePlanet/TreeItem";
+import NewItem from "../../components/InsidePlanet/NewItem";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, newItem, tempNewItem } from "../actions/item";
-import GuestBookList from "../components/InsidePlanet/GuestBookList";
+import { addItem, newItem, tempNewItem } from "../../actions/item";
+import GuestBookList from "../../components/InsidePlanet/GuestBookList";
 
 import dashBoard1 from "../styles/images/SVG/dashBoard_sky.svg";
 import dashBoard2 from "../styles/images/SVG/dashBoard_purple.svg";
@@ -57,8 +57,8 @@ import Dust from "../styles/images/SVG/Weather/wi-dust.svg";
 import Tunderstrom from "../styles/images/SVG/Weather/wi-lightning.svg";
 
 // 홈버튼
-import HomeBtn from "../components/HomeBtn.jsx";
-import PlanetInsideLoader from "../components/InsidePlanet/PlanetInsideLoader";
+import HomeBtn from "../../components/HomeBtn.jsx";
+import PlanetInsideLoader from "../../components/InsidePlanet/PlanetInsideLoader";
 
 // 날씨 정보를 받아 오기 위해 필요한 개인 키
 const API_KDY = "4465fb612d873f51db006ab470b74eeb";

@@ -3,18 +3,18 @@ import { useSelector } from "react-redux";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 
-import { ReactComponent as PlanetBody } from "../styles/images/planet/planet-body-extend.svg";
-import PlanetInfo from "../components/PlanetInfo";
-import PlanetDeco from "../components/PlanetDeco";
-import PlanetEars from "../components/PlanetEars";
-import PlanetNose from "../components/PlanetNose";
-import PlanetMouth from "../components/PlanetMouth";
+import { ReactComponent as PlanetBody } from "../../styles/images/planet/planet-body-extend.svg";
+import PlanetInfo from "../../components/PlanetInfo";
+import PlanetDeco from "../../components/PlanetDeco";
+import PlanetEars from "../../components/PlanetEars";
+import PlanetNose from "../../components/PlanetNose";
+import PlanetMouth from "../../components/PlanetMouth";
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../components/particles";
-import Bubble from "../components/bubble";
+import particles from "../../components/particles";
+import Bubble from "../../components/bubble";
 
-import "../styles/NewPlanet.scss";
-import HomeBtn from "../components/HomeBtn";
+import "../../styles/NewPlanet.scss";
+import HomeBtn from "../../components/HomeBtn";
 
 const NewPlanet = () => {
   // Info

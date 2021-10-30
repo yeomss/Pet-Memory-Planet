@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import P5Wrapper from "react-p5-wrapper";
-import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../actions/user";
-import particles from "../components/particles";
-import useInput from "../hooks/useInput";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../actions/user";
+import particles from "../../components/particles";
+import useInput from "../../hooks/useInput";
 
 const SignUp = () => {
   // const signUpSuccess = useSelector((state) => state.user.signUpData);
@@ -18,17 +18,28 @@ const SignUp = () => {
   // 회원가입 버튼
   const onClickSignUpCheck = useCallback(() => {
     console.log("회원 가입 버튼 클릭 -> ");
-    console.log(email, password, nickname, numOfPets);
+    console.log(email, nickname, password, passwordCheck, numOfPets);
 
-    dispatch(
-      signUp({
+    if (!email) {
+      alert("이메일을 입력해주세요");
+    } else if (!nickname) {
+      alert("닉네임을 입력해주세요");
+    } else if (!password) {
+      alert("비밀번호를 입력해주세요");
+    } else if (!passwordCheck) {
+      alert("비밀번호를 확인해주세요");
+    } else if (password === passwordCheck) {
+      var data = {
         email: email,
-        password: password,
         nickname: nickname,
+        password: password,
         numOfPets: numOfPets,
-      })
-    );
-  }, [email, password, nickname, numOfPets]);
+      };
+      dispatch(signUp(data));
+    } else {
+      alert("비밀번호를 다시 확인해주세요");
+    }
+  }, [email, password, passwordCheck, nickname, numOfPets]);
 
   return (
     <div className="signup">
