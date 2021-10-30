@@ -70,7 +70,7 @@ const signUpFailure = (err) => {
   };
 };
 
-// 로그인 환경
+// 2. 로그인 환경
 const logIn = (data) => {
   return (dispatch, getState) => {
     dispatch(loginRequest(data));
@@ -144,30 +144,13 @@ const logOut = () => {
   };
 };
 
-//
-// 마이페이지
-const openMyPageRequest = (data) => {
-  return {
-    type: OPEN_MY_PAGE_REQUEST,
-    data,
-  };
-};
-const openMyPageSuccess = (data) => {
-  return {
-    type: OPEN_MY_PAGE_SUCCESS,
-    data,
-  };
-};
-const openMyPageFailure = (err) => {
-  return {
-    type: OPEN_MY_PAGE_FAILURE,
-    err,
-  };
-};
-const openMyPage = (data) => {
+// 3. 마이페이지
+const openMyPage = () => {
   return (dispatch, getState) => {
-    dispatch(openMyPageRequest(data));
+    dispatch(openMyPageRequest());
+    dispatch(openMyPageSuccess());
 
+    /* 서버코드
     axios
       .get(`http://52.78.18.110:8000/showuserinfo?userToken=${data.userToken}`)
       .then((res) => {
@@ -185,7 +168,25 @@ const openMyPage = (data) => {
       .catch((err) => {
         console.log(err);
         dispatch(openMyPageFailure(err));
-      });
+      });*/
+  };
+};
+const openMyPageRequest = (data) => {
+  return {
+    type: OPEN_MY_PAGE_REQUEST,
+    data,
+  };
+};
+const openMyPageSuccess = (data) => {
+  return {
+    type: OPEN_MY_PAGE_SUCCESS,
+    data,
+  };
+};
+const openMyPageFailure = (err) => {
+  return {
+    type: OPEN_MY_PAGE_FAILURE,
+    err,
   };
 };
 

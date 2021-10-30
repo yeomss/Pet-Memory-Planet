@@ -18,7 +18,7 @@ const MyPlanetInfo = () => {
 
   // 마이페이지 데이터 받아오기
   const getData = useCallback(async () => {
-    await axios
+    /*await axios
       .get(`http://52.78.18.110:8000/showuserinfo?userToken=${token}`)
       .then((res) => {
         console.log("res!", res);
@@ -27,11 +27,11 @@ const MyPlanetInfo = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      });*/
   }, [token]);
 
   const onClickDeletePlanet = useCallback(async (e) => {
-    console.log(e.target.value);
+    /*
     let planetId = e.target.value;
 
     await axios
@@ -40,7 +40,7 @@ const MyPlanetInfo = () => {
         console.log(res);
         window.location.reload();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err));*/
   }, []);
 
   return (

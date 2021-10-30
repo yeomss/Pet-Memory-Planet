@@ -29,13 +29,12 @@ const initialState = {
   isLoggedIn: false,
   logIndata: null, // 로그인 성공 시 토큰이 들어옴.
 
-  // 마이페이지 user
+  // 마이페이지
   isOpenMyPage: false,
   userInfo: null, // mypage 할 때 유저정보
+  planetInfo: null,
   editEmail: "",
   editNickname: "",
-  editNumOfPets: -1,
-  planetInfo: null,
 };
 
 const userReducer = (prevState = initialState, action) => {
@@ -90,11 +89,10 @@ const userReducer = (prevState = initialState, action) => {
         break;
       case OPEN_MY_PAGE_SUCCESS:
         draft.isOpenMyPage = false;
-        draft.userInfo = action.data.userInfo;
-        draft.planetInfo = action.data.planetInfo;
-        draft.editEmail = draft.userInfo[0].email;
-        draft.editNickname = draft.userInfo[0].nickname;
-        draft.editNumOfPets = draft.userInfo[0].numOfPets;
+        draft.userInfo = JSON.parse(localStorage.getItem("signup"));
+        draft.planetInfo = JSON.parse(localStorage.getItem("planet"));
+        draft.editEmail = draft.userInfo.data.email;
+        draft.editNickname = draft.userInfo.data.nickname;
         break;
       case OPEN_MY_PAGE_FAILURE:
         draft.isOpenMyPage = false;

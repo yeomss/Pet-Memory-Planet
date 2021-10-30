@@ -1,40 +1,30 @@
-import React, { useCallback, useEffect, useState } from "react";
-import axios from "axios";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { openMyPage } from "../actions/user";
+import { openMyPage } from "../actions/user";
 import Loading from "./Loading";
+import useInput from "../hooks/useInput";
 
 const MyUserInfo = () => {
   const dispatch = useDispatch();
-  const token = sessionStorage.getItem("userToken");
-  // const userInfo = useSelector((state) => state.user.userInfo);
-  // const editEmail = useSelector((state) => state.user.editEmail);
-  // const editNickname = useSelector((state) => state.user.editNickname);
-  // const editNumOfPets = useSelector((state) => state.user.editNumOfPets);
-  const [userInfo, setUserInfo] = useState("");
-  const [userInfo2, setUserInfo2] = useState("");
-  const [editEmail, setEditEmail] = useState("");
-  const [editNickname, setEditNickname] = useState("");
-  const [editNumOfPets, setEditNumOfPets] = useState("");
+  const userInfo = useSelector((state) => state.user.userInfo);
+  const editEmail = useSelector((state) => state.user.editEmail);
+  const editNickname = useSelector((state) => state.user.editNickname);
 
-  // console.log("하이루: ", editNumOfPets);
-
-  const [email, setEmail] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordCheck, setPasswordCheck] = useState("");
-  const [numOfPets, setNumOfPets] = useState("");
+  const [email, onChangeEmail] = useInput("");
+  const [nickname, onChangeNickname] = useInput("");
+  const [password, onChangePassword] = useInput("");
+  const [passwordCheck, onChangePasswordCheck] = useInput("");
+  const [numOfPets, onChangeNumOfPets] = useInput("");
 
   useEffect(() => {
     getUserData();
-    // setUserInfo(userInfo2);
-    // setEmail(editEmail);
-    // setNickname(editNickname);
-    // setNumOfPets(editNumOfPets);
   }, []);
 
   // 마이페이지 데이터 받아오기
   const getUserData = useCallback(async () => {
+    dispatch(openMyPage());
+
+    /* 서버 코드
     await axios
       .get(`http://52.78.18.110:8000/showuserinfo?userToken=${token}`)
       .then((res) => {
@@ -47,25 +37,29 @@ const MyUserInfo = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
-  }, [token, userInfo, email, nickname, numOfPets]);
-
-  // onChange 이벤트
-  const onChangeNickname = useCallback((e) => {
-    setNickname(e.target.value);
-  }, []);
-  const onChangePassword = useCallback((e) => {
-    setPassword(e.target.value);
-  }, []);
-  const onChangePasswordCheck = useCallback((e) => {
-    setPasswordCheck(e.target.value);
-  }, []);
-  const onChangeNumOfPets = useCallback((e) => {
-    setNumOfPets(e.target.value);
-  }, []);
+      });*/
+  }, [userInfo, email, nickname, numOfPets]);
 
   // 마이페이지 정보 수정 버튼 클릭
   const onClickCheck = useCallback(() => {
+    var data = {
+      data: {
+        email: editEmail,
+        nickname: editNickname,
+        password: password,
+        numOfPets: numOfPets,
+      },
+    };
+
+    if (password === passwordCheck) {
+      localStorage.setItem("signup", JSON.stringify(data));
+      alert("회원정보 수정 완료!");
+      window.location.reload();
+    } else {
+      alert("비밀번호를 다시 확인해주세요");
+    }
+
+    /* 서버코드
     let data = {
       userToken: token,
       password: password,
@@ -85,8 +79,8 @@ const MyUserInfo = () => {
         console.log(err);
         alert("회원 정보 수정 오류");
         window.location.reload();
-      });
-  }, [token, nickname, password, numOfPets]);
+      });*/
+  }, [editEmail, nickname, password, numOfPets]);
 
   return (
     <>
@@ -100,12 +94,16 @@ const MyUserInfo = () => {
           <div className="user-info-content">
             <div className="email">
               <label htmlFor="">이메일</label>
-              <input value={email} disabled></input>
+              <input value={editEmail} disabled></input>
             </div>
 
             <div className="nickname">
               <label htmlFor="">닉네임</label>
-              <input type="text" value={nickname} onChange={onChangeNickname} />
+              <input
+                type="text"
+                value={editNickname}
+                onChange={onChangeNickname}
+              />
             </div>
 
             <div className="password">

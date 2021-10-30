@@ -25,13 +25,6 @@ const Home = () => {
   const [search, onChangeSearch] = useInput(""); // 검색 내용
   const [searchResult, setSearchResult] = useState(""); // 검색해서 나오는 결과
 
-  // useEffect(() => {
-  //   effect;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, [input]);
-
   // 행성 만들기 가용행성 수 확인
   const onClickNewPlanet = useCallback(() => {
     var nowNum = planet.length; // 현재 planet의 수
@@ -110,7 +103,7 @@ const Home = () => {
             <div className="newplanet-title">
               행성
               <br />
-              만들기
+              띄우기
             </div>
           </div>
         </Link>
