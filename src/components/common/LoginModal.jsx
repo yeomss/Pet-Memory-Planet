@@ -21,12 +21,12 @@ const LoginModal = () => {
 
   // 로그인 확인 버튼 onClick
   const onClickLoginCheck = useCallback(() => {
-    dispatch(
-      logIn({
-        email: email,
-        password: password,
-      })
-    );
+    var data = {
+      email: email,
+      password: password,
+    };
+
+    dispatch(logIn(data));
   }, [email, password]);
 
   return (

@@ -66,7 +66,6 @@ const userReducer = (prevState = initialState, action) => {
       case SIGN_UP_SUCCESS:
         draft.isSignUpIn = false;
         draft.signUpData = action.data.data.signupSuccess;
-        console.log("signup:", draft.isSignUpIn);
         break;
 
       case SIGN_UP_FAILURE:
@@ -83,7 +82,6 @@ const userReducer = (prevState = initialState, action) => {
       case OPEN_MY_PAGE_SUCCESS:
         draft.isOpenMyPage = false;
         draft.userInfo = action.data.userInfo;
-        console.log("signup:", draft.isOpenMyPage);
         break;
 
       case OPEN_MY_PAGE_FAILURE:
@@ -94,17 +92,14 @@ const userReducer = (prevState = initialState, action) => {
       // 게시판
       case OPEN_BOARD:
         draft.boardInfo = action.data.boardInfo;
-        console.log("boardInfo: ", draft.boardInfo);
         break;
 
       case OPEN_MYPAGE:
         draft.userInfo = action.data.userInfo;
-        console.log("userInfo: ", draft.userInfo);
         break;
 
       case SET_NEWTOKEN:
         draft.newToken = action.data.newToken;
-        console.log("newToken:");
         break;
 
       default:

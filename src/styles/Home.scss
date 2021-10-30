@@ -419,6 +419,7 @@ body {
       font-weight: 900;
       letter-spacing: 10px;
       margin-bottom: 10px;
+      cursor: default;
     }
     .input-area {
       width: 30%;
@@ -427,14 +428,14 @@ body {
 
       color: black;
       border: 1px solid rgb(126, 126, 126);
-      border-radius: 10px;
+      border-radius: 3px;
 
       // background: linear-gradient(
       //   45deg,
       //   rgba(0, 0, 0, 0.781),
       //   rgba(0, 0, 0, 0)
       // );
-      background-color: rgba(0, 0, 0, 0.774);
+      background-color: rgba(0, 0, 0, 0.9);
 
       display: flex;
       flex-direction: column;
@@ -447,6 +448,7 @@ body {
         letter-spacing: 1px;
         text-align: left;
         margin-bottom: -20px;
+        cursor: default;
       }
       input {
         width: 100%;
@@ -482,7 +484,7 @@ body {
       select {
         padding: 3px;
         margin-bottom: 5%;
-        order: 1px solid #999;
+        border: 1px solid #999;
         border-radius: 0px; /* iOS 둥근모서리 제거 */
         outline: none;
         background-color: white;
@@ -523,11 +525,9 @@ body {
         outline: none;
         border: 1px solid black;
 
-        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         font-weight: 700;
         border: none;
-        // box-shadow: 1px 1px 1px 0px 1px 1px rgb(255, 255, 255);
 
         transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 

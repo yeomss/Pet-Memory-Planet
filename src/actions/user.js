@@ -84,14 +84,7 @@ const logOut = () => {
 // 회원가입 환경
 const signUp = (data) => {
   return (dispatch, getState) => {
-    console.log("회원가입 시도");
     dispatch(signUpRequest(data));
-
-    console.log("email: ", data.email);
-    console.log("nickane: ", data.nickname);
-    console.log("password: ", data.password);
-    console.log("password: ", data.passwordCheck);
-    console.log("password: ", data.numOfPets);
 
     axios
       .post("http://52.78.18.110:8000/signup", {
