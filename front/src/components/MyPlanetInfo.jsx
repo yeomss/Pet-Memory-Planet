@@ -6,19 +6,20 @@ import Loading from "./Loading";
 
 const MyPlanetInfo = () => {
   const dispatch = useDispatch();
-  const token = sessionStorage.getItem("userToken");
-  const [planetInfo, setPlanetInfo] = useState("");
-  // const planetInfo = useSelector((state) => state.user.planetInfo);
-  const [checked, setChecked] = useState();
-  console.log(planetInfo);
+  const planetInfo = useSelector((state) => state.user.planetInfo);
+  const planet = JSON.parse(localStorage.getItem("planet"));
+  // const [checked, setChecked] = useState();
 
   useEffect(() => {
-    getData();
+    getPlanetData();
   }, []);
 
   // 마이페이지 데이터 받아오기
-  const getData = useCallback(async () => {
-    /*await axios
+  const getPlanetData = useCallback(async () => {
+    dispatch(openMyPage());
+
+    /* 서버 코드
+    await axios
       .get(`http://52.78.18.110:8000/showuserinfo?userToken=${token}`)
       .then((res) => {
         console.log("res!", res);
@@ -28,10 +29,20 @@ const MyPlanetInfo = () => {
       .catch((err) => {
         console.log(err);
       });*/
-  }, [token]);
+  }, []);
 
+  // 행성 삭제
   const onClickDeletePlanet = useCallback(async (e) => {
-    /*
+    var id = e.target.value;
+    var idx = planet.findIndex((key) => {
+      return key.id === id;
+    });
+    planet.splice(idx, 1);
+    localStorage.setItem("planet", JSON.stringify(planet));
+    alert("행성 수정 완료");
+    window.location.reload();
+
+    /* 서버코드
     let planetId = e.target.value;
 
     await axios
@@ -58,10 +69,9 @@ const MyPlanetInfo = () => {
                 return (
                   <div key={idx}>
                     <div className="list-idx">{idx + 1}</div>
-                    {/* <input type="checkbox" id="planetId" value={v.planetId} /> */}
-                    <div className="list-nickname">{v.planetNickname}</div>
-                    {/* <div className="list-planetId">{v.planetId}</div> */}
-                    <button onClick={onClickDeletePlanet} value={v.planetId}>
+                    <div className="list-nickname">{v.name}</div>
+                    <div className="list-planetId">{v.id}</div>
+                    <button onClick={onClickDeletePlanet} value={v.id}>
                       삭제
                     </button>
                   </div>

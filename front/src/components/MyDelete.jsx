@@ -1,8 +1,15 @@
-import axios from "axios";
 import React, { useCallback } from "react";
 
 const MyDelete = () => {
+  // 회원탈퇴 버튼 클릭
   const onClickDeleteUser = useCallback(() => {
+    localStorage.removeItem("signup");
+    localStorage.removeItem("login");
+    localStorage.removeItem("planet");
+    alert("회원 탈퇴 성공");
+    window.location.replace("/");
+
+    /* 서버코드
     let token = sessionStorage.getItem("userToken");
     console.log(token);
     axios
@@ -13,7 +20,7 @@ const MyDelete = () => {
         sessionStorage.removeItem("userToken");
         sessionStorage.removeItem("planetToken");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err));*/
   }, []);
 
   return (

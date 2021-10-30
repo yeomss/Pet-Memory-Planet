@@ -32,6 +32,7 @@ const Home = () => {
 
     if (num <= nowNum) {
       alert("가용할 수 있는 추모 행성이 없습니다.");
+      window.location.reload();
     }
 
     /* 서버 코드
@@ -49,6 +50,7 @@ const Home = () => {
 
   // 검색 클릭 이벤트
   const onClickSearch = useCallback(() => {
+    /*
     let url = `http://52.78.18.110:8000/searchPlanet?select=${selected}&content=${search}`;
 
     axios
@@ -59,7 +61,7 @@ const Home = () => {
       .catch((err) => {
         console.log(err);
         alert("검색 행성이 존재하지 않습니다.");
-      });
+      });*/
   }, [selected, search, searchResult]);
 
   // 검색 엔터
