@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import useInput from "../hooks/useInput";
-import "../styles/Search.scss";
+import useInput from "../../hooks/useInput";
+import "../../styles/Search.scss";
 
 const Search = () => {
   // 옵션 선택

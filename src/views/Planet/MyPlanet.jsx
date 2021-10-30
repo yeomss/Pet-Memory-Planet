@@ -1,10 +1,10 @@
 import React from "react";
 // import circle from "../styles/images/SVG/myPlanetBtn.svg";
-import "../styles/MyPlanet.scss";
+import "../../styles/MyPlanet.scss";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import { ReactComponent as PlanetBody } from "../styles/images/planet/planet-body-extend.svg";
+import { ReactComponent as PlanetBody } from "../../styles/images/planet/planet-body-extend.svg";
 
 const MyPlanet = (state) => {
   const token = sessionStorage.getItem("userToken");

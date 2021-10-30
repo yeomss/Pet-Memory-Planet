@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import P5Wrapper from "react-p5-wrapper";
-import particles from "../../components/particles";
-import earthBtn from "../../styles/images/SVG/earth-btn.svg";
+import particles from "../components/particles";
+import earthBtn from "../styles/images/SVG/earth-btn.svg";
 
-import "../../styles/global.scss";
-import "../../styles/Home.scss";
+import "../styles/global.scss";
+import "../styles/Home.scss";
 
-import MenuBar from "../../components/MenuBar";
-import { logOut, openMypage } from "../../actions/user";
+import MenuBar from "../components/MenuBar";
+import { logOut, openMypage } from "../actions/user";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -32,28 +32,6 @@ const Home = () => {
     console.log("스크롤");
     console.log(tmp[0]);
   };
-
-  //   // 마이페이지 userInfo 가져오기
-  //   const onClickUserInfo = useCallback(() => {
-  //     let token = sessionStorage.getItem("token");
-  //     console.log(
-  //       "url: ",
-  //       `http://52.78.18.110:8000/showuserinfo?userToken=${token}`
-  //     );
-
-  //     axios
-  //       .get(`http://52.78.18.110:8000/showuserinfo?userToken=${token}`)
-  //       .then((res) => {
-  //         console.log(res);
-
-  //         dispatch(
-  //           openMypage({
-  //             userInfo: res.data,
-  //           })
-  //         );
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }, []);
 
   return (
     <div className="home" onWheel={onTest}>

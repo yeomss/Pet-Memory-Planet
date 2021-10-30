@@ -10,7 +10,7 @@ import TreeItem from "../components/InsidePlanet/TreeItem";
 import NewItem from "../components/InsidePlanet/NewItem";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, newItem, tempNewItem } from "../actions/item";
+import { addItem, newItem, tempNewItem } from "../../actions/item";
 import GuestBookList from "../components/InsidePlanet/GuestBookList";
 
 import dashBoard1 from "../styles/images/SVG/dashBoard_sky.svg";

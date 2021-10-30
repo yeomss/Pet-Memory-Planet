@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { loginModalClose } from "../actions/modal";
-import { logIn } from "../actions/user";
-import useInput from "../hooks/useInput";
-import "../styles/Modal.scss";
+import { loginModalClose } from "../../actions/modal";
+import { logIn } from "../../actions/user";
+import useInput from "../../hooks/useInput";
+import "../../styles/Modal.scss";
 
 const LoginModal = () => {
   const [email, onChangeEmail] = useInput("");
@@ -12,7 +12,6 @@ const LoginModal = () => {
 
   // 로그인 모달창 close
   const LoginModalClose = useCallback(() => {
-    console.log("클릭");
     dispatch(
       loginModalClose({
         isLoginModalOpen: false,
@@ -37,7 +36,7 @@ const LoginModal = () => {
       </div>
 
       <div className="layer">
-        <div className="title">LOGIN</div>
+        <div className="title">반가워요</div>
 
         <div className="content">
           <div>Email</div>

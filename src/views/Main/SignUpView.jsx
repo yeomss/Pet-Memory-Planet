@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import P5Wrapper from "react-p5-wrapper";
 import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../actions/user";
-import particles from "../components/particles";
-import useInput from "../hooks/useInput";
+import { signUp } from "../../actions/user";
+import particles from "../../components/particles";
+import useInput from "../../hooks/useInput";
 
 const SignUp = () => {
   // const signUpSuccess = useSelector((state) => state.user.signUpData);

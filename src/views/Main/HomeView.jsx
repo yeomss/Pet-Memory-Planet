@@ -1,9 +1,9 @@
 import React from "react";
 
-import UnLogged from "./Logged/UnLogged";
-import Logged from "./Logged/Logged";
+import UnLogged from "../UnLoggedView";
+import Logged from "../LoggedView";
 
-import "../styles/Home.scss";
+import "../../styles/Home.scss";
 
 const Home = () => {
   const inToken = sessionStorage.getItem("userToken");

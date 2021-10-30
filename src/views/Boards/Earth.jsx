@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
-import RecoverBoard from "./Boards/Recover";
-import EarthMain from "./Boards/Main";
-import "../styles/Earth.scss";
+import RecoverBoard from "./Recover";
+import EarthMain from "./Main";
+import "../../styles/Earth.scss";
 
 const Earth = () => {
   return (
