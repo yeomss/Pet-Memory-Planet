@@ -12,21 +12,16 @@ const LoginModal = () => {
 
   // 로그인 모달창 close
   const LoginModalClose = useCallback(() => {
-    dispatch(
-      loginModalClose({
-        isLoginModalOpen: false,
-      })
-    );
+    var data = {
+      isLoginModalOpen: false,
+    };
+    dispatch(loginModalClose(data));
   }, []);
 
   // 로그인 확인 버튼 onClick
   const onClickLoginCheck = useCallback(() => {
-    dispatch(
-      logIn({
-        email: email,
-        password: password,
-      })
-    );
+    var data = { email: email, password: password };
+    dispatch(logIn(data));
   }, [email, password]);
 
   return (

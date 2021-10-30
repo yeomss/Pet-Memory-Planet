@@ -27,7 +27,7 @@ const initialState = {
 
   // 로그인
   isLoggedIn: false,
-  data: null, // 로그인 성공 시 토큰이 들어옴.
+  logIndata: null, // 로그인 성공 시 토큰이 들어옴.
 
   // 마이페이지 user
   isOpenMyPage: false,
@@ -41,26 +41,6 @@ const initialState = {
 const userReducer = (prevState = initialState, action) => {
   return produce(prevState, (draft) => {
     switch (action.type) {
-      // 로그인
-      case LOG_IN_REQUEST:
-        draft.isLoggedIn = true;
-        draft.data = null;
-        break;
-      case LOG_IN_SUCCESS:
-        draft.isLoggedIn = false;
-        draft.data = action.data.data;
-        break;
-      case LOG_IN_FAILURE:
-        draft.isLoggedIn = false;
-        draft.data = null;
-        break;
-      case LOG_OUT:
-        draft.isSignUpIn = false;
-        draft.signUpData = null;
-        draft.isLoggedIn = false;
-        draft.data = null;
-        break;
-
       // 회원가입
       case SIGN_UP_REQUEST:
         draft.isSignUpIn = true;
@@ -68,11 +48,37 @@ const userReducer = (prevState = initialState, action) => {
         break;
       case SIGN_UP_SUCCESS:
         draft.isSignUpIn = false;
-        draft.signUpData = action.data.data.signupSuccess;
+        draft.signUpData = action.data;
+        localStorage.setItem("signup", JSON.stringify(action.data));
         break;
       case SIGN_UP_FAILURE:
         draft.isSignUpIn = false;
         draft.signUpData = null;
+        break;
+
+      // 로그인
+      case LOG_IN_REQUEST:
+        draft.isLoggedIn = true;
+        draft.logIndata = null;
+        break;
+      case LOG_IN_SUCCESS:
+        draft.isLoggedIn = false;
+        if (localStorage.getItem("signup")) {
+          draft.logIndata = action.data;
+          localStorage.setItem("login", JSON.stringify(action.data));
+        }
+        break;
+      case LOG_IN_FAILURE:
+        draft.isLoggedIn = false;
+        draft.logIndata = null;
+        break;
+      case LOG_OUT:
+        draft.isSignUpIn = false;
+        draft.signUpData = null;
+        draft.isLoggedIn = false;
+        draft.logIndata = null;
+        localStorage.removeItem("signup");
+        localStorage.removeItem("login");
         break;
 
       // 마이페이지

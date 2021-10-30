@@ -20,7 +20,7 @@ const Home = () => {
   const [selected, onChangeSelected] = useInput("행성 번호");
   const [search, onChangeSearch] = useInput(""); // 검색 내용
   const [searchResult, setSearchResult] = useState(""); // 검색해서 나오는 결과
-  const token = sessionStorage.getItem("userToken");
+  const token = sessionStorage.getItem("login");
 
   // useEffect(() => {
   //   effect;
