@@ -1,10 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 // 데스크톱 버전
 @media (orientation: landscape) {
   .mypage {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: black;
+    background-image: url("../styles/images/earth2.png");
+    background-size: cover;
+    background-position: center;
 
     display: flex;
     justify-content: center;
@@ -12,33 +31,236 @@
 
     .mypage-container {
       width: 90%;
-      height: 100%;
-      background-color: palevioletred;
+      height: 90%;
+      // background-color: white;
 
       display: flex;
       flex-direction: row;
 
       .menu-area {
-        width: 20%;
-        background-color: red;
-        padding: 10px;
+        width: 25%;
+        background-color: rgba(0, 0, 0, 0.87);
+        padding: 20px;
+        width: 300px;
+        flex-shrink: 0;
+        flex-grow: 1;
 
         .title {
-          background-color: papayawhip;
+          // background-color: papayawhip;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+          color: white;
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 700;
+          padding-bottom: 20px;
+          margin-bottom: 30px;
+        }
+        a {
+          &:visited {
+            color: white;
+            outline: none;
+            text-decoration: none;
+          }
+          text-decoration: none;
+
+          .user-info,
+          .planet-info,
+          .delete {
+            color: rgb(255, 255, 255);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 10px;
+            transition: all 0.3s;
+
+            &:hover {
+              cursor: pointer;
+              color: black;
+              background-color: white;
+              text-decoration: none;
+              box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.2);
+            }
+          }
         }
         .user-info {
-          background-color: palegoldenrod;
+          // background-color: palegoldenrod;
+          // padding-left: 15px;
+          padding: 15px;
+          margin-bottom: 10px;
         }
         .planet-info {
-          background-color: palegreen;
+          // background-color: palegreen;
+          padding: 15px;
+          margin-bottom: 10px;
         }
         .delete {
-          background-color: paleturquoise;
+          // background-color: paleturquoise;
+          padding: 15px;
         }
       }
       .content-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        background-color: green;
+        padding: 40px;
+        background-color: white;
+        flex-grow: 0;
+
+        .user-info-container {
+          // padding: 150px;
+          .title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+          }
+          .sub-title {
+            font-size: 0.9rem;
+            font-weight: normal;
+          }
+          .user-info-content {
+            width: 100%;
+            label {
+              width: 300px;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+            }
+            input,
+            select {
+              width: 300px;
+              background-color: black;
+              outline: none;
+              border: none;
+              color: white;
+              padding: 7px;
+              margin: 10px;
+              border-radius: 3px;
+            }
+          }
+          button {
+            border: none;
+            outline: none;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: all 0.3s;
+
+            margin-top: 50px;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
+        .planet-info-container {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+
+          .title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+
+            .sub-title {
+              font-size: 0.9rem;
+              font-weight: normal;
+            }
+          }
+          .planet-info-content {
+            .list {
+              input {
+                margin: 10px;
+              }
+              div {
+                // display: inline;
+                margin: 20px;
+                width: 50%;
+
+                // border-bottom: 1px solid black;
+              }
+              .list-idx {
+                display: inline;
+                border: none;
+                background-color: black;
+                color: white;
+                padding: 10px;
+              }
+              .list-planetId {
+                width: 400px;
+                display: inline;
+                border: none;
+              }
+              .list-nickname {
+                width: 100px;
+                font-size: 1rem;
+                letter-spacing: 10px;
+                display: inline;
+                border: none;
+              }
+            }
+          }
+          button {
+            border: none;
+            outline: none;
+            padding: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: all 0.3s;
+
+            // margin-top: 50px;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
+        .delete-container {
+          width: 100%;
+          height: 100%;
+          .delete-title {
+            // background-color: black;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+
+            .delete-subtitle {
+              font-size: 0.9rem;
+              font-weight: normal;
+            }
+          }
+          button {
+            border: none;
+            outline: none;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: all 0.3s;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
       }
     }
   }

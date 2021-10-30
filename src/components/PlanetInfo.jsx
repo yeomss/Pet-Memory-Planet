@@ -144,13 +144,8 @@ const PlanetInfo = () => {
         <div className="input-pet">
           <div className="title">추모동물정보</div>
           <div onClick={onClickPetImg}>
-            <img
-              className="petImg-preview"
-              src={petImgUrl}
-              file="null"
-            />
+            <img className="petImg-preview" src={petImgUrl} file="null" />
           </div>
-
           <div className="img">
             <input
               className="petImg-input"

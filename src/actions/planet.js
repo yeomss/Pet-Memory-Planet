@@ -1,5 +1,3 @@
-const SET_FORMDATA = "SET_FORMDATA";
-
 // Info
 const SET_PLANET_ID = "SET_PLANET_ID";
 const SET_PLANET_NAME = "SET_PLANET_NAME";
@@ -28,13 +26,6 @@ const SET_PLANET_MOUTH_IDX = "SET_PLANET_MOUTH_IDX";
 const SET_PLANET_EARS_COLOR = "SET_PLANET_EARS_COLOR";
 const SET_PLANET_NOSE_COLOR = "SET_PLANET_NOSE_COLOR";
 const SET_PLANET_MOUTH_COLOR = "SET_PLANET_MOUTH_COLOR";
-
-const setFormdata = (data) => {
-  return {
-    type: SET_FORMDATA,
-    data,
-  };
-};
 
 // Info
 // 행성 정보 설정

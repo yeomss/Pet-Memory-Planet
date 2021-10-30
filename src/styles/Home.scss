@@ -1,4 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
+  width: 100%;
+  height: 100%;
+  //   overflow: hidden;
+
   &::selection {
     background-color: aqua;
   }
@@ -112,6 +126,10 @@ body {
       }
     }
 
+    .none {
+      display: none;
+    }
+
     .first {
       width: 20%;
       height: 50%;
@@ -119,57 +137,73 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 20px;
 
       .login-btn {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
 
+        background: linear-gradient(
+          45deg,
+          rgb(27, 124, 77),
+          rgba(128, 17, 255, 0.267)
+        );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
+        // border: 1px solid rgba(255, 255, 255, 0.123);
+        box-shadow: 1px 1px 30px 3px rgba(255, 255, 255, 0.15);
+        // opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .login-title {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          font-size: 17px;
+          font-size: 2rem;
           font-weight: 600;
-
+          padding-top: 27px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: 2px;
+          letter-spacing: -2.5px;
+
+          &:lang(en) {
+            font-family: "Oswald";
+          }
         }
         &:hover {
-          border: none;
-          box-shadow: 0 -350px 0 0 rgb(129, 129, 129) inset;
+          transform: scale(1.2);
         }
       }
       .myplanet-btn {
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
-
+        // logged 하고
+        background: linear-gradient(
+          45deg,
+          rgba(10, 88, 255, 0.637),
+          rgba(0, 0, 0, 0.356)
+        );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
+        box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
+        // opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .myplanet-title {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          font-size: 17px;
           font-weight: 600;
-
+          padding-top: 15px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2px;
+
+          span:nth-child(1) {
+            font-size: 2rem;
+          }
+          span:nth-child(2) {
+            font-size: 1rem;
+          }
+
+          &:lang(en) {
+            font-family: "Oswald";
+          }
         }
 
         &:hover {
-          border: none;
-          box-shadow: 0 -350px 0 0 rgb(129, 129, 129) inset;
+          transform: scale(1.2);
         }
       }
     }
@@ -180,35 +214,34 @@ body {
 
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
 
+      .newplanet-btn,
+      .earth-btn {
+        margin-bottom: 20px;
+      }
       .signup-btn,
       .logout-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
         cursor: pointer;
-
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
-
+        background: linear-gradient(
+          45deg,
+          rgb(114, 35, 74),
+          rgba(128, 17, 255, 0.267)
+        );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
+        // border: 1px solid rgba(255, 255, 255, 0.123);
+        box-shadow: 1px 1px 30px 3px rgba(247, 15, 104, 0.212);
+        // opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .signup-title,
         .logout-title {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          font-size: 17px;
+          font-size: 1.7rem;
           font-weight: 600;
-
+          padding-top: 31px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2.5px;
 
@@ -239,15 +272,15 @@ body {
       .newplanet-btn {
         background: linear-gradient(
           45deg,
-          rgb(255, 255, 255),
-          rgba(0, 0, 0, 0)
+          rgba(1, 241, 149, 0.6),
+          rgba(141, 2, 255, 0.4)
         );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
         // border: 1px solid rgba(255, 255, 255, 0.123);
         box-shadow: 1px 1px 30px 3px rgba(172, 127, 255, 0.212);
-        opacity: 0.5;
+        // opacity: 0.5;
         transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .material-icons {
@@ -258,9 +291,10 @@ body {
         }
 
         .newplanet-title {
-          font-size: 1rem;
+          // width: 200px;
+          font-size: 1.4rem;
           font-weight: 600;
-          padding-top: 15px;
+          padding-top: 23px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
           letter-spacing: -2px;
 
@@ -272,11 +306,65 @@ body {
           transform: scale(1.2);
         }
       }
+      .search-area {
+        width: 400px;
+        flex-shrink: 0;
+        margin-top: -50px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+
+        input,
+        button {
+          padding: 10px;
+          outline: none;
+        }
+        select {
+          width: 100px;
+          display: inline;
+          background-color: black;
+          color: white;
+          border: none;
+          // margin-right: 20px;
+          margin-bottom: 10px;
+          outline: none;
+
+          &:focus {
+            // background-color: aqua;
+            outline: none;
+          }
+          &:hover {
+            background-color: black;
+          }
+
+          option {
+            outline: none;
+            border: none;
+          }
+        }
+        input {
+          text-align: center;
+          background-color: white;
+          color: rgba(0, 0, 0, 0.445);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          padding-left: 100px;
+          padding-right: 100px;
+          font-size: 1.3rem;
+
+          &:focus {
+            color: rgb(119, 0, 255);
+          }
+        }
+        button {
+          display: none;
+        }
+      }
     }
     .third {
       // background-color: blueviolet;
       width: 20%;
       height: 50%;
+      margin-left: 20px;
 
       display: flex;
       justify-content: center;
@@ -353,32 +441,34 @@ body {
         }
       }
       .signup-btn {
-        background-color: rgba(0, 0, 0, 1);
-
+        // unLogged 일때 signup 버튼
+        background: linear-gradient(
+          45deg,
+          rgb(114, 35, 74),
+          rgba(128, 17, 255, 0.267)
+        );
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        // border: 1px solid rgba(255, 255, 255, 0.123);
+        box-shadow: 1px 1px 30px 3px rgba(255, 203, 203, 0.212);
+        // opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         .signup-title {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-size: 17px;
-
+          font-size: 1.7rem;
           font-weight: 600;
+          padding-top: 31px;
           text-shadow: 2px 2px 2px rgb(0, 0, 0);
-          letter-spacing: 2px;
+          letter-spacing: -2.5px;
 
           &:lang(en) {
+            font-family: "Oswald";
           }
         }
 
         &:hover {
-          border: none;
-          box-shadow: 0 -350px 0 0 rgb(129, 129, 129) inset;
+          transform: scale(1.2);
         }
       }
     }
@@ -392,6 +482,7 @@ body {
 
   // 회원가입
   .signup {
+    // background-color: aquamarine;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -402,25 +493,35 @@ body {
     align-items: center;
 
     box-shadow: 1px 1px 30px 3px rgb(255, 255, 255);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.226),
+      rgba(0, 0, 0, 0.356)
+    );
 
     .title {
-      color: black;
-      font-size: 20px;
-      font-weight: 900;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
       letter-spacing: 10px;
       margin-bottom: 10px;
-      cursor: default;
     }
     .input-area {
       width: 30%;
       height: 80%;
       padding: 30px;
 
-      color: black;
-      border: 1px solid rgb(126, 126, 126);
-      border-radius: 3px;
+      background-color: rgba(255, 255, 255, 0.1);
+      // color: white;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 2%;
 
-      background-color: rgba(0, 0, 0, 0.9);
+      // background: linear-gradient(
+      //   45deg,
+      //   rgba(255, 255, 255, 0.781),
+      //   rgba(0, 0, 0, 0)
+      // );
 
       display: flex;
       flex-direction: column;
@@ -428,58 +529,67 @@ body {
 
       div {
         color: white;
+        font-family: "Montserrat", sans-serif;
         font-size: 11px;
-        font-weight: 00;
+        font-weight: 600;
         letter-spacing: 1px;
         text-align: left;
-        margin-bottom: -20px;
-        cursor: default;
+        margin-bottom: 2px;
       }
       input {
         width: 100%;
         padding: 10px;
         margin-bottom: 5%;
-        border-radius: 2px 2px 2px 2px;
-
-        background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.8);
-
-        border: 1px solid rgba(255, 255, 255, 0.692);
+        border-radius: 300px 300px 300px 300px;
+        background-color: rgb(255, 255, 255);
+        // background-color: rgb(255, 255, 255);
+        // border: 1px solid rgba(0, 0, 0, 0.4);
         outline: none;
         color: black;
+        // padding-left: 2%;
+        border: none;
+        // font-family: "Montserrat", sans-serif;
+        font-weight: 400;
 
-        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+        transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         &::placeholder {
-          color: rgba(0, 0, 0, 0.514);
+          color: rgba(0, 0, 0, 0.5);
           margin: 10px;
-          font-size: 13px;
+          font-size: 11px;
           letter-spacing: 5px;
-          padding-left: 2%;
+          // text-align: center;
+          padding-left: 3%;
 
           &:focus {
-            background-color: rgba($color: #fff, $alpha: 1);
+            // background-color: rgba($color: #000000, $alpha: 1);
+            // color: white;
           }
         }
         &:focus {
-          background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
-          border: 1px solid rgb(0, 0, 0);
-          color: black;
+          background-color: rgba($color: #000000, $alpha: 1);
+          border: 3px solid rgb(255, 255, 255);
+          color: rgb(255, 255, 255);
+
+          &::placeholder {
+            color: white;
+          }
         }
       }
       select {
         padding: 3px;
         margin-bottom: 5%;
-        border: 1px solid #999;
+        border: 1px solid rgb(0, 0, 0);
         border-radius: 0px; /* iOS 둥근모서리 제거 */
         outline: none;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
 
         transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         option {
-          color: black;
-          background-color: white;
+          color: white;
+          background-color: black;
 
           &:focus {
             cursor: pointer;
@@ -491,7 +601,7 @@ body {
           content: "가용할 추모 행성의 수";
         }
         &:focus {
-          background-color: rgba($color: #fff, $alpha: 1);
+          background-color: rgba($color: #000000, $alpha: 1);
         }
       }
       .api-area {
@@ -504,22 +614,23 @@ body {
       }
       button {
         color: white;
-        background-color: rgba(0, 0, 0, 0.644);
+        background-color: rgba($color: #000000, $alpha: 1);
+
         padding-top: 10px;
         padding-bottom: 10px;
         outline: none;
         border: 1px solid black;
 
+        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         font-weight: 700;
         border: none;
+        // box-shadow: 1px 1px 1px 0px 1px 1px rgb(255, 255, 255);
 
         transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 
         &:hover {
-          box-shadow: 0 -120px 0 0 rgba(255, 255, 255, 0.5) inset;
-
-          background-color: rgba($color: #ffffffa1, $alpha: 1);
+          background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
           border-radius: 1px 1px 1px 1px;
           color: black;
         }

@@ -1,6 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  // border: 1px solid black;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
 // 데스크톱 화면
 @media (orientation: landscape) {
   // 데스크톱 화면
+  .dung {
+    background-color: transparent;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    animation: ani 1s infinite alternate;
+  }
+  @keyframes ani {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 50px);
+    }
+  }
+
   .new-planet-container {
     position: absolute;
     width: 100%;
@@ -12,8 +44,16 @@
       rgba(0, 0, 0, 0.356)
     );
 
-    // background-color: black;
-
+    .new-planet-title {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.1);
+      top: 0;
+      font-size: 5rem;
+      // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.281);
+      font-family: "Exo 2", sans-serif;
+      left: 10px;
+      // border: 1px solid white;
+    }
     .planet {
       width: 100%;
       height: 100%;
@@ -24,14 +64,15 @@
       .planet-ears,
       .planet-nose,
       .planet-mouth {
-        width: 700px;
+        width: 40%;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 7%;
-        left: 10%;
+        top: 2%;
+        left: 12.9%;
       }
     }
+
     .menu {
       position: absolute;
       top: 0;
@@ -50,21 +91,32 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        transition: all 0.2s;
 
         width: 3rem;
         height: 3rem;
         border-radius: 10%;
+        background-color: white;
+        border: 1px solid rgba(255, 255, 255, 0.349);
 
-        background: -webkit-gradient(
-          linear,
-          left top,
-          right bottom,
-          color-stop(0, rgb(38, 129, 141)),
-          color-stop(1, rgba(30, 93, 211, 0.281))
-        );
+        // background: -webkit-gradient(
+        //   linear,
+        //   left top,
+        //   right bottom,
+        //   color-stop(0, rgb(38, 129, 141)),
+        //   color-stop(1, rgba(30, 93, 211, 0.281))
+        // );
+
+        .material-icons {
+          color: black;
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: rgb(191, 143, 253);
+        }
       }
       .deco {
-        background-color: green;
         padding: 10px;
         margin: 10px;
 
@@ -75,14 +127,26 @@
         width: 3rem;
         height: 3rem;
         border-radius: 10%;
+        background-color: white;
+        border: 1px solid rgba(255, 255, 255, 0.349);
 
-        background: -webkit-gradient(
-          linear,
-          left top,
-          right bottom,
-          color-stop(0, rgb(117, 11, 255)),
-          color-stop(1, rgba(30, 93, 211, 0.281))
-        );
+        transition: all 0.2s;
+        .material-icons {
+          color: black;
+          cursor: pointer;
+        }
+
+        // background: -webkit-gradient(
+        //   linear,
+        //   left top,
+        //   right bottom,
+        //   color-stop(0, rgb(0, 0, 0)),
+        //   color-stop(1, rgba(30, 93, 211, 0.281))
+        // );
+
+        &:hover {
+          background-color: rgb(191, 143, 253);
+        }
       }
       a {
         &:hover {
@@ -107,7 +171,9 @@
         // position: absolute;
         width: 100%;
         height: 100%;
+        // margin-top: -10px;
 
+        // margin: 4px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 10fr;
@@ -117,6 +183,8 @@
           top: 0px;
           grid-row-start: 1;
           grid-row-end: 2;
+          // margin-top: -10px;
+          // padding-bottom: 20px;
 
           font-size: 2rem;
           font-weight: 700;
@@ -172,6 +240,9 @@
               letter-spacing: 10px;
               height: 20px;
               padding: 3px;
+              // padding-left: 0px;
+              margin-left: -20px;
+              margin-top: 7px;
 
               grid-row-start: 1;
               grid-row-end: 2;
@@ -193,6 +264,7 @@
               grid-row-end: 7;
               grid-column-start: 1;
               grid-column-end: 2;
+              cursor: pointer;
 
               img {
                 width: 200px;
@@ -218,7 +290,7 @@
                 outline: none;
                 width: 100%;
 
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -258,7 +330,7 @@
                 outline: none;
                 width: 100%;
                 padding: 5px;
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -295,7 +367,8 @@
                 width: 100%;
                 padding: 5px;
 
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
+
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -332,7 +405,8 @@
                 outline: none;
                 width: 100%;
                 // margin-bottom: 10px;
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
+
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -388,7 +462,8 @@
                 // margin-right: 30px;
                 width: 200px;
 
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
+
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -443,7 +518,8 @@
                 outline: none;
                 width: 100%;
                 // margin-bottom: 10px;
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
+
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -485,6 +561,8 @@
               font-size: 1rem;
               font-weight: 700;
               letter-spacing: 10px;
+              margin-top: 10px;
+              margin-left: -20px;
 
               grid-row-start: 1;
               grid-row-end: 2;
@@ -517,10 +595,6 @@
               text-align: center;
               background-color: black;
               color: white;
-              background-color: black;
-              font-weight: 700;
-              font-size: 0.5rem;
-              color: white;
               font-family: "Montserrat", sans-serif;
               font-size: 1rem;
               font-weight: 700;
@@ -536,14 +610,17 @@
             div:nth-child(4) {
               color: white;
 
-              margin: 10px;
+              // margin: 10px;
+              margin-top: 10px;
+              margin-bottom: 10px;
               input {
                 background-color: white;
                 padding: 5px;
                 outline: none;
                 width: 100%;
                 // margin-bottom: 10px;
-                border-radius: 300px 300px 300px 300px;
+                border-radius: 3px;
+
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: black;
 
@@ -659,38 +736,116 @@
 
         .title {
           // background-color: darkgoldenrod;
+          top: 0px;
+          grid-row-start: 1;
+          grid-row-end: 2;
+
+          font-size: 2rem;
+          font-weight: 700;
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          letter-spacing: -3px;
+        }
+        .ears,
+        .nose,
+        .mouth {
+          font-family: "Montserrat", sans-serif;
+          font-size: 1rem;
+          font-weight: 700;
+          letter-spacing: 10px;
+
+          .material-icons {
+            cursor: pointer;
+          }
         }
         .ears {
-          // background-color: aquamarine;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin-top: 20px;
+
+          &:nth-child(2) {
+            background-color: aua;
+          }
         }
         .nose {
-          // background-color: cornflowerblue;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
         }
         .mouth {
-          // background-color: cyan;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
         }
         .color-area {
           // background-color: darkmagenta;
           width: 100%;
+          margin-bottom: 30px;
+          padding: 10px;
+
+          label {
+            margin-top: 20px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+          }
+          .react-colorful {
+            width: 100%;
+            height: 100px;
+          }
         }
         .shade-area {
-          // background-color: darkgreen;
+          padding: 10px;
+
+          label {
+            margin-top: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+          }
+          .react-colorful {
+            width: 100%;
+            height: 100px;
+          }
         }
       }
     }
     .new-planet-button {
-      display: inline;
-      position: fixed;
-      top: 0px;
-      left: 0px;
+      // display: inline;
+      // padding: 10px;
+      // top: 120px;
+      // right: 550px;
+      // margin: 10px;
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px;
+
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+
+      // width: 3rem;
+      // height: 3.5rem;
+      border-radius: 10%;
+      // background-color: rgb(114, 231, 103);
+      // border: 1px solid rgba(255, 255, 255, 0.349);
+      outline: none;
+      border: none;
       // background-color: aqua;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: green;
+        color: black;
+      }
     }
   }
 
   .planet,
   .menu,
   .edit-box {
-    // background-color: black;
     color: white;
   }
 }

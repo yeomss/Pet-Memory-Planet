@@ -1,5 +1,7 @@
 const ADD_POST = "ADD_POST";
 const ADD_COMMENT = "ADD_COMMENT";
+const EDIT_POST = "EDIT_POST";
+const EDIT_COMMENT = "EDIT_COMMENT";
 
 const SET_BOARD_ID = "SET_BOARD_ID";
 const VIEW_BOARD_LIST = "VIEW_BOARD_LIST";
@@ -21,6 +23,22 @@ const addComment = (data) => {
   };
 };
 
+// 글 수정
+const editPost = (data) => {
+  return {
+    type: EDIT_POST,
+    data,
+  };
+};
+
+// 게시글 번호 조회하기
+const setBoardId = (data) => {
+  return {
+    type: SET_BOARD_ID,
+    data,
+  };
+};
+
 // 게시판 조회하기
 const viewBoardList = (data) => {
   return {
@@ -37,17 +55,10 @@ const viewBoardElement = (data) => {
   };
 };
 
-// 게시글 번호 조회하기
-const setBoardId = (data) => {
-  return {
-    type: SET_BOARD_ID,
-    data,
-  };
-};
-
 module.exports = {
   addPost,
   addComment,
+  editPost,
   viewBoardList,
   setBoardId,
   viewBoardElement,

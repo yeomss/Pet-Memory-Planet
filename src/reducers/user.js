@@ -12,7 +12,6 @@ const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
 // 지구게시판
-const OPEN_BOARD = "OPEN_BOARD";
 const OPEN_MYPAGE = "OPEN_MYPAGE";
 const SET_NEWTOKEN = "SET_NEWTOKEN";
 
@@ -22,12 +21,20 @@ const OPEN_MY_PAGE_SUCCESS = "OPEN_MY_PAGE_SUCCESS";
 const OPEN_MY_PAGE_FAILURE = "OPEN_MY_PAGE_FAILURE";
 
 const initialState = {
+  // 회원가입
   isSignUpIn: false,
   signUpData: null, // 회원가입 성공 시 sucess 데이터가 들어옴.
+
+  // 로그인
   isLoggedIn: false,
   data: null, // 로그인 성공 시 토큰이 들어옴.
+
+  // 마이페이지 user
   isOpenMyPage: false,
   userInfo: null, // mypage 할 때 유저정보
+  editEmail: "",
+  editNickname: "",
+  editNumOfPets: -1,
   planetInfo: null,
 };
 
@@ -39,17 +46,14 @@ const userReducer = (prevState = initialState, action) => {
         draft.isLoggedIn = true;
         draft.data = null;
         break;
-
       case LOG_IN_SUCCESS:
         draft.isLoggedIn = false;
         draft.data = action.data.data;
         break;
-
       case LOG_IN_FAILURE:
         draft.isLoggedIn = false;
         draft.data = null;
         break;
-
       case LOG_OUT:
         draft.isSignUpIn = false;
         draft.signUpData = null;
@@ -62,12 +66,10 @@ const userReducer = (prevState = initialState, action) => {
         draft.isSignUpIn = true;
         draft.signUpData = null;
         break;
-
       case SIGN_UP_SUCCESS:
         draft.isSignUpIn = false;
         draft.signUpData = action.data.data.signupSuccess;
         break;
-
       case SIGN_UP_FAILURE:
         draft.isSignUpIn = false;
         draft.signUpData = null;
@@ -78,28 +80,17 @@ const userReducer = (prevState = initialState, action) => {
         draft.isOpenMyPage = true;
         draft.userInfo = null;
         break;
-
       case OPEN_MY_PAGE_SUCCESS:
         draft.isOpenMyPage = false;
         draft.userInfo = action.data.userInfo;
+        draft.planetInfo = action.data.planetInfo;
+        draft.editEmail = draft.userInfo[0].email;
+        draft.editNickname = draft.userInfo[0].nickname;
+        draft.editNumOfPets = draft.userInfo[0].numOfPets;
         break;
-
       case OPEN_MY_PAGE_FAILURE:
         draft.isOpenMyPage = false;
         draft.userInfo = null;
-        break;
-
-      // 게시판
-      case OPEN_BOARD:
-        draft.boardInfo = action.data.boardInfo;
-        break;
-
-      case OPEN_MYPAGE:
-        draft.userInfo = action.data.userInfo;
-        break;
-
-      case SET_NEWTOKEN:
-        draft.newToken = action.data.newToken;
         break;
 
       default:

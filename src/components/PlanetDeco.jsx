@@ -145,7 +145,7 @@ const PlanetDeco = () => {
       <div className="title">Customizing</div>
 
       <div className="ears">
-        <div>귀 모양</div>
+        <div>귀모양</div>
         <span class="material-icons" onClick={onClickPlanetEarsLeft}>
           arrow_back_ios
         </span>
@@ -162,7 +162,7 @@ const PlanetDeco = () => {
       </div>
 
       <div className="nose">
-        <div>코 모양</div>
+        <div>코모양</div>
         <span class="material-icons" onClick={onClickPlanetNoseLeft}>
           arrow_back_ios
         </span>
@@ -179,7 +179,7 @@ const PlanetDeco = () => {
       </div>
 
       <div className="mouth">
-        <div>입 모양</div>
+        <div>입모양</div>
         <span class="material-icons" onClick={onClickPlanetMouthLeft}>
           arrow_back_ios
         </span>
@@ -196,8 +196,7 @@ const PlanetDeco = () => {
       </div>
 
       <div className="color-area">
-        <label htmlFor="">행성 컬러</label>
-        <div>{color}</div>
+        <label htmlFor="">행성컬러</label>
         <input type="color" value={color} onChange={onChangePlanetColor} />
         <div>
           <HexColorPicker
@@ -209,8 +208,7 @@ const PlanetDeco = () => {
       </div>
 
       <div className="shade-area">
-        <div>행성 그림자 컬러</div>
-        <div>{shade}</div>
+        <label>행성그림자컬러</label>
         <input type="color" value={color} onChange={onChangePlanetShadeColor} />
         <div>
           <HexColorPicker

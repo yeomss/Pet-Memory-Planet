@@ -2,6 +2,11 @@ function sketch(p) {
   let particles = [];
   let particles2 = [];
 
+  const resize = () => {
+    p.createCanvas(window.innerWidth, window.innerHeight);
+  };
+  window.addEventListener("resize", resize);
+
   p.setup = () => {
     p.createCanvas(window.innerWidth, window.innerHeight);
 
@@ -22,12 +27,14 @@ function sketch(p) {
       // 파티클 크기, 색
       createParticle() {
         p.noStroke();
-        p.fill("rgba(0, 0, 0, 0.6)");
+        p.fill("rgba(60, 36, 234, 0.6)");
+        // p.fill("rgba(31, 41, 232, 0.6)");
         p.circle(this.x, this.y, this.r);
       }
       createParticle2() {
         p.noStroke();
-        p.fill("#000");
+        p.fill("#dbabff");
+        // p.fill("rgba(31, 41, 232, 0.6)");
         p.circle(this.x2, this.y2, this.r2);
       }
 
@@ -50,7 +57,11 @@ function sketch(p) {
         particles.forEach((element) => {
           let dis = p.dist(this.x, this.y, element.x, element.y);
           if (dis < 87) {
-            p.stroke("rgba(0, 0, 0, 0.06)");
+            // p.stroke("rgba(102, 94, 204, 0.05)");
+            p.stroke("rgba(255, 255, 255, 0.05)");
+            // p.stroke("rgba(73, 96, 234, 0.3)");
+            // p.stroke("rgba(255, 255, 234, 0.1)");
+
             p.line(this.x, this.y, element.x, element.y);
           }
         });
@@ -64,7 +75,9 @@ function sketch(p) {
   };
 
   p.draw = () => {
-    p.background("#fff");
+    // p.background("#00001a");
+    p.background("#04071C");
+    // p.background("#fff");
 
     for (let i = 0; i < particles.length; i++) {
       particles[i].createParticle();
@@ -77,6 +90,8 @@ function sketch(p) {
       particles2[i].joinParticles(particles2.slice(i));
     }
   };
+
+  // console.log(particles);
 }
 
 export default sketch;

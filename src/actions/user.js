@@ -9,14 +9,12 @@ const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
 const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
-const OPEN_BOARD = "OPEN_BOARD";
+const OPEN_MY_PAGE = "OPEN_MY_PAGE";
 const OPEN_MY_PAGE_REQUEST = "OPEN_MY_PAGE_REQUEST";
 const OPEN_MY_PAGE_SUCCESS = "OPEN_MY_PAGE_SUCCESS";
 const OPEN_MY_PAGE_FAILURE = "OPEN_MY_PAGE_FAILURE";
 
-const OPEN_MYPAGE = "OPEN_MYPAGE";
-const SET_NEWTOKEN = "SET_NEWTOKEN";
-
+//
 // 로그인 환경
 const logIn = (data) => {
   return (dispatch, getState) => {
@@ -84,6 +82,7 @@ const logOut = () => {
 // 회원가입 환경
 const signUp = (data) => {
   return (dispatch, getState) => {
+    console.log("회원가입 시도");
     dispatch(signUpRequest(data));
 
     axios
@@ -107,7 +106,7 @@ const signUp = (data) => {
       .catch((err) => {
         alert("회원 가입에 실패하였습니다.");
         dispatch(signUpFailure(err));
-        window.location.replace("/");
+        // window.location.replace("/");
       });
   };
 };
@@ -131,14 +130,7 @@ const signUpFailure = (err) => {
 };
 
 //
-// 지구 게시판
-const openBoard = (data) => {
-  return {
-    type: OPEN_BOARD,
-    data,
-  };
-};
-
+// 마이페이지
 const openMyPageRequest = (data) => {
   return {
     type: OPEN_MY_PAGE_REQUEST,
@@ -157,23 +149,23 @@ const openMyPageFailure = (err) => {
     err,
   };
 };
-
-const openMypage = (data) => {
+const openMyPage = (data) => {
   return (dispatch, getState) => {
     dispatch(openMyPageRequest(data));
 
     axios
-      .get(`http://52.78.18.110:8000/showuserinfo?userToken=${data}`)
+      .get(`http://52.78.18.110:8000/showuserinfo?userToken=${data.userToken}`)
       .then((res) => {
         console.log("res!", res);
 
         dispatch(
           openMyPageSuccess({
-            userInfo: res.data,
+            userInfo: res.data.userInfo,
+            planetInfo: res.data.planetOutside,
           })
         );
 
-        alert("마이 페이지 오픈!");
+        console.log("유저인포: ", res.data.userInfo);
       })
       .catch((err) => {
         console.log(err);
@@ -182,21 +174,12 @@ const openMypage = (data) => {
   };
 };
 
-const setNewtoken = (data) => {
-  return {
-    type: SET_NEWTOKEN,
-    data,
-  };
-};
-
 module.exports = {
   logIn,
   logOut,
   signUp,
-  openBoard,
-  openMypage,
+  openMyPage,
   openMyPageRequest,
   openMyPageSuccess,
   openMyPageFailure,
-  openMypage,
 };

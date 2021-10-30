@@ -1,39 +1,118 @@
-// 데스크톱 버전
+// * {
+//   box-sizing: border-box;
+//   font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Nanum Myeongjo", serif;
+// }
+
+// html {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// body {
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+// }
+
+// // 데스크톱 버전
+// @media screen and (orientation: landscape) {
+//   .search {
+//     position: absolute;
+//     // width: 100%;
+//     // height: 100%;
+//     // background-color: palevioletred;
+
+//     overflow-y: auto;
+//     .box {
+//       background-color: palegoldenrod;
+//     }
+//     .planets {
+//       width: 100%;
+//       height: 100%;
+//       background-color: paleturquoise;
+
+//       display: grid;
+//       grid-template-columns: repeat(3, 1fr);
+//       grid-template-rows: repeat(1, 1fr);
+//       align-items: center;
+//       justify-items: center;
+
+//       .planet {
+//         width: 15rem;
+//         height: 15rem;
+//         background-color: peru;
+//         border-radius: 100%;
+//       }
+//     }
+//   }
+// }
+
+// // 모바일 버전
+// @media screen and (orientation: portrait) {
+//   .search {
+//     background-color: palegoldenrod;
+//   }
+// }
+
 @media screen and (orientation: landscape) {
-  .search {
-    position: absolute;
+  .home-search {
+    background-color: transparent;
     width: 100%;
-    height: 100%;
-    background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    overflow-y: auto;
-    .box {
-      background-color: palegoldenrod;
-    }
-    .planets {
-      width: 100%;
-      height: 100%;
-      background-color: paleturquoise;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-      align-items: center;
-      justify-items: center;
-
-      .planet {
-        width: 15rem;
-        height: 15rem;
-        background-color: peru;
-        border-radius: 100%;
+    .second {
+      .search-area {
+        // background-color: aquamarine;
+        // margin-top: 0;
+        position: absolute;
+        top: 100px;
       }
     }
-  }
-}
 
-// 모바일 버전
-@media screen and (orientation: portrait) {
-  .search {
-    background-color: palegoldenrod;
+    .search-datas {
+      position: absolute;
+      width: 100%;
+      height: 70%;
+      top: 170px;
+      left: 0;
+      //   height: 13rem;
+      //   height: 30rem;
+
+      //   background-color: aqua;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      overflow-y: scroll;
+      //   margin-top: 60px;
+
+      .search-data {
+        width: 10rem;
+        height: 10rem;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.432);
+        box-shadow: 1px 1px 50px 1px rgb(81, 0, 134);
+        color: white;
+        margin: 30px;
+        // padding: 100px;
+        border-radius: 100%;
+        font-size: 0.8rem;
+        font-weight: 700;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // flex-basis: 13rem;
+
+        .userNickname {
+          font-size: 10rem;
+        }
+      }
+    }
   }
 }

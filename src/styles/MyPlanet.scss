@@ -14,14 +14,14 @@
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 100vh;
-  background-color: black;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  z-index: 1;
+  z-index: 10;
 
+  margin-top: 20vh;
   overflow-x: scroll;
 }
 
@@ -37,6 +37,13 @@
 
 .planetNickname {
   color: rgb(224, 224, 224);
+}
+
+.planetZoomNickname {
+  position: fixed;
+  bottom: 3vh;
+  color: rgb(224, 224, 224);
+  font-size: 2rem;
 }
 
 .planetImg {
@@ -60,9 +67,9 @@
   width: 100vw;
   height: 100vh;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
 }
 
 .planetImgContainer {
@@ -84,22 +91,19 @@
   position: absolute;
   top: 2vh;
   left: 2vw;
-  z-index: 10;
+  z-index: 100;
+  width: fit-content;
+  height: 15vh;
 }
 
 .planetNickname {
-  font-size: 3rem;
-}
-
-.myPlanetZoom {
-  width: 40vw;
-  height: 40vw;
-  border-radius: 100%;
-  transition: 0.4s;
-  opacity: 1;
+  font-size: 1.4rem;
 }
 
 .planetScriptContainer1 {
+  position: fixed;
+  top: 30vh;
+  right: 5vw;
   width: 25vw;
   height: 40vh;
   background-color: #96aabf2e;
@@ -114,6 +118,9 @@
 }
 
 .planetScriptContainer2 {
+  position: fixed;
+  top: 45vh;
+  left: 5vw;
   width: 25vw;
   height: 50vh;
   background-color: #96aabf2e;
@@ -207,15 +214,60 @@
   justify-content: center;
 }
 
-.planet-body,
-.planet-ears,
-.planet-nose,
-.planet-mouth,
-.planet-body-shade {
-  width: 45%;
+.planetWelcomeValue {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 행성 귀, 코 등등을 감싸는 첫번째 컨테이너
+.new-planet {
+  position: fixed;
+  left: 30vw;
+
+  width: 40vw;
+  height: 100vh;
+}
+
+.planet-ears {
   position: absolute;
-  top: 1%;
-  left: 5%;
+  top: 10%;
+  left: 0px;
+
+  width: 40vw;
+  height: 40vw;
+  z-index: 1;
+}
+
+.planet-nose {
+  position: absolute;
+  width: 40vw;
+  height: 15vw;
+  top: 7vw;
+  left: 0px;
+  z-index: 1;
+}
+
+.planet-mouth {
+  position: absolute;
+  width: 40vw;
+  height: 15vh;
+  top: 7vw;
+  left: 0vw;
+  z-index: 1;
+}
+
+// 행성 부분
+.myPlanetZoom {
+  position: absolute;
+  top: 5vh;
+  left: 0vw;
+
+  width: 40vw;
+  height: 100%;
+  border-radius: 100%;
+  transition: 0.4s;
 }
 
 //---------------------------------------------------
@@ -397,7 +449,7 @@ console.log(res.data.guest[0].guestBook);
   top: 0px;
   width: 2000px;
   height: 50%;
-  background-color: #afdefd;
+  //background-color: #afdefd;
 }
 
 .land {
@@ -470,6 +522,41 @@ console.log(res.data.guest[0].guestBook);
   width: 200px;
   height: 300px;
   z-index: 10;
+}
+
+// 날씨 Canvas
+.weatherCanvas {
+  height: 100vh;
+  width: 2000px;
+}
+
+.weatherIconContainer {
+  z-index: 300;
+  position: fixed;
+  top: 2vh;
+  right: 10vh;
+  background-color: rgba(0, 0, 0, 0.123);
+  width: 5vh;
+  height: 5vh;
+  border-radius: 5px;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.HomebtnContainer {
+  z-index: 400;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.123);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+
+  .home-btn {
+    color: black;
+  }
 }
 
 // 아이템 컴포넌트 css
@@ -875,8 +962,14 @@ treeContainer
   position: fixed;
   top: 10vh;
   right: 2vh;
-  width: 5vh;
-  height: 100vh;
+  width: 8vh;
+  height: fit-content;
+
+  background-color: rgba(175, 175, 175, 0.432);
+  padding-bottom: 2vh;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 
   transition: 0.3s;
 
@@ -887,11 +980,11 @@ treeContainer
 }
 
 .editorSideBarOpen {
-  right: 2vh;
+  right: 0vh;
 }
 
 .editorSideBarClose {
-  right: -7vh;
+  right: -9vh;
 }
 
 // 에디터 추가 버튼
@@ -928,6 +1021,8 @@ treeContainer
   border-radius: 5px;
   transition: 0.3s;
   margin-bottom: 3vh;
+
+  font-size: 0.5rem;
 
   color: white;
   display: flex;
@@ -970,17 +1065,66 @@ treeContainer
   z-index: 100;
   border-radius: 5px;
   transition: 0.3s;
-
+  margin-bottom: 3vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.7rem;
 
   &:hover {
     cursor: pointer;
   }
+}
 
-  &:active {
-    border: solid 3px white;
+// 캐릭터 변경 버튼
+.editorCharacterBtn {
+  width: 5vh;
+  height: 5vh;
+  background-color: #34d45c;
+  border: solid 2px black;
+  color: black;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 3vh;
+
+  font-size: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.editorCharacterBtnContent {
+  font-size: 0.6rem;
+}
+
+.editorWeatherBtnContent {
+  font-size: 0.8rem;
+}
+
+.editorWeatherBtn {
+  width: 5vh;
+  height: 5vh;
+  background-color: #64dff0;
+  border: solid 2px black;
+  color: black;
+  z-index: 100;
+  border-radius: 5px;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -1355,7 +1499,7 @@ treeContainer
 
 .NewItemContainer {
   z-index: 200;
-  position: absolute;
+  position: fixed;
   left: 45vh;
   top: 100px;
   width: 300px;
