@@ -151,7 +151,11 @@ const Home = () => {
         {/* 마이 행성 페이지 */}
         <Link to="/myplanet">
           <div className="myplanet-btn">
-            <div className="myplanet-title">추모행성</div>
+            <div className="myplanet-title">
+              나의
+              <br />
+              추모행성
+            </div>
           </div>
         </Link>
       </div>

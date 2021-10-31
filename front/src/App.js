@@ -18,14 +18,15 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Route path="/" exact component={Home} />
-        <Route path="/myplanet" component={MyPlanet} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/newplanet" component={NewPlanet} />
-        {/* <Route path="/myplanetZoom/:planetId" component={MyPlanetZoom} /> */}
-        <Route path="/search" component={Search} />
+        <Route path="/mypage" component={MyPage} />
         <Route path="/earth" component={Earth} />
         <Route path="/petloss" component={Petloss} />
-        <Route path="/mypage" component={MyPage} />
+        <Route path="/search" component={Search} />
+        <Route path="/newplanet" component={NewPlanet} />
+
+        <Route path="/myplanet" component={MyPlanet} />
+        {/* <Route path="/myplanetZoom/:planetId" component={MyPlanetZoom} /> */}
         {/* <Route path="/myplanetInside/:planetId" component={MyPlanetInside} /> */}
       </BrowserRouter>
     </div>

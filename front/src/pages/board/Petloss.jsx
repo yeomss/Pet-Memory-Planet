@@ -1,21 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route } from "react-router";
 import HomeBtn from "../../components/HomeBtn";
 import "../../styles/Petloss.scss";
 
 export const Petloss = () => {
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      resizeHeight();
+    });
+    return () => {};
+  }, [height]);
+
+  const resizeHeight = () => {
+    setHeight(window.innerHeight);
+  };
+
   return (
     <div className="petloss">
+      {/* nav */}
       <div className="menu">
         <p>
-          <a href="#content">펫로스 증후군이란 ?</a>
+          <a href="#head">펫로스 증후군이란 ?</a>
         </p>
-        | <p>하이루</p> |<p>하이루</p>
-        <HomeBtn />
+        |
+        <p>
+          <a href="#cure">치료법</a>
+        </p>
+        |
+        <p>
+          <a href="#planet">추억 그리고 행성</a>
+        </p>
+        |
+        <p>
+          <a href="/">홈으로</a>
+        </p>
       </div>
-      <div className="head">펫로스 헤더</div>
-      <div id="content">펫 로스 컨텐트</div>
-      <div className="footer">펫 로스 푸터</div>
+
+      {/* 헤더 */}
+      <div id="head" style={{ height: height }}>
+        <h1>펫로스 증후군</h1>
+      </div>
+
+      {/* 치료법 */}
+      <div id="cure">치료법</div>
+
+      {/* 추억 그리고 행성 소개 */}
+      <div id="planet">추억 그리고 행성 소개</div>
     </div>
   );
 };

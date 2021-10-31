@@ -31,9 +31,7 @@ const UnLogged = () => {
       <div className="first">
         {/* 로그인 버튼 */}
         <div className="login-btn " onClick={LoginModalOpen}>
-          <div className="login-title" style={{ color: "white" }}>
-            로그인
-          </div>
+          <div className="login-title">로그인</div>
         </div>
       </div>
 
