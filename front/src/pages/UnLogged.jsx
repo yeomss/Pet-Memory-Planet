@@ -60,7 +60,7 @@ const UnLogged = () => {
       </div>
 
       <MenuBar />
-      <P5Wrapper sketch={particles} />
+      <P5Wrapper sketch={particles} style={{ width: "100px" }} />
     </div>
   );
 };

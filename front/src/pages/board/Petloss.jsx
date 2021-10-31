@@ -5,6 +5,9 @@ import "../../styles/Petloss.scss";
 
 export const Petloss = () => {
   const [height, setHeight] = useState(window.innerHeight);
+  const saElementList = document.querySelector(".sa");
+
+  console.log(saElementList);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -16,6 +19,8 @@ export const Petloss = () => {
   const resizeHeight = () => {
     setHeight(window.innerHeight);
   };
+
+  const animation = () => {};
 
   return (
     <div className="petloss">
@@ -40,14 +45,28 @@ export const Petloss = () => {
 
       {/* 헤더 */}
       <div id="head" style={{ height: height }}>
-        <h1>펫로스 증후군:</h1>
+        <div className="background"></div>
+        <div className="text">
+          <h1 className="title">펫로스 증후군(pet-loss 症候群):</h1>
+          <p className="sub">
+            반려동물들이 죽거나 교통사고 또는 도난 등을 당한 시점부터
+            <br />
+            생겨난 상실감을 계기로 일어나는 각종 질환 및 심신 증세
+          </p>
+        </div>
       </div>
 
       {/* 치료법 */}
-      <div id="cure">치료법</div>
+      <div id="cure" style={{ height: height }}>
+        <div className="sa sa-down">감추지마세요</div>
+        <div className="sa sa-down">추억을 표현해요</div>
+        <div className="sa sa-down">마음에 보관해요</div>
+      </div>
 
       {/* 추억 그리고 행성 소개 */}
-      <div id="planet">추억 그리고 행성 소개</div>
+      <div id="planet" style={{ height: height }}>
+        추억 그리고 행성 소개
+      </div>
     </div>
   );
 };

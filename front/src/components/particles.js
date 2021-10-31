@@ -1,10 +1,12 @@
 function sketch(p) {
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
   let particles = [];
   let particles2 = [];
 
   p.setup = () => {
-    p.createCanvas(window.innerWidth, window.innerHeight);
-
+    p.createCanvas(width, height);
     class Particle {
       constructor() {
         this.x = p.random(0, p.width);
