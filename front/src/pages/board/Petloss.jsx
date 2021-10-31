@@ -40,7 +40,7 @@ export const Petloss = () => {
 
       {/* 헤더 */}
       <div id="head" style={{ height: height }}>
-        <h1>펫로스 증후군</h1>
+        <h1>펫로스 증후군:</h1>
       </div>
 
       {/* 치료법 */}
