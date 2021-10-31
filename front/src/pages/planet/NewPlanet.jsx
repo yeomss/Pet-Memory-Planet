@@ -16,6 +16,7 @@ import "../../styles/NewPlanet.scss";
 import HomeBtn from "../../components/HomeBtn";
 
 const NewPlanet = () => {
+  const user = JSON.parse(localStorage.getItem("signup"));
   const planet = JSON.parse(localStorage.getItem("planet"));
 
   // Info
@@ -56,6 +57,7 @@ const NewPlanet = () => {
       petBreed: petBreed,
       petFavorite: petFavorite,
       image: petImg,
+      user: user.data.nickname,
 
       // Deco
       color: [planetColor, planetShade],

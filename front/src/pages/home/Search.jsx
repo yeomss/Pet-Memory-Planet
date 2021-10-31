@@ -10,7 +10,6 @@ const Search = (props) => {
 
   useEffect(() => {
     setSearchData(props.data);
-    console.log("searchData:", searchData);
   }, [props, searchData]);
 
   return (
@@ -19,8 +18,9 @@ const Search = (props) => {
         {searchData ? (
           searchData.map((v, idx) => (
             <Link
+              key={idx}
               to={{
-                pathname: `/MyPlanetZoom/${v.planetId}`,
+                pathname: `/MyPlanetZoom/${v.id}`,
                 state: {
                   color: v.color,
                 },
@@ -34,11 +34,11 @@ const Search = (props) => {
                   opacity: "0.9",
                 }}
               >
-                {v.planetId}
+                {v.id}
                 <br />
-                {v.planetNickname}
+                {v.name}
                 <br />
-                {v.userNickname}
+                {v.user}
               </div>
             </Link>
           ))
@@ -47,7 +47,7 @@ const Search = (props) => {
         )}
       </div>
 
-      <Bubble />
+      {/* <Bubble /> */}
     </div>
   );
 };

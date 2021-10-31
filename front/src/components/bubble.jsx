@@ -39,7 +39,7 @@ const bubble = () => {
             </g>
           </g>
 
-          <g className="bubbles-small" stroke-width="4">
+          <g className="bubbles-small" strokeWidth="4">
             <g>
               <g transform="translate(147 984)">
                 <circle cx="15" cy="15" r="15" />
@@ -99,7 +99,7 @@ const bubble = () => {
           viewBox="0 0 701 1024"
           style={{ overflow: "visible" }}
         >
-          <g className="bubbles-large2" stroke-width="7">
+          <g className="bubbles-large2" strokeWidth="7">
             <g>
               <g transform="translate(100 440)">
                 <circle cx="35" cy="35" r="35" />
@@ -127,7 +127,7 @@ const bubble = () => {
             </g>
           </g>
 
-          <g className="bubbles-small" stroke-width="4">
+          <g className="bubbles-small" strokeWidth="4">
             <g>
               <g transform="translate(147 984)">
                 <circle cx="15" cy="15" r="15" />

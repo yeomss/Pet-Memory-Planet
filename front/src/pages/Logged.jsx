@@ -25,6 +25,28 @@ const Home = () => {
   const [search, onChangeSearch] = useInput(""); // 검색 내용
   const [searchResult, setSearchResult] = useState(""); // 검색해서 나오는 결과
 
+  const searchFilter = useCallback((data, type, search) => {
+    if (type === "user") {
+      return data.map((data) => {
+        if (data.user.includes(search)) {
+          return data;
+        }
+      });
+    } else if (type === "name") {
+      return data.map((data) => {
+        if (data.name.includes(search)) {
+          return data;
+        }
+      });
+    } else {
+      return data.map((data) => {
+        if (data.id.includes(search)) {
+          return data;
+        }
+      });
+    }
+  });
+
   // 행성 만들기 가용행성 수 확인
   const onClickNewPlanet = useCallback(() => {
     var nowNum = planet.length; // 현재 planet의 수
@@ -49,8 +71,47 @@ const Home = () => {
   }, [token]);
 
   // 검색 클릭 이벤트
-  const onClickSearch = useCallback(() => {
-    /*
+  const onClickSearch = useCallback(
+    (selected, search) => {
+      if (selected === "행성 이름") {
+        var data = searchFilter(planet, "name", search);
+        data = data.filter((res) => {
+          return res !== undefined;
+        });
+
+        if (data.length === 0) {
+          alert("검색 행성이 존재하지 않습니다.");
+          window.location.reload();
+        } else {
+          setSearchResult(data);
+        }
+      } else if (selected === "사용자") {
+        var data = searchFilter(planet, "user", search);
+        data = data.filter((res) => {
+          return res !== undefined;
+        });
+
+        if (data.length === 0) {
+          alert("검색 행성이 존재하지 않습니다.");
+          window.location.reload();
+        } else {
+          setSearchResult(data);
+        }
+      } else {
+        var data = searchFilter(planet, "id", search);
+        data = data.filter((res) => {
+          return res !== undefined;
+        });
+
+        if (data.length === 0) {
+          alert("검색 행성이 존재하지 않습니다.");
+          window.location.reload();
+        } else {
+          setSearchResult(data);
+        }
+      }
+
+      /* 서버코드
     let url = `http://52.78.18.110:8000/searchPlanet?select=${selected}&content=${search}`;
 
     axios
@@ -62,16 +123,18 @@ const Home = () => {
         console.log(err);
         alert("검색 행성이 존재하지 않습니다.");
       });*/
-  }, [selected, search, searchResult]);
+    },
+    [selected, search, searchResult]
+  );
 
   // 검색 엔터
   const onKeyPressSearch = useCallback(
     (e) => {
       if (e.key === "Enter") {
-        onClickSearch();
+        onClickSearch(selected, search);
       }
     },
-    [search]
+    [selected, search]
   );
 
   // 로그아웃 이벤트

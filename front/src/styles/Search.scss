@@ -69,6 +69,10 @@
         // margin-top: 0;
         position: absolute;
         top: 100px;
+
+        input {
+          color: black;
+        }
       }
     }
 
@@ -96,12 +100,13 @@
         height: 10rem;
         background-color: transparent;
         border: 1px solid rgba(255, 255, 255, 0.432);
-        box-shadow: 1px 1px 50px 1px rgb(81, 0, 134);
+        box-shadow: 1px 1px 50px 1px rgb(205, 184, 216);
         color: white;
+        text-shadow: 1px 1px 1px rgb(59, 59, 59);
         margin: 30px;
         // padding: 100px;
         border-radius: 100%;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         font-weight: 700;
 
         display: flex;

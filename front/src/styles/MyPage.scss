@@ -171,12 +171,12 @@
                 margin-right: 15px;
               }
               .list-planetId {
-                width: 400px;
+                width: 100%;
                 display: inline;
                 border: none;
               }
               .list-nickname {
-                width: 100px;
+                width: 100%;
                 font-size: 1rem;
                 letter-spacing: 10px;
                 display: inline;
@@ -185,7 +185,7 @@
             }
           }
           button {
-            width: 70px;
+            width: 50%;
             border: none;
             outline: none;
             padding: 5px;
