@@ -1,0 +1,58 @@
+.MenucontentsBox {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
+
+.MenuopenContentsBox {
+  right: 0px;
+}
+
+.MenucloseContentsBox {
+  right: -400px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+}
+
+li {
+  font-size: 1.2rem;
+  height: 50px;
+  margin-bottom: 60px;
+  padding-left: 30px;
+  width: 100%;
+  left: 0px;
+  text-align: left;
+  color: white;
+  transition: 0.2s;
+
+  &:hover {
+    font-size: 1.5rem;
+    background-color: #000000;
+    cursor: pointer;
+  }
+}
+
+.Menucontents {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+  height: 100vh;
+  background-color: #000000;
+
+  opacity: 0.7;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.OpenMenucontents {
+  right: 0px;
+}
+
+.CloseMenucontents {
+  right: -400px;
+}

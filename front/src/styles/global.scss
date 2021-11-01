@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Serif KR", serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+// 지구 아이콘 wiggle 효과
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(1deg);
+  }
+  95% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+//
+// Home.jsx
+// p5 파티클 캔버스
+.p5Canvas {
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  z-index: -99999;
+}
+
+//
+// 메뉴바 부분
+// 햄버거 버튼
+.hamburger {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 30px;
+
+  opacity: 0.8;
+  transition: 0.3s;
+  z-index: 100;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+.openHamburger {
+  // X 가 메뉴바 밖으로 나오게
+  // right : 440px;
+
+  // X 가 메뉴바 안으로 들어가게
+  right: 330px;
+}
+.closeHamburger {
+  right: 30px;
+}
+// 햄버거버튼 : 객체 3개
+.one {
+  position: relative;
+  top: 0px;
+  width: 37px;
+  height: 1px;
+  background-color: black;
+
+  transition: 0.4s;
+  border-radius: 1px;
+  transform-origin: left top;
+}
+.two {
+  position: relative;
+  top: 9px;
+  width: 37px;
+  height: 1px;
+  background-color: black;
+
+  transition: 0.4s;
+  border-radius: 1px;
+}
+.three {
+  position: relative;
+  top: 18px;
+  height: 1px;
+  background-color: black;
+
+  transition: 0.4s;
+  border-radius: 1px;
+  transform-origin: left bottom;
+}
+// 햄버거 버튼 객체: Open
+.openOne {
+  transform: rotate(40deg);
+  width: 30px;
+}
+.openTwo {
+  opacity: 0;
+}
+.openThree {
+  transform: rotate(-40deg);
+  width: 30px;
+  top: 17.6px;
+}
+// 햄버거 버튼 객체: Close
+.closeOne {
+  background-color: black;
+  transform: rotate(0deg);
+  width: 37px;
+}
+.closeTwo {
+  opacity: 1;
+}
+.closeThree {
+  transform: rotate(0deg);
+  width: 37px;
+}
+
+// 메뉴바 부분 (메뉴 컨텐츠)
+.contents {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+  height: 100vh;
+  background-color: #12052a;
+
+  opacity: 0.7;
+  transition: 0.6s;
+  z-index: 10;
+}
+.openContents {
+  right: 0px;
+}
+.closeContents {
+  right: -400px;
+}
+
+.home-btn {
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: black;
+  transition: all 0.3s;
+  z-index: 999;
+
+  .material-icons {
+    font-size: 3rem;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.699);
+    }
+  }
+  &:hover {
+    color: rgba(0, 0, 0, 0.699);
+  }
+}

@@ -1,0 +1,134 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+  .login-modal {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.932);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .material-icons {
+      font-size: 2rem;
+      margin-left: 20rem;
+      margin-top: 4.5rem;
+      margin-bottom: 2.8rem;
+      color: black;
+      z-index: 100;
+      float: inline-end;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .layer {
+      width: 80%;
+      height: 100%;
+      margin-bottom: -100px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .title {
+        width: 100%;
+        color: black;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 10px;
+        margin-bottom: -100px;
+        cursor: default;
+        margin-top: -150px;
+      }
+      .content {
+        width: 70%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        div {
+          color: black;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          margin-bottom: 2px;
+          cursor: default;
+          margin-left: 1px;
+        }
+        input {
+          width: 100%;
+          margin-bottom: 20px;
+          padding: 10px;
+          border-radius: 2px 2px 2px 2px;
+          background-color: rgb(0, 0, 0);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          outline: none;
+          color: white;
+
+          transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.514);
+            margin: 10px;
+            font-size: 13px;
+            letter-spacing: 5px;
+            padding-left: 2%;
+
+            &:focus {
+              background-color: rgba($color: #fff, $alpha: 1);
+              color: black;
+            }
+          }
+          &:focus {
+            background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.2);
+            border: 1px solid rgb(0, 0, 0);
+            color: black;
+          }
+        }
+      }
+      button {
+        width: 25%;
+        height: 15%;
+        margin-left: 100%;
+        padding: 30px;
+        color: white;
+        border: 1px solid black;
+        background-color: rgba($color: #000, $alpha: 1);
+        margin-top: -100px;
+        border-radius: 2px 40px 40px 40px;
+
+        font-size: 1rem;
+        font-weight: 700;
+
+        transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+        &:hover {
+          transform: rotate(5deg);
+          opacity: 1;
+          // background-color: rgb(0, 0, 0);
+          // color: white;
+          // border: 1px solid black;
+        }
+      }
+    }
+  }
+}

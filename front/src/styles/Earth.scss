@@ -1,0 +1,528 @@
+.earth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  // background-image: url("https://www.kolpaper.com/wp-content/uploads/2020/04/Earth-Surface-Hd-Wallpaper.jpg");
+  background-image: url("../styles/images/earth2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+// 데스크톱 화면
+@media screen and (orientation: landscape) {
+  .main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .petloss-menu,
+    .recover-menu {
+      width: 20%;
+      height: 40%;
+      margin: 30px;
+    }
+    .petloss-menu {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 2%;
+      box-shadow: 10px 34px -15px rgb(0, 0, 0);
+
+      a {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: black;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        // text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        letter-spacing: -5px;
+
+        img,
+        p {
+          // height: 50%;
+          margin: 1%;
+        }
+        img {
+          width: 50%;
+        }
+        p {
+        }
+      }
+    }
+    .recover-menu {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 2%;
+      // box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+
+      a {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: black;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        // text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        letter-spacing: -5px;
+
+        img,
+        p {
+          // height: 50%;
+          margin: 3%;
+        }
+        img {
+          width: 40%;
+        }
+        p {
+        }
+      }
+    }
+  }
+
+  .recover {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .recover-container {
+      width: 70%;
+      height: 80%;
+
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 1px solid black;
+
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+
+      .title {
+        font-size: 1rem;
+        margin-right: 90%;
+        color: white;
+        font-weight: 700;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        padding-top: 10px;
+        white-space: nowrap;
+        cursor: default;
+      }
+      .edit-area {
+        background-color: transparent;
+        button {
+          border: none;
+          outline: none;
+          width: 100px;
+          padding: 5px;
+          margin: 10px;
+          border-radius: 10px;
+
+          transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+          background-color: rgb(255, 255, 255);
+          color: black;
+
+          font-weight: 700;
+          font-size: 15px;
+
+          opacity: 0.8;
+          cursor: pointer;
+
+          a {
+            background-color: transparent;
+            color: black;
+            text-decoration: none;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      table {
+        height: 80%;
+        thead {
+          background-color: black;
+          color: white;
+          font-size: 15px;
+        }
+        tbody {
+          font-size: 15px;
+
+          .list-title {
+            cursor: pointer;
+          }
+        }
+        background-color: rgba(255, 255, 255, 0.89);
+        width: 100%;
+        // height: 80%;
+        margin-top: 10px;
+        border-collapse: collapse;
+      }
+
+      .board-nav {
+        // background-color: aqua;
+        color: white;
+      }
+    }
+
+    .board-title {
+      width: 100%;
+      max-height: 10%;
+      height: auto;
+      color: white;
+      // word-break: break-all; // 두줄 이상
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-shadow: 1px 1px 1px rgb(0, 0, 0);
+      font-weight: 700;
+      font-size: 2rem;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .content-area {
+      width: 100%;
+      height: 100%;
+      // background-color: white;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .recover-img {
+        img {
+          display: block;
+          width: 500px;
+          margin-bottom: 10px;
+        }
+      }
+      .title {
+        flex-grow: 1;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+      }
+      .content {
+        width: 97%;
+        height: auto;
+        margin: 10px;
+        flex-grow: 8;
+        background-color: white;
+        padding: 25px;
+        border-radius: 3px;
+        // margin-top: 20px;
+
+        div {
+          height: 100%;
+        }
+      }
+      .edit-area {
+        padding: 10px;
+        text-align: right;
+
+        :nth-child(1) {
+          // background-color: green;
+          &:hover {
+            background-color: rgb(187, 222, 255);
+          }
+        }
+        :nth-child(2) {
+          &:hover {
+            background-color: rgb(255, 185, 185);
+          }
+        }
+        button {
+          opacity: 1;
+          width: 3rem;
+          font-size: 700;
+          border: 2px solid black;
+        }
+      }
+      .comment-area {
+        width: 100%;
+        height: 100%;
+        // background-color: white;
+
+        .comment-title {
+          background-color: black;
+          color: white;
+        }
+        .comment-post {
+          display: flex;
+          margin: 10px;
+
+          textarea {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 3px;
+            resize: none;
+          }
+          button {
+            background-color: black;
+            color: white;
+            outline: none;
+            margin: 10px;
+            border: none;
+            font-weight: 700;
+            border: 2px solid white;
+            border-radius: 20px;
+          }
+        }
+        .comments-area {
+          // background-color: rgb(73, 62, 66);
+          // margin: 10px;
+
+          // display: grid;
+          // grid-template-columns: repeat(1, 1fr);
+          margin-bottom: 10px;
+
+          // background-color: black;
+          padding: 10px;
+
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          .comment-btn-area {
+            button {
+              text-align: right;
+              // grid-row-start: 1;
+              // grid-row-end: 2;
+            }
+            background-color: black;
+          }
+          .comment-user {
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            grid-row-start: 3;
+            grid-row-end: 4;
+          }
+          .comment-date {
+            // background-color: white;
+            color: white;
+            grid-row-start: 3;
+            grid-row-end: 4;
+          }
+          .comment-comment {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 5;
+          }
+          .re-comment {
+            background-color: white;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            textarea {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .form-container {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .editor {
+        // .ck-editor__editable {
+        //   height: 400px;
+        // }
+        width: 90%;
+        height: 90%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .title-box,
+        .edit-box {
+          margin: 10px;
+          // background-color: green;
+        }
+        .title-box {
+          width: 100%;
+          padding: 10px;
+          background-color: white;
+          color: black;
+          outline: none;
+        }
+        .edit-box {
+          width: 100%;
+          height: 70%;
+          resize: none;
+          background-color: white;
+          color: black;
+          padding: 10px;
+          margin: 10px;
+          outline: none;
+        }
+        input {
+          width: 100%;
+          color: white;
+        }
+      }
+      .post-button {
+        // flex-grow: 1;
+
+        width: 50%;
+        background-color: black;
+        color: white;
+        outline: none;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid white;
+      }
+    }
+  }
+}
+
+// 모바일 화면
+@media screen and (orientation: portrait) {
+  .main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    background-color: green;
+
+    .petloss-menu,
+    .recover-menu {
+      width: 100%;
+      height: 50%;
+    }
+    .petloss-menu {
+      background-color: blue;
+
+      a {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img,
+        p {
+          margin: 30px;
+        }
+        img {
+          width: 60%;
+        }
+      }
+    }
+    .recover-menu {
+      background-color: red;
+
+      a {
+        height: 100%;
+      }
+    }
+  }
+
+  .recover {
+    width: 100%;
+    height: 100%;
+    background-color: hotpink;
+
+    .recover-container {
+      height: 100%;
+      background-color: blue;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        background-color: palegoldenrod;
+      }
+      .edit-area {
+        background-color: palegreen;
+      }
+      .list-area {
+        height: 100%;
+        background-color: paleturquoise;
+
+        .head {
+          display: none;
+        }
+        .content {
+          background-color: peru;
+          height: 100%;
+
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+
+          .index {
+            background-color: plum;
+          }
+          .title {
+            flex-grow: 1;
+          }
+          .user {
+            background-color: palevioletred;
+            flex-grow: 1;
+          }
+          .date {
+            display: none;
+          }
+          .comment {
+            display: none;
+          }
+          .visit {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .petloss {
+    background-color: aqua;
+  }
+}

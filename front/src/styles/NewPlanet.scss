@@ -1,0 +1,985 @@
+// 데스크톱 화면
+@media (orientation: landscape) {
+  // 데스크톱 화면
+  .dung {
+    background-color: transparent;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    animation: ani 1s infinite alternate;
+  }
+  @keyframes ani {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 50px);
+    }
+  }
+
+  .new-planet-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.226),
+      rgba(0, 0, 0, 0.356)
+    );
+
+    .new-planet-title {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.1);
+      top: 0;
+      font-size: 5rem;
+      font-family: "Exo 2", sans-serif;
+      left: 10px;
+    }
+    .planet {
+      width: 100%;
+      height: 90%;
+
+      color: white;
+
+      .planet-body,
+      .planet-ears,
+      .planet-nose,
+      .planet-mouth {
+        width: 40%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 2%;
+        left: 11%;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: 550px;
+
+      color: white;
+      text-align: center;
+
+      .info {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 13px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        transition: all 0.2s;
+
+        width: 3rem;
+        height: 3rem;
+        border-radius: 10%;
+        background-color: white;
+        border: 1px solid rgba(255, 255, 255, 0.349);
+
+        // background: -webkit-gradient(
+        //   linear,
+        //   left top,
+        //   right bottom,
+        //   color-stop(0, rgb(38, 129, 141)),
+        //   color-stop(1, rgba(30, 93, 211, 0.281))
+        // );
+
+        .material-icons {
+          color: black;
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: rgb(191, 143, 253);
+        }
+      }
+      .deco {
+        padding: 10px;
+        margin: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 3rem;
+        height: 3rem;
+        border-radius: 10%;
+        background-color: white;
+        border: 1px solid rgba(255, 255, 255, 0.349);
+
+        transition: all 0.2s;
+        .material-icons {
+          color: black;
+          cursor: pointer;
+        }
+
+        // background: -webkit-gradient(
+        //   linear,
+        //   left top,
+        //   right bottom,
+        //   color-stop(0, rgb(0, 0, 0)),
+        //   color-stop(1, rgba(30, 93, 211, 0.281))
+        // );
+
+        &:hover {
+          background-color: rgb(191, 143, 253);
+        }
+      }
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+        &:visited {
+          color: white;
+        }
+      }
+    }
+    .edit-box {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 550px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+
+      .info-container {
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+        // margin-top: -10px;
+
+        // margin: 4px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 10fr;
+
+        .info-title {
+          // position: absolute;
+          top: 0px;
+          grid-row-start: 1;
+          grid-row-end: 2;
+          // margin-top: -10px;
+          // padding-bottom: 20px;
+
+          font-size: 2rem;
+          font-weight: 700;
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          letter-spacing: -3px;
+          // text-align: center;
+          // margin-bottom: 15px;
+        }
+        .info-sub-title {
+          // height: 20px;
+          grid-row-start: 2;
+          grid-row-end: 3;
+          font-size: 12px;
+
+          position: absolute;
+          top: 60px;
+          left: 250px;
+          text-align: center;
+          padding: 0px;
+          margin: 0px;
+          height: 5px;
+        }
+        .input-area {
+          position: absolute;
+          // width: 100%;
+          // height: 700px;
+          top: 50px;
+          // background-color: rgb(255, 255, 255);
+          padding: 20px;
+          grid-row-start: 3;
+          grid-row-end: 4;
+
+          .input-pet {
+            width: 100%;
+            // background-color: aqua;
+            padding-bottom: 10px;
+            border-bottom: 1px solid white;
+            display: grid;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            grid-template-columns: 215px 215px;
+            // grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(7, 1fr);
+            row-gap: 10px;
+            // 추모 동물 title
+            div:nth-child(1) {
+              // background-color: palegoldenrod;
+              display: grid;
+              color: white;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+              height: 20px;
+              padding: 3px;
+              // padding-left: 0px;
+              margin-left: -20px;
+              margin-top: 7px;
+
+              grid-row-start: 1;
+              grid-row-end: 2;
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+            // image 대표사진
+            div:nth-child(2) {
+              background-color: black;
+              border: none;
+              border-radius: 10px;
+              width: 200px;
+              height: 200px;
+              margin-top: -6px;
+              margin-bottom: 30px;
+              margin-right: 10px;
+              // margin-left: 10px;
+              grid-row-start: 2;
+              grid-row-end: 7;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              cursor: pointer;
+
+              img {
+                width: 200px;
+                height: 200px;
+              }
+            }
+            // 파일 선택란
+            div:nth-child(3) {
+              display: none;
+              background-color: paleturquoise;
+              // grid-row-start: 2;
+              // grid-row-end: 9;
+              // grid-column-start: 2;
+              // grid-column-end: 3;
+            }
+            // 추모 동물 이름
+            div:nth-child(4) {
+              input {
+                background-color: white;
+                padding: 5px;
+                margin-top: 3px;
+
+                outline: none;
+                width: 100%;
+
+                border-radius: 3px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+              grid-row-start: 2;
+              grid-row-end: 3;
+              grid-column-start: 2;
+              grid-column-end: 3;
+            }
+            // 추모 동물 성별
+            div:nth-child(5) {
+              grid-row-start: 3;
+              grid-row-end: 3;
+              grid-column-start: 2;
+              grid-column-end: 3;
+
+              select {
+                background-color: white;
+                outline: none;
+                width: 100%;
+                padding: 5px;
+                border-radius: 3px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  // margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+            // 추모동물 품종
+            div:nth-child(6) {
+              grid-row-start: 4;
+              grid-row-end: 5;
+              grid-column-start: 2;
+              grid-column-end: 3;
+
+              input {
+                background-color: white;
+                outline: none;
+                width: 100%;
+                padding: 5px;
+
+                border-radius: 3px;
+
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+            // 좋아하던 것
+            div:nth-child(7) {
+              grid-row-start: 5;
+              grid-row-end: 6;
+              grid-column-start: 2;
+              grid-column-end: 3;
+
+              input {
+                background-color: white;
+                padding: 5px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                border-radius: 3px;
+
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+            // 탄생일
+            div:nth-child(8) {
+              color: white;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+              // margin-bottom: 10px;
+              margin-top: 16px;
+              margin-left: 7px;
+
+              grid-row-start: 6;
+              grid-row-end: 7;
+              grid-column-start: 1;
+              grid-column-end: 2;
+            }
+            // 탄생일 날짜
+            div:nth-child(9) {
+              grid-row-start: 7;
+              grid-row-end: 8;
+              grid-column-start: 1;
+              grid-column-end: 2;
+
+              input {
+                background-color: white;
+                padding: 3px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                // margin-right: 30px;
+                width: 200px;
+
+                border-radius: 3px;
+
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+            // 안식일
+            div:nth-child(10) {
+              color: white;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+              // margin-bottom: -20px;
+              margin-top: 16px;
+              margin-left: 7px;
+              // text-align: center;
+
+              grid-row-start: 6;
+              grid-row-end: 7;
+              grid-column-start: 2;
+              grid-column-end: 3;
+            }
+            // 안식일 날짜
+            div:nth-child(11) {
+              grid-row-start: 7;
+              grid-row-end: 8;
+              grid-column-start: 2;
+              grid-column-end: 3;
+              width: 200px;
+              margin-left: 10px;
+              input {
+                background-color: white;
+                padding: 3px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                border-radius: 3px;
+
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+          }
+
+          .input-planet {
+            display: grid;
+            grid-template-columns: 215px 215px;
+            grid-template-rows: repeat(6);
+
+            // 타이틀
+            div:nth-child(1) {
+              font-weight: 700;
+              font-size: 1rem;
+              margin-bottom: 10px;
+
+              color: white;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+              margin-top: 10px;
+              margin-left: -20px;
+
+              grid-row-start: 1;
+              grid-row-end: 2;
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+            // 행성 고유 번호 버튼
+            div:nth-child(2) {
+              button {
+                width: 100%;
+                background-color: white;
+                color: black;
+                border: none;
+                outline: none;
+                font-weight: 700;
+                font-size: 1rem;
+                font-size: 1rem;
+                font-weight: 700;
+                letter-spacing: 10px;
+              }
+              grid-row-start: 2;
+              grid-row-end: 3;
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+            // 행성 고유 번호
+            div:nth-child(3) {
+              padding: 10px;
+              text-align: center;
+              background-color: black;
+              color: white;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 10px;
+              height: 45px;
+
+              grid-row-start: 3;
+              grid-row-end: 4;
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+            // 행성 이름
+            div:nth-child(4) {
+              color: white;
+
+              // margin: 10px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              input {
+                background-color: white;
+                padding: 5px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                border-radius: 3px;
+
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+
+              grid-row-start: 4;
+              grid-row-end: 5;
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+            // 행성 이름
+            div:nth-child(5) {
+              // background-color: blue;
+              grid-row-start: 5;
+              grid-row-end: 6;
+              grid-column-start: 1;
+              grid-column-end: 3;
+
+              textarea {
+                background-color: white;
+                padding: 3px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                border-radius: 3px;
+                resize: none;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+            // 행성 스토리
+            div:nth-child(6) {
+              font-weight: 700;
+              font-size: 1rem;
+
+              grid-row-start: 5;
+              grid-row-end: 6;
+              grid-column-start: 1;
+              grid-column-end: 3;
+
+              textarea {
+                background-color: white;
+                padding: 3px;
+                outline: none;
+                width: 100%;
+                // margin-bottom: 10px;
+                border-radius: 300px 300px 300px 300px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: black;
+
+                transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.514);
+                  margin: 10px;
+                  font-size: 13px;
+                  letter-spacing: 5px;
+                  padding-left: 2%;
+
+                  &:focus {
+                    background-color: rgba($color: #000000, $alpha: 1);
+                    border: 1px solid rgba(0, 0, 0, 0.404);
+                  }
+                }
+                &:focus {
+                  // background-color: rgba($color: #ffffff, $alpha: 0.2);
+                  border: 1px solid rgb(0, 0, 0);
+                }
+              }
+            }
+          }
+        }
+      }
+      .deco-container {
+        // background-color: cadetblue;
+
+        .title {
+          // background-color: darkgoldenrod;
+          top: 0px;
+          grid-row-start: 1;
+          grid-row-end: 2;
+
+          font-size: 2rem;
+          font-weight: 700;
+          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          letter-spacing: -3px;
+        }
+        .ears,
+        .nose,
+        .mouth {
+          font-size: 1rem;
+          font-weight: 700;
+          letter-spacing: 10px;
+
+          .material-icons {
+            cursor: pointer;
+          }
+        }
+        .ears {
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin-top: 20px;
+
+          &:nth-child(2) {
+            background-color: aua;
+          }
+        }
+        .nose {
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+        }
+        .mouth {
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+        }
+        .color-area {
+          // background-color: darkmagenta;
+          width: 100%;
+          margin-bottom: 30px;
+          padding: 10px;
+
+          label {
+            margin-top: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+          }
+          .react-colorful {
+            width: 100%;
+            height: 100px;
+          }
+        }
+        .shade-area {
+          padding: 10px;
+
+          label {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+          }
+          .react-colorful {
+            width: 100%;
+            height: 100px;
+          }
+        }
+      }
+    }
+    .new-planet-button {
+      // display: inline;
+      // padding: 10px;
+      // top: 120px;
+      // right: 550px;
+      // margin: 10px;
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px;
+
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+
+      // width: 3rem;
+      // height: 3.5rem;
+      border-radius: 10%;
+      // background-color: rgb(114, 231, 103);
+      // border: 1px solid rgba(255, 255, 255, 0.349);
+      outline: none;
+      border: none;
+      // background-color: aqua;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: green;
+        color: black;
+      }
+    }
+  }
+
+  .planet,
+  .menu,
+  .edit-box {
+    color: white;
+  }
+}
+
+// 모바일 화면
+@media (orientation: portrait) {
+  canvas {
+    display: none;
+  }
+
+  .new-planet-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    align-content: center;
+    // background-color: palevioletred;
+
+    .planet {
+      flex-grow: 1;
+      background-color: palegoldenrod;
+
+      // .planet-body {
+      //   width: 70%;
+      //   top: 5%;
+      //   left: 15%;
+      //   position: fixed;
+      //   svg {
+      //     z-index: 1;
+      //   }
+      // }
+      // .planet-ears,
+      // .planet-nose,
+      // .planet-mouth {
+      //   position: fixed;
+      //   width: 70%;
+      //   top: 5%;
+      //   left: 15%;
+      //   svg {
+      //     top: 0;
+      //     z-index: 100;
+      //   }
+      // }
+
+      .planet-body {
+        // left: 15%;
+        svg {
+          // position: absolute;
+          width: 60%;
+          z-index: 1;
+        }
+      }
+      .planet-ears,
+      .planet-nose,
+      .planet-mouth {
+        svg {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 100;
+          float: left;
+        }
+      }
+      .container {
+        display: none;
+      }
+    }
+    .menu {
+      // position: fixed;
+      width: 100%;
+      // top: 55%;
+      flex-grow: 1;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      text-align: center;
+      a {
+        width: 100%;
+        border: 1px solid black;
+      }
+
+      background-color: palegreen;
+    }
+    .edit-box {
+      // position: fixed;
+      // width: 100%;
+      height: 100vh;
+      top: 60%;
+
+      padding: 20px;
+      flex-grow: 1;
+      background-color: paleturquoise;
+      overflow-y: scroll;
+    }
+
+    // // overflow-y: scroll;
+    // .planet {
+    //   // position: absolute;
+    //   // width: 100%;
+    //   // height: 70%;
+    //   // top: 0;
+    //   // // background-color: palegreen;
+    //   // order: 1;
+
+    //   // .planet-body,
+    //   // .planet-ears,
+    //   // .planet-nose,
+    //   // .planet-mouth {
+    //   //   position: absolute;
+    //   //   width: 100%;
+    //   //   flex-grow: 1;
+    //   //   // margin-left: auto;
+    //   //   // margin-right: auto;
+    //   //   // top: 10px;
+    //   //   // left: 5%;
+    //   // }
+    //   // .container {
+    //   //   display: none;
+    //   // }
+    // }
+    // .menu {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   top: 500px;
+    //   background-color: palegoldenrod;
+    //   flex-grow: 1;
+    //   order: 2;
+
+    //   display: grid;
+    //   grid-template-columns: repeat(2, 1fr);
+    //   grid-template-rows: repeat(1, 1fr);
+
+    //   a {
+    //     width: 100%;
+    //     text-align: center;
+    //   }
+    //   .info {
+    //     background-color: red;
+    //   }
+    //   .deco {
+    //     background-color: green;
+    //   }
+    // }
+    // .edit-box {
+    //   height: 100%;
+    //   background-color: peru;
+    //   flex-grow: 1;
+    //   order: 3;
+    // }
+    // .new-planet-button {
+    //   order: 4;
+    // }
+  }
+  // .planet,
+  // .menu,
+  // .edit-box {
+  //   width: 100%;
+  // }
+}
