@@ -84,6 +84,9 @@ const logIn = (data) => {
       dispatch(loginSuccess({ data: data }));
       alert(user.data.nickname + "님 반갑습니다!");
       window.location.replace("/");
+    } else {
+      dispatch(loginFailure());
+      alert("로그인에 실패했습니다.");
     }
 
     /* 서버 코드

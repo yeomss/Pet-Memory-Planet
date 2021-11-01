@@ -95,18 +95,41 @@
       overflow-y: scroll;
       //   margin-top: 60px;
 
+      .id-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .search-id {
+          background-color: black;
+          color: white;
+          padding: 8px;
+          font-size: 13px;
+          font-family: sans-serif;
+          font-weight: 700;
+        }
+        .down {
+          width: 0px;
+          height: 0px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 11px solid rgb(0, 0, 0);
+          margin-bottom: -20px;
+        }
+      }
+
       .search-data {
         width: 10rem;
         height: 10rem;
         background-color: transparent;
         border: 1px solid rgba(255, 255, 255, 0.432);
-        box-shadow: 1px 1px 50px 1px rgb(205, 184, 216);
+        box-shadow: 1px 1px 50px 1px rgba(213, 196, 229, 0.938);
         color: white;
         text-shadow: 1px 1px 1px rgb(59, 59, 59);
         margin: 30px;
         // padding: 100px;
         border-radius: 100%;
-        font-size: 0.6rem;
+        font-size: 0.85rem;
         font-weight: 700;
 
         display: flex;

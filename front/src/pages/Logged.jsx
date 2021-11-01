@@ -206,9 +206,7 @@ const Home = () => {
           className={searchResult ? "none" : "logout-btn"}
           onClick={onClickLogOut}
         >
-          <div className="logout-title" style={{ color: "white" }}>
-            로그아웃
-          </div>
+          <div className="logout-title">로그아웃</div>
         </div>
       </div>
 

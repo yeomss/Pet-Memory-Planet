@@ -26,6 +26,10 @@ const Search = (props) => {
                 },
               }}
             >
+              <div className="id-box">
+                <div className="search-id">{v.id}</div>
+                <div className="down"></div>
+              </div>
               <div
                 className="search-data"
                 key={idx}
@@ -34,11 +38,9 @@ const Search = (props) => {
                   opacity: "0.9",
                 }}
               >
-                {v.id}
+                {v.user} 님의
                 <br />
-                {v.name}
-                <br />
-                {v.user}
+                {v.name} 행성
               </div>
             </Link>
           ))

@@ -155,8 +155,9 @@ body {
       .myplanet-btn {
         // logged 하고
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        border: 1px dashed black;
+        // background-color: rgba(0, 0, 0, 1);
+        transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
@@ -169,12 +170,13 @@ body {
           height: 100%;
 
           font-weight: 600;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          // text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
 
         &:hover {
           border: none;
-          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
+          color: white;
         }
       }
     }
@@ -195,8 +197,9 @@ body {
       .signup-btn,
       .logout-btn {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        border: 1px dashed black;
+
+        transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
@@ -208,14 +211,14 @@ body {
           align-items: center;
           justify-content: center;
           height: 100%;
-
           font-weight: 600;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          // text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
 
         &:hover {
           border: none;
-          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
+          color: white;
         }
       }
       .earth-title {
@@ -235,8 +238,10 @@ body {
       }
       .newplanet-btn {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        // background-color: rgba(0, 0, 0, 1);
+        border: 1px dashed black;
+
+        transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
@@ -245,7 +250,7 @@ body {
           position: static;
           top: 0;
           left: 0;
-          background-color: aqua;
+          // background-color: aqua;
         }
 
         .newplanet-title {
@@ -256,12 +261,13 @@ body {
           height: 100%;
 
           font-weight: 600;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          // text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
 
         &:hover {
           border: none;
-          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
+          color: white;
         }
       }
       .search-area {
@@ -344,8 +350,9 @@ body {
 
       .mypage-btn {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 1);
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        // background-color: rgba(0, 0, 0, 1);
+        border: 1px dashed black;
+        transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
         width: 7rem;
         height: 7rem;
         border-radius: 100%;
@@ -358,12 +365,13 @@ body {
           height: 100%;
 
           font-weight: 600;
-          text-shadow: 2px 2px 2px rgb(0, 0, 0);
+          // text-shadow: 2px 2px 2px rgb(0, 0, 0);
         }
 
         &:hover {
           border: none;
-          box-shadow: 0 -200px 0 0 rgb(129, 129, 129) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
+          color: white;
         }
       }
       .myplanet-btn {

@@ -51,12 +51,16 @@ const MyUserInfo = () => {
       },
     };
 
-    if (password === passwordCheck) {
-      localStorage.setItem("signup", JSON.stringify(data));
-      alert("회원정보 수정 완료!");
-      window.location.reload();
+    if (password || passwordCheck) {
+      if (password === passwordCheck) {
+        localStorage.setItem("signup", JSON.stringify(data));
+        alert("회원정보 수정 완료!");
+        window.location.reload();
+      } else {
+        alert("비밀번호를 다시 확인해주세요");
+      }
     } else {
-      alert("비밀번호를 다시 확인해주세요");
+      alert("비밀번호를 입력해주세요");
     }
 
     /* 서버코드

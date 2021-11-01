@@ -77,9 +77,7 @@ const userReducer = (prevState = initialState, action) => {
         draft.signUpData = null;
         draft.isLoggedIn = false;
         draft.logIndata = null;
-        localStorage.removeItem("signup");
         localStorage.removeItem("login");
-        localStorage.removeItem("planet");
         break;
 
       // 마이페이지
