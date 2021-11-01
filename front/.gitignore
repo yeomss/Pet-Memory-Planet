@@ -6,9 +6,9 @@
 .pnp.js
 
 # firebase
-.firebase
-/dist
-firebase.json
+# .firebase
+# /dist
+# firebase.json
 
 # testing
 /coverage
