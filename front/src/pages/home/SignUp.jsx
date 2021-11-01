@@ -3,6 +3,7 @@ import P5Wrapper from "react-p5-wrapper";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../actions/user";
+import HomeBtn from "../../components/HomeBtn";
 import Loading from "../../components/Loading";
 import particles from "../../components/particles";
 import useInput from "../../hooks/useInput";
@@ -100,6 +101,7 @@ const SignUp = () => {
             <button onClick={onClickSignUpCheck}>Check</button>
           </div>
 
+          <HomeBtn />
           <P5Wrapper sketch={particles} />
         </div>
       )}

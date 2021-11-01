@@ -239,7 +239,7 @@ const RecoverContent = ({ match, location }) => {
                       <div className="comment-user">{v.userNickname}</div>
                       <div className="comment-date">{v.date}</div>
 
-                      {isRecomment & (recommentId == v.commentId) ? (
+                      {isRecomment & (recommentId === v.commentId) ? (
                         <div className="re-comment">
                           <textarea
                             value={recomment}
@@ -253,7 +253,7 @@ const RecoverContent = ({ match, location }) => {
                           </button>
                         </div>
                       ) : null}
-                      {isCommentEdit & (editCommentId == v.commentId) ? (
+                      {isCommentEdit & (editCommentId === v.commentId) ? (
                         <>
                           <textarea
                             className="comment-comment"
@@ -275,7 +275,7 @@ const RecoverContent = ({ match, location }) => {
                       {/* 반복문 이렇게 */}
                       {comments.map((w) => (
                         <div>
-                          {w.parentCommentId == v.commentId ? (
+                          {w.parentCommentId === v.commentId ? (
                             <div style={{ color: "white" }}>{w.comment}</div>
                           ) : null}
                         </div>

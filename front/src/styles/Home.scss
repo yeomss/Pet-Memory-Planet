@@ -129,7 +129,7 @@ body {
         cursor: pointer;
         // background-color: transparent(0, 0, 0, 1);
         border: 1px dashed black;
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        transition: all 1s cubic-bezier(0, 0, 0.58, 1);
 
         width: 7rem;
         height: 7rem;
@@ -149,7 +149,7 @@ body {
         &:hover {
           border: none;
           color: white;
-          box-shadow: 0 -200px 0 0 rgb(0, 0, 0) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
         }
       }
       .myplanet-btn {
@@ -405,7 +405,7 @@ body {
         cursor: pointer;
         // background-color: rgba(0, 0, 0, 1);
         border: 1px dashed black;
-        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        transition: all 1s cubic-bezier(0, 0, 0.58, 1);
 
         width: 7rem;
         height: 7rem;
@@ -426,7 +426,7 @@ body {
         &:hover {
           border: none;
           color: white;
-          box-shadow: 0 -200px 0 0 rgb(0, 0, 0) inset;
+          box-shadow: 200px -200px 0 0 rgb(0, 0, 0) inset;
         }
       }
     }
@@ -462,7 +462,7 @@ body {
     .input-area {
       width: 20%;
       min-width: 300px;
-      height: 65%;
+      height: 70%;
       padding: 30px;
 
       color: black;
