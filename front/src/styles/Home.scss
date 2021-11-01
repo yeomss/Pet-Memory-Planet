@@ -110,6 +110,13 @@ body {
       &:visited {
         color: black;
       }
+      &:link {
+        color: black;
+      }
+    }
+
+    a:link {
+      color: black;
     }
 
     .none {
