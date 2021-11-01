@@ -26,3 +26,7 @@ firebase.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# image
+src/assets/펫2.jpg
+src/assets/펫2.png
