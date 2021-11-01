@@ -33,9 +33,14 @@
 ```
 ### 개요
 <div align='center'>
+  
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/%EA%B0%9C%EC%9A%94.png)
+  
 </div>
-<div align='center'>
+
 ### 기대효과
+<div align='center'>
+  
 ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/%EA%B8%B0%EB%8C%80%ED%9A%A8%EA%B3%BC.png)
+  
 </div>
