@@ -14,6 +14,8 @@ import Bubble from "../../components/bubble";
 
 import "../../styles/NewPlanet.scss";
 import HomeBtn from "../../components/HomeBtn";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const NewPlanet = () => {
   const user = JSON.parse(localStorage.getItem("signup"));
@@ -42,6 +44,22 @@ const NewPlanet = () => {
   const planetMouthColor = useSelector(
     (state) => state.planet.Deco.Mouth.color
   );
+
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    // 화면 resize
+    window.addEventListener("resize", () => {
+      resizeHeight();
+    });
+
+    return () => {};
+  }, [height]);
+
+  // 화면 resize 이벤트
+  const resizeHeight = () => {
+    setHeight(window.innerHeight);
+  };
 
   // 체크 버튼 클릭 이벤트
   const onClickPlanetCheck = useCallback(() => {
@@ -133,7 +151,7 @@ const NewPlanet = () => {
   ]);
 
   return (
-    <div className="new-planet-container">
+    <div className="new-planet-container" height={{ height: height }}>
       <HomeBtn />
 
       <div className="planet dung">
@@ -164,7 +182,7 @@ const NewPlanet = () => {
         </div>
       </div>
 
-      <div className="edit-box">
+      <div className="edit-box" style={{ height: height }}>
         <Route path="/newplanet/info" component={PlanetInfo} />
         <Route path="/newplanet/deco" component={PlanetDeco} />
       </div>

@@ -10,6 +10,8 @@ import Petloss from "./pages/board/Petloss";
 
 import MyPlanet from "./pages/planet/MyPlanet";
 import NewPlanet from "./pages/planet/NewPlanet";
+import { useState } from "react";
+import { useEffect } from "react";
 // import MyPlanetZoom from "./pages/planet/MyPlanetZoom";
 // import MyPlanetInside from "./pages/planet/MyPlanetInside";
 

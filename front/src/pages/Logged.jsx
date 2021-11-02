@@ -14,6 +14,7 @@ import Loading from "../components/Loading";
 
 import "../styles/global.scss";
 import "../styles/Home.scss";
+import { useEffect } from "react";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,23 @@ const Home = () => {
   const [search, onChangeSearch] = useInput(""); // 검색 내용
   const [searchResult, setSearchResult] = useState(""); // 검색해서 나오는 결과
 
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    // 화면 resize
+    window.addEventListener("resize", () => {
+      resizeHeight();
+    });
+
+    return () => {};
+  }, [height]);
+
+  // 화면 resize 이벤트
+  const resizeHeight = () => {
+    setHeight(window.innerHeight);
+  };
+
+  // 검색 함수
   const searchFilter = useCallback((data, type, search) => {
     if (type === "user") {
       return data.map((data) => {
@@ -225,7 +243,7 @@ const Home = () => {
 
       {/* 메뉴 바 */}
       <MenuBar />
-      <P5Wrapper sketch={particles} />
+      <P5Wrapper sketch={particles} style={{ height: height }} />
     </div>
   );
 };

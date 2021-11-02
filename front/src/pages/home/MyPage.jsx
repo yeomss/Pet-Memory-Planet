@@ -1,4 +1,6 @@
 import React, { useCallback } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import HomeBtn from "../../components/HomeBtn";
 import MyDelete from "../../components/MyDelete";
@@ -7,8 +9,24 @@ import MyUserInfo from "../../components/MyUserInfo";
 import "../../styles/MyPage.scss";
 
 const MyPage = () => {
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    // 화면 resize
+    window.addEventListener("resize", () => {
+      resizeHeight();
+    });
+
+    return () => {};
+  }, [height]);
+
+  // 화면 resize 이벤트
+  const resizeHeight = () => {
+    setHeight(window.innerHeight);
+  };
+
   return (
-    <div className="mypage">
+    <div className="mypage" style={{ height: height }}>
       <HomeBtn />
 
       <div className="mypage-container">
