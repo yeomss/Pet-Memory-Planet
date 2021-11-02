@@ -12,7 +12,7 @@ import MyPlanet from "./pages/planet/MyPlanet";
 import NewPlanet from "./pages/planet/NewPlanet";
 import { useState } from "react";
 import { useEffect } from "react";
-// import MyPlanetZoom from "./pages/planet/MyPlanetZoom";
+import MyPlanetZoom from "./pages/planet/MyPlanetZoom";
 // import MyPlanetInside from "./pages/planet/MyPlanetInside";
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/newplanet" component={NewPlanet} />
 
         <Route path="/myplanet" component={MyPlanet} />
-        {/* <Route path="/myplanetZoom/:planetId" component={MyPlanetZoom} /> */}
+        <Route path="/myplanetZoom/:planetId" component={MyPlanetZoom} />
         {/* <Route path="/myplanetInside/:planetId" component={MyPlanetInside} /> */}
       </BrowserRouter>
     </div>

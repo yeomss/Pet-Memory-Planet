@@ -1,13 +1,13 @@
-import "../styles/MyPlanet.scss";
+import "../../styles/MyPlanet.scss";
 
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import P5Wrapper from "react-p5-wrapper";
 import particles from "../../components/particles.js";
-import X from "../styles/images/SVG/X2white.svg";
+import X from "../../styles/images/SVG/X2white.svg";
 
-import { ReactComponent as PlanetBody } from "../styles/images/planet/planet-body-extend.svg";
+import { ReactComponent as PlanetBody } from "../../styles/images/planet/planet-body-extend.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
 import PlanetEars from "../../components/PlanetEars";
@@ -22,6 +22,7 @@ import {
 } from "../../actions/planet";
 import PlanetNose from "../../components/PlanetNose";
 import PlanetMouth from "../../components/PlanetMouth";
+import HomeBtn from "../../components/HomeBtn";
 
 const MyPlanetZoom = (state) => {
   // url 에 id 값 넘겨주고 이 값을 state.match.params.~ 로 받음.
@@ -31,9 +32,12 @@ const MyPlanetZoom = (state) => {
 
   const [planetData, setPlanetData] = useState([]);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const token = sessionStorage.getItem("userToken");
+  // const token = sessionStorage.getItem("userToken");
+
+  const planet = JSON.parse(localStorage.getItem("planet"));
+  const planetId = document.location.href.split("/")[4];
 
   // 리덕스에 설정한 변수를 변경 하기 위한 dispatch 선언
   const dispatch = useDispatch();
@@ -94,6 +98,8 @@ const MyPlanetZoom = (state) => {
 
   // 행성의 고유 아이디를 통해 선택한 행성의 정보를 받아오는 함수
   const getMyPlanetData = async () => {
+    // setPlanetData(planet[idx]);
+    /* 서버 코드
     const config = {
       params: {
         userToken: token,
@@ -131,13 +137,23 @@ const MyPlanetZoom = (state) => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      });*/
   };
 
   useEffect(() => {
-    getMyPlanetData();
+    // getMyPlanetData();
 
-    return setIsLoading(!isLoading);
+    var idx = planet.findIndex((data) => {
+      return data.id === planetId;
+    });
+
+    setPlanetData(planet[idx]);
+
+    setPlanetEar(planet[idx].ears[0], planet[idx].ears[1]);
+    setPlanetNose(planet[idx].nose[0], planet[idx].nose[1]);
+    setPlanetMouth(planet[idx].mouth[0], planet[idx].mouth[1]);
+    setColorFunc();
+    // return setIsLoading(!isLoading);
   }, []);
 
   // JSX 코드 부분
@@ -157,9 +173,7 @@ const MyPlanetZoom = (state) => {
           <div className="planetScriptContainer2">
             <div className="planetScript">
               <div className="userNameBox">
-                <div className="userName">
-                  {planetData.userNickname} 님의 행성
-                </div>
+                <div className="userName">{planetData.user} 님의 행성</div>
               </div>
 
               <div className="imageBox">
@@ -167,16 +181,14 @@ const MyPlanetZoom = (state) => {
                 <img
                   className="representPhoto"
                   src={
-                    planetData.representPhoto === null
+                    planetData.image === null
                       ? X
-                      : `http://52.78.18.110:8000/${planetData.representPhoto}`
+                      : `http://52.78.18.110:8000/${planetData.image}`
                   }
                 />
               </div>
               <div className="welcomeMsg">
-                <div className="planetWelcomeValue">
-                  {planetData.planetIntro}
-                </div>
+                <div className="planetWelcomeValue">{planetData.story}</div>
               </div>
             </div>
           </div>
@@ -201,7 +213,7 @@ const MyPlanetZoom = (state) => {
               </div>
             </Link>
             <div className="planetZoomNickname">
-              {isLoading ? planetData.planetNickname : "-"}
+              {isLoading ? planetData.name : "-"}
             </div>
           </div>
 
@@ -217,23 +229,24 @@ const MyPlanetZoom = (state) => {
               </div>
               <div className="textBox">
                 <div className="planetItem">종</div>
-                <div className="planetValue">{planetData.breed}</div>
+                <div className="planetValue">{planetData.petBreed}</div>
               </div>
               <div className="textBox">
                 <div className="planetItem">성별</div>
-                <div className="planetValue">{planetData.gender}</div>
+                <div className="planetValue">{planetData.petGender}</div>
               </div>
               <div className="textBox">
                 <div className="planetItem">좋아하는것</div>
-                <div className="planetValue">{planetData.favorite}</div>
+                <div className="planetValue">{planetData.petFavorite}</div>
               </div>
               <div className="textBox">
-                <div>{planetData.birthday}</div>
+                <div>{planetData.petBirthday}</div>
                 <div>~</div>
-                <div>{planetData.deathday}</div>
+                <div>{planetData.petDeathday}</div>
               </div>
             </div>
           </div>
+          <HomeBtn />
         </>
       ) : null}
     </div>

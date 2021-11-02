@@ -84,10 +84,21 @@ const NewPlanet = () => {
       mouth: [planetMouthIdx, planetMouthColor],
     };
 
-    planet.push(data);
-    localStorage.setItem("planet", JSON.stringify(planet));
-    alert("추모 행성 띄우기 성공 🌌");
-    window.location.replace("/");
+    if (
+      planetId === "" ||
+      planetName === "" ||
+      petName === "" ||
+      petGender === "" ||
+      petBirthday === "" ||
+      petDeathday === ""
+    ) {
+      alert("행성의 정보를 입력해주세요");
+    } else {
+      planet.push(data);
+      localStorage.setItem("planet", JSON.stringify(planet));
+      alert("추모 행성 띄우기 성공 🌌");
+      window.location.replace("/");
+    }
 
     /* 서버코드
     // formData 생성
@@ -165,12 +176,12 @@ const NewPlanet = () => {
       <div className="menu">
         <Link to="/newplanet/info">
           <div className="info" title="Information">
-            <span class="material-icons">auto_stories</span>
+            <span className="material-icons">auto_stories</span>
           </div>
         </Link>
         <Link to="/newplanet/deco">
           <div className="deco" title="Customizing">
-            <span class="material-icons">auto_awesome</span>
+            <span className="material-icons">auto_awesome</span>
           </div>
         </Link>
         <div
@@ -178,7 +189,7 @@ const NewPlanet = () => {
           onClick={onClickPlanetCheck}
           title="create"
         >
-          <span class="material-icons">done_outline</span>
+          <span className="material-icons">done_outline</span>
         </div>
       </div>
 
