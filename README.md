@@ -51,6 +51,7 @@
 <div align='left'><h3>메인화면</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main_logged.png)
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/menubar.png)
     
 <div align='left'><h3>회원가입</h3><div>
   
@@ -60,15 +61,23 @@
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/login.png)
             
-              <div align='left'><h3>행성 띄우기</h3><div>
+<div align='left'><h3>행성 띄우기</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/petinfo.png)
                 
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/petdeco.png)
                 
                 
-                  <div align='left'><h3>메인화면</h3><div>
+<div align='left'><h3>나의 추모행성</h3><div>
   
-  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main_logged.png)
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/planetlist.png)
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/myplanetzoom.png)
   
+<div align='left'><h3>행성 검색</h3><div>
+  
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/search.png)
+
+<div align='left'><h3>설정</h3><div>
+  
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/mypage.png)
 </div>
