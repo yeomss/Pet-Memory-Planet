@@ -8,6 +8,9 @@
   <h6>반려동물 추모 웹 사이트</h6>
   <p>👉 팀 MADE</p>
 
+  🛠️ 행성 내부 수정 중
+  🛠️ 지구 게시판 수정 중
+  
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/SCSS-CC6699?style=flat-square&logo=SASS&logoColor=white"/></a>
@@ -32,6 +35,8 @@
 - 무지개다리를 건넌 반려동물에게 편지를 보내는 우편함 기능이 내재 되어 있다.
 - 반려동물을 잃은 사람들 간의 소통을 원활하게 할 의견/정보 게시판이 존재한다.
 ```
+
+
 <!-- ### 개요
 <div align='center'>
   
