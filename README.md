@@ -48,15 +48,15 @@
 
 ----
 <div align='center'>
-  <div align='left'><h3>메인화면</h3><div>
+<div align='left'><h3>메인화면</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main_logged.png)
     
-      <div align='left'><h3>회원가입</h3><div>
+<div align='left'><h3>회원가입</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/signup.png)
         
-          <div align='left'><h3>로그인</h3><div>
+<div align='left'><h3>로그인</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/login.png)
             
