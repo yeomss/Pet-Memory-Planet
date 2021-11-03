@@ -11,6 +11,8 @@
   🛠️ 행성 내부 수정 중
   🛠️ 지구 게시판 수정 중
   
+  모바일 ❌ 웹 ⭕
+  
 <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/SCSS-CC6699?style=flat-square&logo=SASS&logoColor=white"/></a>
