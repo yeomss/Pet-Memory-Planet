@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { signUp } from "../../actions/user";
 import HomeBtn from "../../components/HomeBtn";
 import Loading from "../../components/Loading";
+import MenuBar from "../../components/MenuBar";
 import particles from "../../components/particles";
 import useInput from "../../hooks/useInput";
 
@@ -102,6 +103,7 @@ const SignUp = () => {
           </div>
 
           <HomeBtn />
+          <MenuBar />
           <P5Wrapper sketch={particles} />
         </div>
       )}
