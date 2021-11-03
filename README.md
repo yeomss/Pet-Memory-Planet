@@ -4,6 +4,7 @@
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main.png)
   <h3> <b>2021 창의설계프로젝트 - 추억 그리고 행성</b> </h3>
+  🚩 https://ospvue-ca032.web.app/
   <h6>반려동물 추모 웹 사이트</h6>
   <p>👉 팀 MADE</p>
 
@@ -31,3 +32,16 @@
 - 무지개다리를 건넌 반려동물에게 편지를 보내는 우편함 기능이 내재 되어 있다.
 - 반려동물을 잃은 사람들 간의 소통을 원활하게 할 의견/정보 게시판이 존재한다.
 ```
+<!-- ### 개요
+<div align='center'>
+  
+![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/%EA%B0%9C%EC%9A%94.png)
+  
+</div>
+
+### 기대효과
+<div align='center'>
+  
+![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/%EA%B8%B0%EB%8C%80%ED%9A%A8%EA%B3%BC.png)
+  
+</div> -->

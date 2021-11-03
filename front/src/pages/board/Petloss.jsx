@@ -48,7 +48,7 @@ export const Petloss = () => {
         </p>
         |
         <p>
-          <a href="#cure">치료법</a>
+          <a href="#cure">극복하는 방법</a>
         </p>
         |
         <p>

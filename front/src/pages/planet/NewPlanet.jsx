@@ -14,6 +14,9 @@ import Bubble from "../../components/bubble";
 
 import "../../styles/NewPlanet.scss";
 import HomeBtn from "../../components/HomeBtn";
+import { useState } from "react";
+import { useEffect } from "react";
+import MenuBar from "../../components/MenuBar";
 
 const NewPlanet = () => {
   const user = JSON.parse(localStorage.getItem("signup"));
@@ -43,6 +46,22 @@ const NewPlanet = () => {
     (state) => state.planet.Deco.Mouth.color
   );
 
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    // 화면 resize
+    window.addEventListener("resize", () => {
+      resizeHeight();
+    });
+
+    return () => {};
+  }, [height]);
+
+  // 화면 resize 이벤트
+  const resizeHeight = () => {
+    setHeight(window.innerHeight);
+  };
+
   // 체크 버튼 클릭 이벤트
   const onClickPlanetCheck = useCallback(() => {
     var data = {
@@ -66,10 +85,21 @@ const NewPlanet = () => {
       mouth: [planetMouthIdx, planetMouthColor],
     };
 
-    planet.push(data);
-    localStorage.setItem("planet", JSON.stringify(planet));
-    alert("추모 행성 띄우기 성공 🌌");
-    window.location.replace("/");
+    if (
+      planetId === "" ||
+      planetName === "" ||
+      petName === "" ||
+      petGender === "" ||
+      petBirthday === "" ||
+      petDeathday === ""
+    ) {
+      alert("행성의 정보를 입력해주세요");
+    } else {
+      planet.push(data);
+      localStorage.setItem("planet", JSON.stringify(planet));
+      alert("추모 행성 띄우기 성공 🌌");
+      window.location.replace("/");
+    }
 
     /* 서버코드
     // formData 생성
@@ -133,8 +163,9 @@ const NewPlanet = () => {
   ]);
 
   return (
-    <div className="new-planet-container">
+    <div className="new-planet-container" height={{ height: height }}>
       <HomeBtn />
+      <MenuBar />
 
       <div className="planet dung">
         <PlanetBody className="planet-body" fill={planetColor} />
@@ -147,12 +178,12 @@ const NewPlanet = () => {
       <div className="menu">
         <Link to="/newplanet/info">
           <div className="info" title="Information">
-            <span class="material-icons">auto_stories</span>
+            <span className="material-icons">auto_stories</span>
           </div>
         </Link>
         <Link to="/newplanet/deco">
           <div className="deco" title="Customizing">
-            <span class="material-icons">auto_awesome</span>
+            <span className="material-icons">auto_awesome</span>
           </div>
         </Link>
         <div
@@ -160,11 +191,11 @@ const NewPlanet = () => {
           onClick={onClickPlanetCheck}
           title="create"
         >
-          <span class="material-icons">done_outline</span>
+          <span className="material-icons">done_outline</span>
         </div>
       </div>
 
-      <div className="edit-box">
+      <div className="edit-box" style={{ height: height }}>
         <Route path="/newplanet/info" component={PlanetInfo} />
         <Route path="/newplanet/deco" component={PlanetDeco} />
       </div>

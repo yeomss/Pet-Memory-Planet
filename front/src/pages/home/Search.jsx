@@ -34,7 +34,7 @@ const Search = (props) => {
                 className="search-data"
                 key={idx}
                 style={{
-                  background: `linear-gradient(60deg, ${v.color[1]} , ${v.color[0]}) `,
+                  background: `linear-gradient(45deg, ${v.color[1]} 1% , ${v.color[0]} 55%) `,
                   opacity: "0.9",
                 }}
               >

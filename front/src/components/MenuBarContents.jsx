@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "../styles/Menu.scss";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logOut } from "../actions/user";
 const MenuBarContents = ({ isClicked }) => {
   // useEffect(() => {
   //   const render = () => {
@@ -9,6 +11,8 @@ const MenuBarContents = ({ isClicked }) => {
 
   //   render();
   // }, []);
+  const dispatch = useDispatch();
+  const user = localStorage.getItem("login");
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [isLogInModalOpen, setIsLogInModalOpen] = useState(false);
 
@@ -28,6 +32,13 @@ const MenuBarContents = ({ isClicked }) => {
     setIsLogInModalOpen(isLogInModalOpen);
   };
 
+  // 로그아웃 이벤트
+  const onClickLogOut = useCallback(() => {
+    dispatch(logOut());
+    alert("로그아웃 성공!");
+    window.location.replace("/");
+  }, []);
+
   return (
     <div>
       <div
@@ -44,20 +55,52 @@ const MenuBarContents = ({ isClicked }) => {
               : "Menucontents CloseMenucontents"
           }
         >
-          <ul className="MenucontentsList">
-            <Link to="/signup">
-              <li className="Menucontents1">Sign Up</li>
-            </Link>
-            <Link to="/myplanet">
-              <li className="Menucontents3">My Planet</li>
-            </Link>
-            <Link to="/newplanet">
-              <li className="Menucontents4">행성 생성</li>
-            </Link>
-            <Link to="/earth">
-              <li className="Menucontents5">지구</li>
-            </Link>
-          </ul>
+          {user ? (
+            <>
+              <ul className="MenucontentsList">
+                <Link to="/">
+                  <li className="Menucontents4">To Home</li>
+                </Link>
+                <Link to="/petloss">
+                  <li className="Menucontents4">펫로스 증후군이란 ?</li>
+                </Link>
+                <Link to="/newplanet/info">
+                  <li className="Menucontents3">행성 띄우기</li>
+                </Link>
+                <Link to="/myplanet">
+                  <li className="Menucontents1">나의 추모행성</li>
+                </Link>
+
+                <Link to="/earth/main">
+                  <li className="Menucontents5">To Earth</li>
+                </Link>
+                <Link to="/mypage/user">
+                  <li className="Menucontents5">설정</li>
+                </Link>
+                <li onClick={onClickLogOut}>로그아웃</li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <ul className="MenucontentsList">
+                <Link to="/">
+                  <li className="Menucontents4">To Home</li>
+                </Link>
+                <Link to="/petloss">
+                  <li className="Menucontents4">펫로스 증후군이란 ?</li>
+                </Link>
+                <Link to="/signup">
+                  <li className="Menucontents3">회원가입</li>
+                </Link>
+                {/* <Link to="/login">
+                  <li className="Menucontents1">로그인</li>
+                </Link> */}
+                <Link to="/earth/main">
+                  <li className="Menucontents5">To Earth</li>
+                </Link>
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </div>

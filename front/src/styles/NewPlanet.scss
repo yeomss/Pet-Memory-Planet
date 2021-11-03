@@ -731,6 +731,11 @@
           .material-icons {
             cursor: pointer;
           }
+
+          div,
+          span {
+            font-weight: 700;
+          }
         }
         .ears {
           display: flex;

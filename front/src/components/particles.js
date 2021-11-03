@@ -7,6 +7,7 @@ function sketch(p) {
 
   p.setup = () => {
     p.createCanvas(width, height);
+
     class Particle {
       constructor() {
         this.x = p.random(0, p.width);

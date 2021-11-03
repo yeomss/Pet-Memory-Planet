@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeBtn from "../../components/HomeBtn";
+import MenuBar from "../../components/MenuBar";
 
 const EarthMain = () => {
   const loading = false;
@@ -32,7 +33,7 @@ const EarthMain = () => {
           </div>
         </Link>
       </div>
-
+      <MenuBar />
       <HomeBtn />
     </div>
   );
