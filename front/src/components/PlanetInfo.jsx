@@ -62,7 +62,7 @@ const PlanetInfo = () => {
   // img 이벤트
   const onClickPetImg = (e) => {
     document.querySelector(".petImg-input").click();
-    console.log(document.querySelector(".petImg-input"));
+    // console.log(document.querySelector(".petImg-input"));
   };
   const onChangePetTempImg = useCallback(
     (e) => {
@@ -72,13 +72,17 @@ const PlanetInfo = () => {
       let fr = new FileReader();
       let file = e.target.files[0];
 
-      dispatch(setPetImg({ petImg: file }));
+      if (file) {
+        fr.readAsDataURL(file);
+      }
 
-      fr.onloadend = () => {
-        setPetImgUrl(fr.result);
+      fr.onloadend = (e) => {
+        // setPetImgUrl(fr.result);
+        // console.log(e.target.result);
+        dispatch(setPetImg({ petImg: e.target.result }));
       };
 
-      fr.readAsDataURL(file);
+      // fr.readAsDataURL(file);
     },
     [petImg]
   );
@@ -144,7 +148,7 @@ const PlanetInfo = () => {
         <div className="input-pet">
           <div className="title">추모동물정보</div>
           <div onClick={onClickPetImg}>
-            <img className="petImg-preview" src={petImgUrl} file="null" />
+            <img className="petImg-preview" src={petImg} file="null" />
           </div>
           <div className="img">
             <input

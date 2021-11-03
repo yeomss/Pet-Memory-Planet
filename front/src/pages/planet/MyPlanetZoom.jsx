@@ -182,11 +182,12 @@ const MyPlanetZoom = (state) => {
                 {/* 이미지를 설정 하지 않은 경우 미리 설정된 이미지가 보여진다. */}
                 <img
                   className="representPhoto"
-                  src={
-                    planetData.image === null
-                      ? X
-                      : `http://52.78.18.110:8000/${planetData.image}`
-                  }
+                  // src={
+                  //   planetData.image === null
+                  //     ? X
+                  //     : `http://52.78.18.110:8000/${planetData.image}`
+                  // }
+                  src={planetData.image}
                 />
               </div>
               <div className="welcomeMsg">
