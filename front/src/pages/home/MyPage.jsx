@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import HomeBtn from "../../components/HomeBtn";
+import MenuBar from "../../components/MenuBar";
 import MyDelete from "../../components/MyDelete";
 import MyPlanetInfo from "../../components/MyPlanetInfo";
 import MyUserInfo from "../../components/MyUserInfo";
@@ -28,7 +29,7 @@ const MyPage = () => {
   return (
     <div className="mypage" style={{ height: height }}>
       <HomeBtn />
-
+      <MenuBar />
       <div className="mypage-container">
         <div className="menu-area">
           <div className="title">My Page</div>

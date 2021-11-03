@@ -23,6 +23,8 @@ import {
 import PlanetNose from "../../components/PlanetNose";
 import PlanetMouth from "../../components/PlanetMouth";
 import HomeBtn from "../../components/HomeBtn";
+import Bubble from "../../components/bubble";
+import MenuBar from "../../components/MenuBar";
 
 const MyPlanetZoom = (state) => {
   // url 에 id 값 넘겨주고 이 값을 state.match.params.~ 로 받음.
@@ -77,7 +79,7 @@ const MyPlanetZoom = (state) => {
         })
       );
 
-      dispatch(setPlanetNoseColor({ color }));
+      dispatch(setPlanetNoseColor({ planetNoseColor: color }));
     },
     [isLoading]
   );
@@ -91,7 +93,7 @@ const MyPlanetZoom = (state) => {
         })
       );
 
-      dispatch(setPlanetMouthColor({ color }));
+      dispatch(setPlanetMouthColor({ planetMouthColor: color }));
     },
     [isLoading]
   );
@@ -163,7 +165,7 @@ const MyPlanetZoom = (state) => {
         <>
           {/* 상단에 현재 페이지를 나타내는 영역 */}
           <div className="PageNameContainer">
-            <span className="planetZoomPosition">My Planet Page</span>
+            <span className="planetZoomPosition">{planetData.name}</span>
           </div>
 
           {/* 배경 */}
@@ -201,20 +203,18 @@ const MyPlanetZoom = (state) => {
                 pathname: `/MyPlanetInside/${state.match.params.planetId}`,
               }}
             >
-              <div className="new-planet">
-                <PlanetEars className="planet-ears1111" />
+              <div className="new-planet dung">
+                <PlanetEars className="planet-ears" />
                 <PlanetNose className="planet-nose" />
                 <PlanetMouth className="planet-mouth" />
                 <PlanetBody
-                  className="myPlanetZoom"
+                  className="planet-body"
                   fill={state.location.state.color[0]}
                   ref={myPlanetRef}
                 />
               </div>
             </Link>
-            <div className="planetZoomNickname">
-              {isLoading ? planetData.name : "-"}
-            </div>
+            <div className="planetZoomNickname"></div>
           </div>
 
           {/* 반려동물에 대한 정보를 보여줄 영역 */}
@@ -246,6 +246,8 @@ const MyPlanetZoom = (state) => {
               </div>
             </div>
           </div>
+          <Bubble />
+          <MenuBar />
           <HomeBtn />
         </>
       ) : null}

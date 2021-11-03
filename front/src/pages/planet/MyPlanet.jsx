@@ -9,6 +9,7 @@ import P5Wrapper from "react-p5-wrapper";
 import particles from "../../components/particles.js";
 import Loading from "../../components/Loading";
 import HomeBtn from "../../components/HomeBtn";
+import MenuBar from "../../components/MenuBar";
 
 const MyPlanet = (state) => {
   const user = JSON.parse(localStorage.getItem("login"));
@@ -99,6 +100,8 @@ const MyPlanet = (state) => {
               </div>
             ))}
           </div>
+          <MenuBar />
+
           <HomeBtn />
         </div>
       ) : (

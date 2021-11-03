@@ -16,6 +16,7 @@ import "../../styles/NewPlanet.scss";
 import HomeBtn from "../../components/HomeBtn";
 import { useState } from "react";
 import { useEffect } from "react";
+import MenuBar from "../../components/MenuBar";
 
 const NewPlanet = () => {
   const user = JSON.parse(localStorage.getItem("signup"));
@@ -164,6 +165,7 @@ const NewPlanet = () => {
   return (
     <div className="new-planet-container" height={{ height: height }}>
       <HomeBtn />
+      <MenuBar />
 
       <div className="planet dung">
         <PlanetBody className="planet-body" fill={planetColor} />

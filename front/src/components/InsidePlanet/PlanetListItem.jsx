@@ -7,7 +7,6 @@ const PlanetListItem = ({ color, idx }) => {
   //행성의 색상을 설정하는 함수
   const init = () => {
     let svg = document.getElementsByClassName("planet-body-shade");
-
     svg[idx].setAttribute("stop-color", color[1]);
   };
 

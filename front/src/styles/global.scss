@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
 
 * {
   box-sizing: border-box;
-  font-family: "Noto Serif KR", serif;
+  font-weight: 100;
+  font-family: "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  // font-family: "Noto Sans KR", sans-serif;
 }
 
 html,
@@ -59,7 +62,7 @@ a {
 
   opacity: 0.8;
   transition: 0.3s;
-  z-index: 100;
+  z-index: 200;
 
   &:hover {
     cursor: pointer;
@@ -112,14 +115,17 @@ a {
 .openOne {
   transform: rotate(40deg);
   width: 30px;
+  background-color: white;
 }
 .openTwo {
   opacity: 0;
+  background-color: white;
 }
 .openThree {
   transform: rotate(-40deg);
   width: 30px;
   top: 17.6px;
+  background-color: white;
 }
 // 햄버거 버튼 객체: Close
 .closeOne {
