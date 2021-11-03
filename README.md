@@ -47,8 +47,7 @@
 </div> -->
 
 <div align='center'>
-  <h3>메인화면</h3>
-  ----
+  <div align='left'><h3>메인화면</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main_logged.png)
   
