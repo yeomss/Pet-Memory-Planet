@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
-import "../styles/MyPlanet.scss";
+import "../../styles/MyPlanet.scss";
 import PostList from "../../components/InsidePlanet/PostList";
-import close from "../styles/images/close.png";
-import setting from "../styles/images/pngwing.com.png";
+import close from "../../styles/images/close.png";
+import setting from "../../styles/images/pngwing.com.png";
 import axios from "axios";
 
 import TreeItem from "../../components/InsidePlanet/TreeItem";
@@ -12,49 +12,49 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, newItem, tempNewItem } from "../../actions/item";
 import GuestBookList from "../../components/InsidePlanet/GuestBookList";
 
-import dashBoard1 from "../styles/images/SVG/dashBoard_sky.svg";
-import dashBoard2 from "../styles/images/SVG/dashBoard_purple.svg";
-import frame from "../styles/images/SVG/frame2.svg";
-import adderFrame from "../styles/images/SVG/adderFrame.svg";
-import post from "../styles/images/SVG/post.svg";
+import dashBoard1 from "../../styles/images/SVG/dashBoard_sky.svg";
+import dashBoard2 from "../../styles/images/SVG/dashBoard_purple.svg";
+import frame from "../../styles/images/SVG/frame2.svg";
+import adderFrame from "../../styles/images/SVG/adderFrame.svg";
+import post from "../../styles/images/SVG/post.svg";
 
 // 여자
-import WomanLeftone from "../styles/images/SVG/1.svg";
-import WomanLefttwo from "../styles/images/SVG/2.svg";
-import WomanRightthree from "../styles/images/SVG/3.svg";
-import WomanRightfour from "../styles/images/SVG/4.svg";
+import WomanLeftone from "../../styles/images/SVG/1.svg";
+import WomanLefttwo from "../../styles/images/SVG/2.svg";
+import WomanRightthree from "../../styles/images/SVG/3.svg";
+import WomanRightfour from "../../styles/images/SVG/4.svg";
 
 // 남자
-import ManRightone from "../styles/images/SVG/5.svg";
-import ManRighttwo from "../styles/images/SVG/6.svg";
-import ManLeftthree from "../styles/images/SVG/7.svg";
-import ManLeftfour from "../styles/images/SVG/8.svg";
+import ManRightone from "../../styles/images/SVG/5.svg";
+import ManRighttwo from "../../styles/images/SVG/6.svg";
+import ManLeftthree from "../../styles/images/SVG/7.svg";
+import ManLeftfour from "../../styles/images/SVG/8.svg";
 
-import X1 from "../styles/images/SVG/X1.svg";
+import X1 from "../../styles/images/SVG/X1.svg";
 
-import enterDoorRight from "../styles/images/SVG/enterDoorRight.svg";
-import enterDoorLeft from "../styles/images/SVG/enterDoorLeft.svg";
+import enterDoorRight from "../../styles/images/SVG/enterDoorRight.svg";
+import enterDoorLeft from "../../styles/images/SVG/enterDoorLeft.svg";
 
-import okIcon from "../styles/images/okIcon.png";
+import okIcon from "../../styles/images/okIcon.png";
 
 // 나무
-import tree1 from "../styles/images/SVG/tree1.svg";
-import tree2 from "../styles/images/SVG/tree2.svg";
-import tree3 from "../styles/images/SVG/tree3.svg";
-import tree4 from "../styles/images/SVG/tree4.svg";
-import tree5 from "../styles/images/SVG/newTree1.svg";
-import tree6 from "../styles/images/SVG/newTree2.svg";
-import tree7 from "../styles/images/SVG/newTree3.svg";
+import tree1 from "../../styles/images/SVG/tree1.svg";
+import tree2 from "../../styles/images/SVG/tree2.svg";
+import tree3 from "../../styles/images/SVG/tree3.svg";
+import tree4 from "../../styles/images/SVG/tree4.svg";
+import tree5 from "../../styles/images/SVG/newTree1.svg";
+import tree6 from "../../styles/images/SVG/newTree2.svg";
+import tree7 from "../../styles/images/SVG/newTree3.svg";
 
 // 날씨 아이콘
-import Clear from "../styles/images/SVG/Weather/wi-day-sunny.svg";
-import Rain from "../styles/images/SVG/Weather/wi-rain.svg";
-import Snow from "../styles/images/SVG/Weather/wi-snow.svg";
-import Clouds from "../styles/images/SVG/Weather/wi-cloudy.svg";
-import Haze from "../styles/images/SVG/Weather/wi-fog.svg";
-import Mist from "../styles/images/SVG/Weather/wi-fog.svg";
-import Dust from "../styles/images/SVG/Weather/wi-dust.svg";
-import Tunderstrom from "../styles/images/SVG/Weather/wi-lightning.svg";
+import Clear from "../../styles/images/SVG/Weather/wi-day-sunny.svg";
+import Rain from "../../styles/images/SVG/Weather/wi-rain.svg";
+import Snow from "../../styles/images/SVG/Weather/wi-snow.svg";
+import Clouds from "../../styles/images/SVG/Weather/wi-cloudy.svg";
+import Haze from "../../styles/images/SVG/Weather/wi-fog.svg";
+import Mist from "../../styles/images/SVG/Weather/wi-fog.svg";
+import Dust from "../../styles/images/SVG/Weather/wi-dust.svg";
+import Tunderstrom from "../../styles/images/SVG/Weather/wi-lightning.svg";
 
 // 홈버튼
 import HomeBtn from "../../components/HomeBtn.jsx";
@@ -76,7 +76,7 @@ const MyPlanetInside = (state) => {
   const dispatch = useDispatch();
 
   // 로딩화면 관련 State
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
 
   // 행성, 사용자 토큰
   const planetToken = sessionStorage.getItem("planetToken");
@@ -192,8 +192,9 @@ const MyPlanetInside = (state) => {
   const [modalGuestBook, setModalGuestBook] = useState(false);
 
   // 편지 새로 작성하기 버튼이 눌림 감지 변수
-  const [isCreateGuestBookBtnClicked, setCreateGuestBookBtnClick] =
-    useState(false);
+  const [isCreateGuestBookBtnClicked, setCreateGuestBookBtnClick] = useState(
+    false
+  );
 
   // 방명록 작성값
   const [guestInput, setGuestInput] = useState("");

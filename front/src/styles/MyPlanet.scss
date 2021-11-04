@@ -108,6 +108,11 @@
   flex-direction: column;
   z-index: 1;
   color: white;
+
+  // a {
+  //   width: 100%;
+  //   height: 50%;
+  // }
 }
 
 .planetZoomPosition {
@@ -520,7 +525,10 @@ console.log(res.data.guest[0].guestBook);
 }
 
 // 배경, 기타 요소
-
+.container,
+.subContainer {
+  overflow-y: hidden;
+}
 // 추억관 외부
 .sky {
   position: absolute;
