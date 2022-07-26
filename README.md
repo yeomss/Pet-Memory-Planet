@@ -54,6 +54,8 @@
 </div> -->
 
 ----
+
+/*
 <div align='center'>
 <div align='left'><h3>메인화면</h3><div>
   
@@ -87,4 +89,4 @@
 <div align='left'><h3>설정</h3><div>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/mypage.png)
-</div>
+</div>*/
