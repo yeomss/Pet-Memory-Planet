@@ -3,6 +3,7 @@
 <div align='center'>
   
   ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main.png)
+  ![](https://github.com/dua9920/Pet-Memory-Planet/blob/main/front/src/assets/memories/main_logged.png)
   <h3> <b>2021 창의설계프로젝트 - 추억 그리고 행성</b> </h3>
   
   <h6>반려동물 추모 웹 사이트</h6>
